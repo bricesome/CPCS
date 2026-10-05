@@ -1,9 +1,9 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:nana_doc/features/classification/data/datasources/user_prefs_local_data_source.dart';
-import 'package:nana_doc/features/classification/data/repositories/classification_repository_impl.dart';
-import 'package:nana_doc/features/classification/domain/usecases/classification_usecases.dart';
-import 'package:nana_doc/features/classification/presentation/bloc/classification_bloc.dart';
+import 'package:cpcs/features/classification/data/datasources/user_prefs_local_data_source.dart';
+import 'package:cpcs/features/classification/data/repositories/classification_repository_impl.dart';
+import 'package:cpcs/features/classification/domain/usecases/classification_usecases.dart';
+import 'package:cpcs/features/classification/presentation/bloc/classification_bloc.dart';
 
 import '../helpers/test_data.dart';
 

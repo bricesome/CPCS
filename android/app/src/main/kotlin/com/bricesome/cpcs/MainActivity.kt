@@ -1,4 +1,4 @@
-package com.nanadoc.nana_doc
+package com.bricesome.cpcs
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -32,7 +32,7 @@ class _ClassificationPageState extends State<ClassificationPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Nana Doc'),
+        title: const Text('CPCS'),
         actions: const [LearningModeButton()],
       ),
       body: ClassificationGate(

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:nana_doc/core/service_locator.dart' as di;
-import 'package:nana_doc/features/classification/data/datasources/user_prefs_local_data_source.dart';
-import 'package:nana_doc/main.dart';
+import 'package:cpcs/core/service_locator.dart' as di;
+import 'package:cpcs/features/classification/data/datasources/user_prefs_local_data_source.dart';
+import 'package:cpcs/main.dart';
 
 import 'helpers/test_data.dart';
 
@@ -20,7 +20,7 @@ void main() {
     tester.view.devicePixelRatio = 1;
     addTearDown(tester.view.reset);
 
-    await tester.pumpWidget(const NanaDocApp());
+    await tester.pumpWidget(const CPCSApp());
     await tester.pumpAndSettle();
 
     expect(find.text('Sols minéraux bruts'), findsOneWidget);
@@ -38,7 +38,7 @@ void main() {
     tester.view.devicePixelRatio = 1;
     addTearDown(tester.view.reset);
 
-    await tester.pumpWidget(const NanaDocApp());
+    await tester.pumpWidget(const CPCSApp());
     await tester.pumpAndSettle();
 
     await tester.tap(find.text('Croisement').first);

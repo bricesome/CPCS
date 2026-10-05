@@ -1,4 +1,4 @@
-# Nana Doc
+# CPCS
 
 Application Flutter multiplateforme (Android, iOS, Web, Windows, Linux, macOS) pour consulter et apprendre la **classification française des sols CPCS 1967** (Aubert et al.).
 

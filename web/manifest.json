@@ -1,11 +1,11 @@
 {
-    "name": "nana_doc",
-    "short_name": "nana_doc",
+    "name": "CPCS - Classification des sols",
+    "short_name": "CPCS",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "Classification des sols CPCS 1967",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

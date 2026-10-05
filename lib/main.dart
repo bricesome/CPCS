@@ -14,17 +14,17 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await HiveDatabase.init();
   await di.init();
-  runApp(const NanaDocApp());
+  runApp(const CPCSApp());
 }
 
-class NanaDocApp extends StatefulWidget {
-  const NanaDocApp({super.key});
+class CPCSApp extends StatefulWidget {
+  const CPCSApp({super.key});
 
   @override
-  State<NanaDocApp> createState() => _NanaDocAppState();
+  State<CPCSApp> createState() => _CPCSAppState();
 }
 
-class _NanaDocAppState extends State<NanaDocApp> {
+class _CPCSAppState extends State<CPCSApp> {
   late final GoRouter _router = createRouter();
 
   @override
@@ -44,7 +44,7 @@ class _NanaDocAppState extends State<NanaDocApp> {
         BlocProvider<CompareCubit>(create: (_) => CompareCubit()),
       ],
       child: MaterialApp.router(
-        title: 'Nana Doc',
+        title: 'CPCS',
         theme: AppTheme.lightTheme,
         routerConfig: _router,
         debugShowCheckedModeBanner: false,

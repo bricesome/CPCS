@@ -5,10 +5,10 @@
 // 'flutter create' template.
 
 // The application's name. By default this is also the title of the Flutter window.
-PRODUCT_NAME = nana_doc
+PRODUCT_NAME = cpcs
 
 // The application's bundle identifier
-PRODUCT_BUNDLE_IDENTIFIER = com.nanadoc.nanaDoc
+PRODUCT_BUNDLE_IDENTIFIER = com.bricesome.cpcs
 
 // The copyright displayed in application information
-PRODUCT_COPYRIGHT = Copyright © 2026 com.nanadoc. All rights reserved.
+PRODUCT_COPYRIGHT = Copyright © 2026 com.bricesome. All rights reserved.

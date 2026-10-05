@@ -4203,7 +4203,7 @@
    "code": "X.1.1",
    "level": "groupe",
    "name": "Sols ferrallitiques faiblement désaturés typiques",
-   "description": "Profil complet, sans caractère secondaire.",
+   "description": "Succession d'horizons de texture assez constante ; matière organique bien évoluée assez faible.",
    "parent": "X.1",
    "criteria": {}
   },
@@ -4211,31 +4211,59 @@
    "id": "X.1.1.1",
    "code": "X.1.1.1",
    "level": "sous_groupe",
-   "name": "Rouge",
-   "description": "Couleur rouge due à l'hématite, signe de bon drainage et d'oxydation.",
-   "parent": "X.1.1",
-   "criteria": {},
-   "modifier": "rouge"
-  },
-  {
-   "id": "X.1.1.2",
-   "code": "X.1.1.2",
-   "level": "sous_groupe",
-   "name": "Jaune",
-   "description": "Couleur jaune due à la goethite, milieu plus humide.",
-   "parent": "X.1.1",
-   "criteria": {},
-   "modifier": "jaune"
-  },
-  {
-   "id": "X.1.1.3",
-   "code": "X.1.1.3",
-   "level": "sous_groupe",
    "name": "Modal",
    "description": "Le sous-groupe « modal » représente le cas typique du groupe, sans caractère secondaire marqué.",
    "parent": "X.1.1",
    "criteria": {},
    "modifier": "modal"
+  },
+  {
+   "id": "X.1.1.2",
+   "code": "X.1.1.2",
+   "level": "sous_groupe",
+   "name": "Induré",
+   "description": "Un horizon est durci (cuirasse, carapace, croûte) et forme un obstacle aux racines.",
+   "parent": "X.1.1",
+   "criteria": {},
+   "modifier": "induré"
+  },
+  {
+   "id": "X.1.1.3",
+   "code": "X.1.1.3",
+   "level": "sous_groupe",
+   "name": "Hydromorphe",
+   "description": "Présente des signes d'engorgement (taches d'oxydo-réduction, gley ou pseudogley) en profondeur.",
+   "parent": "X.1.1",
+   "criteria": {
+    "drainage": [
+     "temporaire"
+    ]
+   },
+   "modifier": "hydromorphe"
+  },
+  {
+   "id": "X.1.1.4",
+   "code": "X.1.1.4",
+   "level": "sous_groupe",
+   "name": "Rajeuni / pénévolué",
+   "description": "L'érosion a décapé le sol et réexposé un matériau moins altéré.",
+   "parent": "X.1.1",
+   "criteria": {
+    "topographie": [
+     "pente"
+    ]
+   },
+   "modifier": "rajeuni"
+  },
+  {
+   "id": "X.1.1.5",
+   "code": "X.1.1.5",
+   "level": "sous_groupe",
+   "name": "Humifère",
+   "description": "Horizon de surface particulièrement riche en matière organique.",
+   "parent": "X.1.1",
+   "criteria": {},
+   "modifier": "humifere"
   },
   {
    "id": "X.1.2",
@@ -4688,19 +4716,29 @@
    "id": "X.3.6",
    "code": "X.3.6",
    "level": "groupe",
-   "name": "Sols ferrallitiques fortement désaturés podzoliques",
-   "description": "Début de podzolisation sur matériaux sableux.",
+   "name": "Sols ferrallitiques fortement désaturés lessivés",
+   "description": "Horizon B textural (indice de lessivage au moins 1/1,4) avec revêtements d'argile orientée ; climat équatorial.",
    "parent": "X.3",
    "criteria": {
     "processus": [
      "ferrallitisation",
-     "podzolisation"
+     "lessivage"
     ]
    }
   },
   {
    "id": "X.3.6.1",
    "code": "X.3.6.1",
+   "level": "sous_groupe",
+   "name": "Modal",
+   "description": "Le sous-groupe « modal » représente le cas typique du groupe, sans caractère secondaire marqué.",
+   "parent": "X.3.6",
+   "criteria": {},
+   "modifier": "modal"
+  },
+  {
+   "id": "X.3.6.2",
+   "code": "X.3.6.2",
    "level": "sous_groupe",
    "name": "Podzolique / podzolisé",
    "description": "Montre un début de podzolisation (horizon blanchi, accumulation humo-ferrugineuse).",
@@ -4711,6 +4749,30 @@
     ]
    },
    "modifier": "podzolique"
+  },
+  {
+   "id": "X.3.6.3",
+   "code": "X.3.6.3",
+   "level": "sous_groupe",
+   "name": "Induré",
+   "description": "Un horizon est durci (cuirasse, carapace, croûte) et forme un obstacle aux racines.",
+   "parent": "X.3.6",
+   "criteria": {},
+   "modifier": "induré"
+  },
+  {
+   "id": "X.3.6.4",
+   "code": "X.3.6.4",
+   "level": "sous_groupe",
+   "name": "Hydromorphe",
+   "description": "Présente des signes d'engorgement (taches d'oxydo-réduction, gley ou pseudogley) en profondeur.",
+   "parent": "X.3.6",
+   "criteria": {
+    "drainage": [
+     "temporaire"
+    ]
+   },
+   "modifier": "hydromorphe"
   },
   {
    "id": "XI",

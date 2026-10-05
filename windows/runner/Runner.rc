@@ -89,13 +89,13 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "com.nanadoc" "\0"
-            VALUE "FileDescription", "nana_doc" "\0"
+            VALUE "CompanyName", "com.bricesome" "\0"
+            VALUE "FileDescription", "cpcs" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "nana_doc" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2026 com.nanadoc. All rights reserved." "\0"
-            VALUE "OriginalFilename", "nana_doc.exe" "\0"
-            VALUE "ProductName", "nana_doc" "\0"
+            VALUE "InternalName", "cpcs" "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2026 com.bricesome. All rights reserved." "\0"
+            VALUE "OriginalFilename", "cpcs.exe" "\0"
+            VALUE "ProductName", "cpcs" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:nana_doc/features/classification/domain/entities/classification.dart';
-import 'package:nana_doc/features/classification/domain/entities/soil_unit.dart';
-import 'package:nana_doc/features/classification/domain/services/cross_filter.dart';
+import 'package:cpcs/features/classification/domain/entities/classification.dart';
+import 'package:cpcs/features/classification/domain/entities/soil_unit.dart';
+import 'package:cpcs/features/classification/domain/services/cross_filter.dart';
 
 import '../helpers/test_data.dart';
 

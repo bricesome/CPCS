@@ -175,7 +175,7 @@ TREE = [
    f=dict(processus=["ferrallitisation"], climat=["tropical_humide"], vegetation=["foret_dense", "savane"], drainage=["bon"], topographie=["sommet", "pente"], materiau=["divers"], aptitude=["foret", "cultures", "amendement"]), profil="A B C (très épais)",
    kids=[
     N("Sols ferrallitiques faiblement désaturés", "Saison sèche marquée, complexe encore assez riche en bases.", f=dict(complexe=["peu_desature"], climat=["tropical_humide", "tropical_sec"]), kids=[
-       N("Sols ferrallitiques faiblement désaturés typiques", "Profil complet, sans caractère secondaire.", sg=["rouge", "jaune", "modal"]),
+       N("Sols ferrallitiques faiblement désaturés typiques", "Succession d'horizons de texture assez constante ; matière organique bien évoluée assez faible.", sg=["modal", "induré", "hydromorphe", "rajeuni", "humifere"]),
        N("Sols ferrallitiques faiblement désaturés appauvris", "Surface appauvrie en argile.", sg=["modal", "concretions", "induré"]),
        N("Sols ferrallitiques faiblement désaturés remaniés", "Horizons supérieurs remaniés, ligne de cailloux.", sg=["remanie", "modal"]),
        N("Sols ferrallitiques faiblement désaturés rajeunis", "Érosion ayant réexposé un matériau moins altéré.", sg=["rajeuni"]),
@@ -194,7 +194,7 @@ TREE = [
        N("Sols ferrallitiques fortement désaturés appauvris", "Surface appauvrie.", sg=["modal", "hydromorphe"]),
        N("Sols ferrallitiques fortement désaturés remaniés", "Profil remanié.", sg=["remanie", "induré"]),
        N("Sols ferrallitiques fortement désaturés rajeunis", "Rajeunis par l'érosion.", sg=["rajeuni"]),
-       N("Sols ferrallitiques fortement désaturés podzoliques", "Début de podzolisation sur matériaux sableux.", f=dict(processus=["ferrallitisation", "podzolisation"]), sg=["podzolique"]),
+       N("Sols ferrallitiques fortement désaturés lessivés", "Horizon B textural (indice de lessivage au moins 1/1,4) avec revêtements d'argile orientée ; climat équatorial.", f=dict(processus=["ferrallitisation", "lessivage"]), sg=["modal", "podzolique", "induré", "hydromorphe"]),
     ]),
    ]),
  N("Sols hydromorphes", "Sols marqués par un excès d'eau prolongé : réduction du fer (gley gris-bleu), alternance oxydation/réduction (pseudogley à taches rouille), ou accumulation de matière organique (tourbe, anmoor).",
