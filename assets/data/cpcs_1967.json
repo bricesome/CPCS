@@ -1,0 +1,5935 @@
+{
+ "meta": {
+  "title": "Classification des sols CPCS 1967",
+  "source": "Commission de Pédologie et de Cartographie des Sols (CPCS), Classification des sols, édition 1967 (Aubert et al.), ENSA Grignon.",
+  "note": "Données de référence reconstituées pour l'apprentissage ; à vérifier et compléter avec le document source.",
+  "version": 1
+ },
+ "levels": [
+  {
+   "id": "classe",
+   "label": "Classe",
+   "explanation": "Niveau 1 : défini par le processus pédogénétique dominant (degré d'évolution, type d'altération, nature de l'humus, excès d'eau ou de sels)."
+  },
+  {
+   "id": "sous_classe",
+   "label": "Sous-classe",
+   "explanation": "Niveau 2 : précise les conditions du processus, surtout le pédoclimat (température, humidité) ou le type de drainage."
+  },
+  {
+   "id": "groupe",
+   "label": "Groupe",
+   "explanation": "Niveau 3 : défini par des caractères morphologiques du profil traduisant l'intensité du processus (horizons présents, accumulations)."
+  },
+  {
+   "id": "sous_groupe",
+   "label": "Sous-groupe",
+   "explanation": "Niveau 4 : intensité du processus principal ou apparition d'un processus secondaire (hydromorphe, vertique, salé, lessivé…)."
+  }
+ ],
+ "criteria": [
+  {
+   "id": "processus",
+   "label": "Processus pédogénétique",
+   "explanation": "Le mécanisme principal qui a façonné le sol. C'est le critère de base de la CPCS 1967 : chaque classe correspond à un processus dominant.",
+   "values": [
+    {
+     "id": "aucun",
+     "label": "Aucune évolution",
+     "explanation": "Le matériau n'est presque pas transformé : pas d'altération chimique notable, peu ou pas de matière organique."
+    },
+    {
+     "id": "faible",
+     "label": "Évolution faible",
+     "explanation": "Début d'altération et d'accumulation de matière organique, profil encore peu différencié (A-C)."
+    },
+    {
+     "id": "vertisolisation",
+     "label": "Vertisolisation",
+     "explanation": "Les argiles gonflantes (smectites) se gonflent et se rétractent avec l'humidité : fentes de retrait, faces de glissement, autobrassage."
+    },
+    {
+     "id": "andosolisation",
+     "label": "Andosolisation",
+     "explanation": "Altération rapide des verres volcaniques en allophanes et complexes alumino-humiques ; sol léger, très poreux, riche en matière organique."
+    },
+    {
+     "id": "calcimagnesique",
+     "label": "Influence calcique/magnésienne",
+     "explanation": "Le calcium ou le magnésium (calcaire, dolomie, gypse) bloque l'évolution : humus stable, complexe saturé."
+    },
+    {
+     "id": "isohumique",
+     "label": "Isohumisme",
+     "explanation": "La matière organique très évoluée est incorporée profondément et de façon progressive (racines de graminées) ; teneur décroissant régulièrement avec la profondeur."
+    },
+    {
+     "id": "brunification",
+     "label": "Brunification",
+     "explanation": "Formation d'un humus actif (mull) lié aux argiles et au fer : couleur brune, bonne structure, horizon (B) d'altération."
+    },
+    {
+     "id": "lessivage",
+     "label": "Lessivage (argilluviation)",
+     "explanation": "Les argiles fines migrent mécaniquement de la surface vers la profondeur : horizon appauvri (E) au-dessus d'un horizon enrichi (Bt)."
+    },
+    {
+     "id": "podzolisation",
+     "label": "Podzolisation",
+     "explanation": "Des acides organiques complexent le fer et l'aluminium et les entraînent en profondeur : horizon cendreux (E) et horizon d'accumulation (Bh, Bs)."
+    },
+    {
+     "id": "fersiallitisation",
+     "label": "Fersiallitisation (rubéfaction)",
+     "explanation": "Altération modérée avec libération de fer qui cristallise (hématite) : couleur rouge, argiles 2/1 conservées, complexe saturé ou peu désaturé."
+    },
+    {
+     "id": "ferruginisation",
+     "label": "Ferruginisation",
+     "explanation": "Altération tropicale à saison sèche marquée : individualisation du fer (taches, concrétions, cuirasses), argile kaolinitique, bases encore présentes."
+    },
+    {
+     "id": "ferrallitisation",
+     "label": "Ferrallitisation",
+     "explanation": "Altération totale des minéraux primaires sous climat chaud et humide : perte de la silice et des bases, accumulation de kaolinite, d'oxydes de fer et d'aluminium."
+    },
+    {
+     "id": "hydromorphie",
+     "label": "Hydromorphie",
+     "explanation": "Excès d'eau prolongé : manque d'oxygène, réduction du fer (gris-bleu, gley) ou alternance réduction/oxydation (taches rouille, pseudogley)."
+    },
+    {
+     "id": "salinisation",
+     "label": "Salinisation",
+     "explanation": "Accumulation de sels solubles (chlorures, sulfates) qui augmente la pression osmotique et gêne l'alimentation en eau des plantes."
+    },
+    {
+     "id": "sodisation",
+     "label": "Sodisation (alcalisation)",
+     "explanation": "Le sodium remplace le calcium sur le complexe absorbant : argiles dispersées, structure dégradée, pH très élevé."
+    }
+   ]
+  },
+  {
+   "id": "climat",
+   "label": "Climat / zone",
+   "explanation": "Le climat règle l'intensité de l'altération (température) et le bilan d'eau (pluie, évaporation). Certaines classes sont dites « climatiques », d'autres « azonales ».",
+   "values": [
+    {
+     "id": "froid",
+     "label": "Froid / boréal / polaire",
+     "explanation": "Températures basses, sol gelé une partie de l'année (permagel possible) : altération très lente."
+    },
+    {
+     "id": "montagnard",
+     "label": "Montagnard / alpin",
+     "explanation": "Climat froid et humide d'altitude, pentes fortes : sols jeunes et humifères."
+    },
+    {
+     "id": "tempere_humide",
+     "label": "Tempéré humide (atlantique)",
+     "explanation": "Pluies réparties sur l'année, hivers doux : lessivage et brunification dominants."
+    },
+    {
+     "id": "tempere_continental",
+     "label": "Tempéré continental",
+     "explanation": "Hivers froids, étés chauds, pluies moyennes : prairies et forêts mixtes."
+    },
+    {
+     "id": "mediterraneen",
+     "label": "Méditerranéen",
+     "explanation": "Été chaud et sec, hiver doux et pluvieux : rubéfaction (sols rouges)."
+    },
+    {
+     "id": "steppique",
+     "label": "Steppique / semi-aride froid",
+     "explanation": "Steppes à graminées, saison sèche estivale : forte incorporation d'humus (chernozems)."
+    },
+    {
+     "id": "aride",
+     "label": "Aride / désertique",
+     "explanation": "Pluies très faibles et irrégulières, évaporation forte : végétation rare, sels et calcaire restent dans le sol."
+    },
+    {
+     "id": "sahelien",
+     "label": "Sahélien / semi-aride tropical",
+     "explanation": "Climat tropical à longue saison sèche (300-600 mm) : sols bruns subarides, ferrugineux peu lessivés, sols sableux dunaires."
+    },
+    {
+     "id": "tropical_sec",
+     "label": "Tropical à saison sèche (soudanien)",
+     "explanation": "600-1200 mm en une saison des pluies : sols ferrugineux tropicaux, cuirasses."
+    },
+    {
+     "id": "tropical_humide",
+     "label": "Tropical humide / équatorial",
+     "explanation": "Chaud et pluvieux toute l'année ou presque : ferrallitisation intense."
+    },
+    {
+     "id": "azonal",
+     "label": "Azonal (tout climat)",
+     "explanation": "Le sol dépend surtout d'un facteur local (eau, roche, relief, apport) plutôt que du climat."
+    }
+   ]
+  },
+  {
+   "id": "materiau",
+   "label": "Matériau originel (roche-mère)",
+   "explanation": "La roche ou le dépôt à partir duquel le sol s'est formé. Il détermine la texture, la richesse minérale et parfois la classe elle-même (calcaire, volcanique).",
+   "values": [
+    {
+     "id": "roche_dure",
+     "label": "Roche dure (cohérente)",
+     "explanation": "Granite, grès, basalte, quartzite… : altération lente, sols souvent minces."
+    },
+    {
+     "id": "roche_acide",
+     "label": "Roche acide / siliceuse",
+     "explanation": "Granites, gneiss, grès, sables quartzeux : pauvres en bases, favorisent l'acidification et la podzolisation."
+    },
+    {
+     "id": "roche_basique",
+     "label": "Roche basique",
+     "explanation": "Basaltes, dolérites, schistes verts : riches en fer, magnésium et calcium ; sols argileux et fertiles."
+    },
+    {
+     "id": "calcaire",
+     "label": "Calcaire / dolomie / marne",
+     "explanation": "Roches riches en carbonates de calcium ou magnésium."
+    },
+    {
+     "id": "gypse",
+     "label": "Gypse",
+     "explanation": "Sulfate de calcium : matériau soluble typique des régions arides."
+    },
+    {
+     "id": "volcanique",
+     "label": "Matériau volcanique (cendres, ponces)",
+     "explanation": "Verres volcaniques facilement altérables : origine des andosols."
+    },
+    {
+     "id": "alluvions",
+     "label": "Alluvions / colluvions",
+     "explanation": "Dépôts apportés par les cours d'eau ou par le ruissellement en bas de pente."
+    },
+    {
+     "id": "eolien",
+     "label": "Sables et limons éoliens (loess, dunes)",
+     "explanation": "Matériaux transportés par le vent ; le loess donne des sols très fertiles."
+    },
+    {
+     "id": "argile_gonflante",
+     "label": "Argiles gonflantes / marnes",
+     "explanation": "Matériaux riches en smectites : source des vertisols."
+    },
+    {
+     "id": "organique",
+     "label": "Débris végétaux (tourbe)",
+     "explanation": "Matière organique accumulée dans l'eau, peu décomposée."
+    },
+    {
+     "id": "sale",
+     "label": "Dépôts salés / lagunaires / marins",
+     "explanation": "Sédiments ou nappes chargés de sels : origine des sols salés et sodiques."
+    },
+    {
+     "id": "divers",
+     "label": "Tout matériau",
+     "explanation": "Le matériau n'est pas déterminant pour cette unité."
+    }
+   ]
+  },
+  {
+   "id": "topographie",
+   "label": "Position topographique",
+   "explanation": "La place dans le paysage : elle contrôle l'érosion, les apports et la circulation de l'eau (notion de toposéquence / catena).",
+   "values": [
+    {
+     "id": "sommet",
+     "label": "Plateau / sommet",
+     "explanation": "Position stable, peu d'érosion : sols anciens et profonds, cuirasses possibles."
+    },
+    {
+     "id": "pente",
+     "label": "Versant / pente forte",
+     "explanation": "L'érosion décape le sol au fur et à mesure : sols minces et jeunes."
+    },
+    {
+     "id": "bas_pente",
+     "label": "Bas de versant / glacis",
+     "explanation": "Zone de transit et d'accumulation de matériaux (colluvions)."
+    },
+    {
+     "id": "depression",
+     "label": "Bas-fond / dépression fermée",
+     "explanation": "L'eau et les éléments fins s'accumulent : hydromorphie, argiles gonflantes, sels."
+    },
+    {
+     "id": "plaine_alluviale",
+     "label": "Plaine alluviale / vallée",
+     "explanation": "Dépôts récents des rivières, nappe proche."
+    },
+    {
+     "id": "littoral",
+     "label": "Littoral / delta / lagune",
+     "explanation": "Influence de la mer : sels, sodium, engorgement."
+    },
+    {
+     "id": "toutes",
+     "label": "Toutes positions",
+     "explanation": "La position n'est pas déterminante."
+    }
+   ]
+  },
+  {
+   "id": "drainage",
+   "label": "Régime hydrique (drainage)",
+   "explanation": "Comment l'eau circule dans le profil. Un engorgement change complètement les processus (manque d'oxygène, réduction du fer).",
+   "values": [
+    {
+     "id": "excessif",
+     "label": "Drainage excessif / sec",
+     "explanation": "L'eau traverse ou s'évapore très vite : sol séchant, faible réserve utile."
+    },
+    {
+     "id": "bon",
+     "label": "Bien drainé",
+     "explanation": "Pas d'excès d'eau durable : sol aéré."
+    },
+    {
+     "id": "temporaire",
+     "label": "Engorgement temporaire",
+     "explanation": "Nappe perchée saisonnière : alternance réduction/oxydation (pseudogley)."
+    },
+    {
+     "id": "permanent",
+     "label": "Engorgement permanent",
+     "explanation": "Nappe proche toute l'année : milieu réduit (gley) ou tourbe."
+    },
+    {
+     "id": "nappe_salee",
+     "label": "Nappe salée",
+     "explanation": "Remontées capillaires d'une nappe chargée en sels."
+    }
+   ]
+  },
+  {
+   "id": "complexe",
+   "label": "Complexe absorbant",
+   "explanation": "Les argiles et l'humus retiennent des cations (Ca, Mg, K, Na, H, Al). Leur nature et leur taux de saturation renseignent sur la fertilité.",
+   "values": [
+    {
+     "id": "sature",
+     "label": "Saturé (riche en bases)",
+     "explanation": "Calcium et magnésium dominent : pH neutre à basique, bonne fertilité chimique."
+    },
+    {
+     "id": "peu_desature",
+     "label": "Peu à moyennement désaturé",
+     "explanation": "Une partie des bases a été lessivée : pH légèrement acide."
+    },
+    {
+     "id": "desature",
+     "label": "Fortement désaturé (acide)",
+     "explanation": "Bases remplacées par H+ et Al3+ : pH acide, toxicité aluminique possible."
+    },
+    {
+     "id": "sodique",
+     "label": "Sodique",
+     "explanation": "Sodium échangeable élevé (> 15 % de la CEC) : dispersion des argiles."
+    },
+    {
+     "id": "variable",
+     "label": "Variable",
+     "explanation": "Dépend du matériau et de l'environnement."
+    }
+   ]
+  },
+  {
+   "id": "vegetation",
+   "label": "Végétation associée",
+   "explanation": "La couverture végétale fournit la matière organique et protège le sol ; elle reflète aussi le climat.",
+   "values": [
+    {
+     "id": "nulle",
+     "label": "Nulle à très rare",
+     "explanation": "Désert, roche nue, glacier."
+    },
+    {
+     "id": "steppe",
+     "label": "Steppe / pseudo-steppe",
+     "explanation": "Graminées et arbustes clairsemés des régions sèches."
+    },
+    {
+     "id": "prairie",
+     "label": "Prairie / pelouse",
+     "explanation": "Graminées denses (prairie, pelouse alpine)."
+    },
+    {
+     "id": "savane",
+     "label": "Savane arborée / arbustive",
+     "explanation": "Graminées avec arbres épars : paysage soudano-sahélien typique (RNA)."
+    },
+    {
+     "id": "foret_feuillus",
+     "label": "Forêt de feuillus",
+     "explanation": "Litière riche, humus actif (mull)."
+    },
+    {
+     "id": "foret_resineux",
+     "label": "Forêt de résineux / lande",
+     "explanation": "Litière acide, humus brut (mor) : favorise la podzolisation."
+    },
+    {
+     "id": "foret_dense",
+     "label": "Forêt dense humide",
+     "explanation": "Forêt tropicale sempervirente."
+    },
+    {
+     "id": "hygrophile",
+     "label": "Végétation hygrophile / halophile",
+     "explanation": "Roseaux, joncs, sphaignes, mangroves, plantes tolérant le sel."
+    },
+    {
+     "id": "variee",
+     "label": "Variée",
+     "explanation": "Pas de végétation caractéristique."
+    }
+   ]
+  },
+  {
+   "id": "aptitude",
+   "label": "Aptitude / usage conseillé",
+   "explanation": "Indication pratique de mise en valeur (agriculture, élevage, forêt, conservation). Elle dépend toujours du contexte local.",
+   "values": [
+    {
+     "id": "cultures",
+     "label": "Cultures pluviales",
+     "explanation": "Mil, sorgho, maïs, arachide, céréales… si la profondeur et l'eau le permettent."
+    },
+    {
+     "id": "irrigation",
+     "label": "Irrigation / riziculture / maraîchage",
+     "explanation": "Sols lourds ou proches de l'eau, valorisés par la maîtrise de l'eau."
+    },
+    {
+     "id": "paturage",
+     "label": "Pâturage / parcours",
+     "explanation": "Valorisation extensive par l'élevage."
+    },
+    {
+     "id": "foret",
+     "label": "Forêt / agroforesterie / RNA",
+     "explanation": "Protection par l'arbre : reboisement, régénération naturelle assistée."
+    },
+    {
+     "id": "conservation",
+     "label": "Conservation / restauration (CES-DRS)",
+     "explanation": "Sol fragile ou dégradé : cordons pierreux, zaï, demi-lunes, mise en défens."
+    },
+    {
+     "id": "amendement",
+     "label": "Cultures après amendement",
+     "explanation": "Nécessite chaulage, gypsage, lessivage des sels ou fumure organique."
+    },
+    {
+     "id": "faible",
+     "label": "Aptitude très faible",
+     "explanation": "Contraintes fortes : roche, sel, gel, aridité extrême."
+    }
+   ]
+  }
+ ],
+ "units": [
+  {
+   "id": "I",
+   "code": "I",
+   "level": "classe",
+   "name": "Sols minéraux bruts",
+   "description": "Sols sans évolution notable : matériau à peine altéré, quasi dépourvu de matière organique. Profil (A)C ou C.",
+   "parent": null,
+   "criteria": {
+    "processus": [
+     "aucun"
+    ],
+    "complexe": [
+     "variable"
+    ],
+    "vegetation": [
+     "nulle"
+    ],
+    "aptitude": [
+     "faible",
+     "conservation"
+    ],
+    "drainage": [
+     "excessif",
+     "bon"
+    ]
+   },
+   "explanation": "Imagine une roche ou un sable fraîchement exposé : aucun horizon n'a eu le temps ou les conditions pour se former. C'est le point de départ de toute pédogenèse.",
+   "profile": "C ou (A)C"
+  },
+  {
+   "id": "I.1",
+   "code": "I.1",
+   "level": "sous_classe",
+   "name": "Sols minéraux bruts non climatiques",
+   "description": "L'absence d'évolution est due à un facteur local (érosion, apport récent, action humaine) et non au climat.",
+   "parent": "I",
+   "criteria": {
+    "climat": [
+     "azonal"
+    ]
+   },
+   "explanation": "Même sous un climat favorable, un sol peut rester brut si l'érosion le décape sans cesse ou si des dépôts frais le recouvrent."
+  },
+  {
+   "id": "I.1.1",
+   "code": "I.1.1",
+   "level": "groupe",
+   "name": "Sols minéraux bruts d'érosion",
+   "description": "Roche ou matériau mis à nu par l'érosion.",
+   "parent": "I.1",
+   "criteria": {
+    "topographie": [
+     "pente",
+     "sommet"
+    ]
+   }
+  },
+  {
+   "id": "I.1.1.1",
+   "code": "I.1.1.1",
+   "level": "sous_groupe",
+   "name": "Lithique (lithosol)",
+   "description": "La roche dure apparaît à faible profondeur (moins de 10 à 20 cm) : profil réduit à un horizon sur la roche.",
+   "parent": "I.1.1",
+   "criteria": {
+    "materiau": [
+     "roche_dure"
+    ],
+    "topographie": [
+     "pente"
+    ]
+   },
+   "modifier": "lithique"
+  },
+  {
+   "id": "I.1.1.2",
+   "code": "I.1.1.2",
+   "level": "sous_groupe",
+   "name": "Régosolique (régosol)",
+   "description": "Formé sur un matériau tendre ou meuble (marne, sable, argile), rajeuni sans cesse par l'érosion.",
+   "parent": "I.1.1",
+   "criteria": {
+    "topographie": [
+     "pente"
+    ]
+   },
+   "modifier": "regosolique"
+  },
+  {
+   "id": "I.1.2",
+   "code": "I.1.2",
+   "level": "groupe",
+   "name": "Sols minéraux bruts d'apport",
+   "description": "Dépôt récent (alluvial, colluvial, éolien, volcanique) n'ayant pas encore évolué.",
+   "parent": "I.1",
+   "criteria": {
+    "topographie": [
+     "plaine_alluviale",
+     "bas_pente"
+    ]
+   }
+  },
+  {
+   "id": "I.1.2.1",
+   "code": "I.1.2.1",
+   "level": "sous_groupe",
+   "name": "d'apport alluvial",
+   "description": "Formé sur des alluvions récentes déposées par les crues.",
+   "parent": "I.1.2",
+   "criteria": {
+    "materiau": [
+     "alluvions"
+    ],
+    "topographie": [
+     "plaine_alluviale"
+    ]
+   },
+   "modifier": "alluvial"
+  },
+  {
+   "id": "I.1.2.2",
+   "code": "I.1.2.2",
+   "level": "sous_groupe",
+   "name": "d'apport colluvial",
+   "description": "Formé sur des matériaux descendus des pentes par le ruissellement et la gravité.",
+   "parent": "I.1.2",
+   "criteria": {
+    "materiau": [
+     "alluvions"
+    ],
+    "topographie": [
+     "bas_pente"
+    ]
+   },
+   "modifier": "colluvial"
+  },
+  {
+   "id": "I.1.2.3",
+   "code": "I.1.2.3",
+   "level": "sous_groupe",
+   "name": "d'apport éolien",
+   "description": "Formé sur des sables ou limons déposés par le vent (dunes, voiles sableux, loess).",
+   "parent": "I.1.2",
+   "criteria": {
+    "materiau": [
+     "eolien"
+    ]
+   },
+   "modifier": "eolien"
+  },
+  {
+   "id": "I.1.2.4",
+   "code": "I.1.2.4",
+   "level": "sous_groupe",
+   "name": "d'apport volcanique friable",
+   "description": "Formé sur des cendres, lapillis ou ponces récentes.",
+   "parent": "I.1.2",
+   "criteria": {
+    "materiau": [
+     "volcanique"
+    ]
+   },
+   "modifier": "volcanique"
+  },
+  {
+   "id": "I.1.3",
+   "code": "I.1.3",
+   "level": "groupe",
+   "name": "Sols minéraux bruts anthropiques",
+   "description": "Matériaux remaniés ou déposés par l'homme (déblais, remblais, mines, carrières).",
+   "parent": "I.1",
+   "criteria": {
+    "materiau": [
+     "divers"
+    ],
+    "topographie": [
+     "toutes"
+    ]
+   }
+  },
+  {
+   "id": "I.1.3.1",
+   "code": "I.1.3.1",
+   "level": "sous_groupe",
+   "name": "Modal",
+   "description": "Le sous-groupe « modal » représente le cas typique du groupe, sans caractère secondaire marqué.",
+   "parent": "I.1.3",
+   "criteria": {},
+   "modifier": "modal"
+  },
+  {
+   "id": "I.2",
+   "code": "I.2",
+   "level": "sous_classe",
+   "name": "Sols minéraux bruts climatiques",
+   "description": "L'absence d'évolution est imposée par le climat (froid extrême ou aridité).",
+   "parent": "I",
+   "criteria": {},
+   "explanation": "Sans eau liquide ou sans chaleur, l'altération chimique et la vie biologique sont bloquées."
+  },
+  {
+   "id": "I.2.1",
+   "code": "I.2.1",
+   "level": "groupe",
+   "name": "Sols minéraux bruts xériques (désertiques)",
+   "description": "Déserts chauds : regs, hamadas, ergs. Très peu d'eau, végétation absente.",
+   "parent": "I.2",
+   "criteria": {
+    "climat": [
+     "aride"
+    ],
+    "topographie": [
+     "toutes"
+    ]
+   },
+   "examples": "Regs et ergs du Sahara (nord du Niger, Ténéré)."
+  },
+  {
+   "id": "I.2.1.1",
+   "code": "I.2.1.1",
+   "level": "sous_groupe",
+   "name": "Lithique (lithosol)",
+   "description": "La roche dure apparaît à faible profondeur (moins de 10 à 20 cm) : profil réduit à un horizon sur la roche.",
+   "parent": "I.2.1",
+   "criteria": {
+    "materiau": [
+     "roche_dure"
+    ],
+    "topographie": [
+     "pente"
+    ]
+   },
+   "modifier": "lithique"
+  },
+  {
+   "id": "I.2.1.2",
+   "code": "I.2.1.2",
+   "level": "sous_groupe",
+   "name": "d'apport éolien",
+   "description": "Formé sur des sables ou limons déposés par le vent (dunes, voiles sableux, loess).",
+   "parent": "I.2.1",
+   "criteria": {
+    "materiau": [
+     "eolien"
+    ]
+   },
+   "modifier": "eolien"
+  },
+  {
+   "id": "I.2.1.3",
+   "code": "I.2.1.3",
+   "level": "sous_groupe",
+   "name": "d'apport alluvial",
+   "description": "Formé sur des alluvions récentes déposées par les crues.",
+   "parent": "I.2.1",
+   "criteria": {
+    "materiau": [
+     "alluvions"
+    ],
+    "topographie": [
+     "plaine_alluviale"
+    ]
+   },
+   "modifier": "alluvial"
+  },
+  {
+   "id": "I.2.1.4",
+   "code": "I.2.1.4",
+   "level": "sous_groupe",
+   "name": "À croûte saline / efflorescences",
+   "description": "Les sels cristallisent en surface en saison sèche.",
+   "parent": "I.2.1",
+   "criteria": {
+    "drainage": [
+     "nappe_salee"
+    ]
+   },
+   "modifier": "croute_saline"
+  },
+  {
+   "id": "I.2.2",
+   "code": "I.2.2",
+   "level": "groupe",
+   "name": "Sols minéraux bruts des déserts froids (cryiques)",
+   "description": "Régions polaires et haute montagne : le gel bloque l'évolution.",
+   "parent": "I.2",
+   "criteria": {
+    "climat": [
+     "froid",
+     "montagnard"
+    ],
+    "topographie": [
+     "toutes"
+    ]
+   }
+  },
+  {
+   "id": "I.2.2.1",
+   "code": "I.2.2.1",
+   "level": "sous_groupe",
+   "name": "À sol structuré / polygonal",
+   "description": "Le gel et le dégel trient les cailloux en cercles ou polygones.",
+   "parent": "I.2.2",
+   "criteria": {},
+   "modifier": "polygonal"
+  },
+  {
+   "id": "I.2.2.2",
+   "code": "I.2.2.2",
+   "level": "sous_groupe",
+   "name": "Lithique (lithosol)",
+   "description": "La roche dure apparaît à faible profondeur (moins de 10 à 20 cm) : profil réduit à un horizon sur la roche.",
+   "parent": "I.2.2",
+   "criteria": {
+    "materiau": [
+     "roche_dure"
+    ],
+    "topographie": [
+     "pente"
+    ]
+   },
+   "modifier": "lithique"
+  },
+  {
+   "id": "II",
+   "code": "II",
+   "level": "classe",
+   "name": "Sols peu évolués",
+   "description": "Début de pédogenèse : un horizon humifère A repose directement sur le matériau (profil AC). L'altération reste faible.",
+   "parent": null,
+   "criteria": {
+    "processus": [
+     "faible"
+    ],
+    "complexe": [
+     "variable"
+    ],
+    "drainage": [
+     "bon"
+    ]
+   },
+   "explanation": "On voit apparaître une couche plus sombre en surface (matière organique), mais le reste du profil ressemble encore beaucoup au matériau de départ.",
+   "profile": "A C"
+  },
+  {
+   "id": "II.1",
+   "code": "II.1",
+   "level": "sous_classe",
+   "name": "Sols peu évolués à permagel (cryiques)",
+   "description": "Climat froid : un horizon humifère se forme mais le sol est gelé en profondeur.",
+   "parent": "II",
+   "criteria": {
+    "climat": [
+     "froid"
+    ],
+    "vegetation": [
+     "prairie"
+    ],
+    "aptitude": [
+     "faible",
+     "paturage"
+    ]
+   }
+  },
+  {
+   "id": "II.1.1",
+   "code": "II.1.1",
+   "level": "groupe",
+   "name": "Sols peu évolués humifères à permagel",
+   "description": "Horizon humifère sur sol gelé en permanence.",
+   "parent": "II.1",
+   "criteria": {}
+  },
+  {
+   "id": "II.1.1.1",
+   "code": "II.1.1.1",
+   "level": "sous_groupe",
+   "name": "Modal",
+   "description": "Le sous-groupe « modal » représente le cas typique du groupe, sans caractère secondaire marqué.",
+   "parent": "II.1.1",
+   "criteria": {},
+   "modifier": "modal"
+  },
+  {
+   "id": "II.1.1.2",
+   "code": "II.1.1.2",
+   "level": "sous_groupe",
+   "name": "Hydromorphe",
+   "description": "Présente des signes d'engorgement (taches d'oxydo-réduction, gley ou pseudogley) en profondeur.",
+   "parent": "II.1.1",
+   "criteria": {
+    "drainage": [
+     "temporaire"
+    ]
+   },
+   "modifier": "hydromorphe"
+  },
+  {
+   "id": "II.2",
+   "code": "II.2",
+   "level": "sous_classe",
+   "name": "Sols peu évolués humifères",
+   "description": "Climat froid et humide (montagne) : la matière organique s'accumule sur un matériau peu altéré.",
+   "parent": "II",
+   "criteria": {
+    "climat": [
+     "montagnard",
+     "froid"
+    ],
+    "vegetation": [
+     "prairie",
+     "foret_resineux"
+    ],
+    "complexe": [
+     "desature"
+    ],
+    "aptitude": [
+     "paturage",
+     "foret"
+    ]
+   }
+  },
+  {
+   "id": "II.2.1",
+   "code": "II.2.1",
+   "level": "groupe",
+   "name": "Rankers",
+   "description": "Horizon A humifère acide directement sur roche siliceuse (granite, schiste).",
+   "parent": "II.2",
+   "criteria": {
+    "materiau": [
+     "roche_acide"
+    ],
+    "topographie": [
+     "pente"
+    ]
+   },
+   "explanation": "Le ranker est l'équivalent acide de la rendzine : même profil A sur roche, mais la roche est pauvre en calcium.",
+   "profile": "A R"
+  },
+  {
+   "id": "II.2.1.1",
+   "code": "II.2.1.1",
+   "level": "sous_groupe",
+   "name": "Modal",
+   "description": "Le sous-groupe « modal » représente le cas typique du groupe, sans caractère secondaire marqué.",
+   "parent": "II.2.1",
+   "criteria": {},
+   "modifier": "modal"
+  },
+  {
+   "id": "II.2.1.2",
+   "code": "II.2.1.2",
+   "level": "sous_groupe",
+   "name": "Lithique (lithosol)",
+   "description": "La roche dure apparaît à faible profondeur (moins de 10 à 20 cm) : profil réduit à un horizon sur la roche.",
+   "parent": "II.2.1",
+   "criteria": {
+    "materiau": [
+     "roche_dure"
+    ],
+    "topographie": [
+     "pente"
+    ]
+   },
+   "modifier": "lithique"
+  },
+  {
+   "id": "II.2.1.3",
+   "code": "II.2.1.3",
+   "level": "sous_groupe",
+   "name": "Podzolique / podzolisé",
+   "description": "Montre un début de podzolisation (horizon blanchi, accumulation humo-ferrugineuse).",
+   "parent": "II.2.1",
+   "criteria": {
+    "complexe": [
+     "desature"
+    ]
+   },
+   "modifier": "podzolique"
+  },
+  {
+   "id": "II.2.1.4",
+   "code": "II.2.1.4",
+   "level": "sous_groupe",
+   "name": "Brunifié",
+   "description": "Un horizon brun d'altération (B) s'est formé sous l'horizon humifère.",
+   "parent": "II.2.1",
+   "criteria": {},
+   "modifier": "brunifie"
+  },
+  {
+   "id": "II.2.2",
+   "code": "II.2.2",
+   "level": "groupe",
+   "name": "Sols humifères lithocalciques",
+   "description": "Horizon humifère épais sur éboulis calcaires de montagne.",
+   "parent": "II.2",
+   "criteria": {
+    "materiau": [
+     "calcaire"
+    ]
+   }
+  },
+  {
+   "id": "II.2.2.1",
+   "code": "II.2.2.1",
+   "level": "sous_groupe",
+   "name": "Modal",
+   "description": "Le sous-groupe « modal » représente le cas typique du groupe, sans caractère secondaire marqué.",
+   "parent": "II.2.2",
+   "criteria": {},
+   "modifier": "modal"
+  },
+  {
+   "id": "II.3",
+   "code": "II.3",
+   "level": "sous_classe",
+   "name": "Sols peu évolués xériques",
+   "description": "Climat aride ou subdésertique : un peu de matière organique et de calcaire, profil faiblement différencié.",
+   "parent": "II",
+   "criteria": {
+    "climat": [
+     "aride",
+     "sahelien"
+    ],
+    "vegetation": [
+     "steppe"
+    ],
+    "complexe": [
+     "sature"
+    ],
+    "drainage": [
+     "excessif",
+     "bon"
+    ],
+    "aptitude": [
+     "paturage"
+    ]
+   }
+  },
+  {
+   "id": "II.3.1",
+   "code": "II.3.1",
+   "level": "groupe",
+   "name": "Sols gris subdésertiques",
+   "description": "Sols clairs, pauvres en matière organique, souvent calcaires ou gypseux, des marges désertiques.",
+   "parent": "II.3",
+   "criteria": {}
+  },
+  {
+   "id": "II.3.1.1",
+   "code": "II.3.1.1",
+   "level": "sous_groupe",
+   "name": "Modal",
+   "description": "Le sous-groupe « modal » représente le cas typique du groupe, sans caractère secondaire marqué.",
+   "parent": "II.3.1",
+   "criteria": {},
+   "modifier": "modal"
+  },
+  {
+   "id": "II.3.1.2",
+   "code": "II.3.1.2",
+   "level": "sous_groupe",
+   "name": "À encroûtement calcaire",
+   "description": "Le calcaire s'est accumulé en amas, nodules ou croûte durcie en profondeur.",
+   "parent": "II.3.1",
+   "criteria": {
+    "climat": [
+     "aride",
+     "sahelien",
+     "mediterraneen",
+     "steppique"
+    ]
+   },
+   "modifier": "encroutement_calcaire"
+  },
+  {
+   "id": "II.3.1.3",
+   "code": "II.3.1.3",
+   "level": "sous_groupe",
+   "name": "Gypseux / à encroûtement gypseux",
+   "description": "Accumulation de gypse (cristaux, amas ou croûte).",
+   "parent": "II.3.1",
+   "criteria": {
+    "materiau": [
+     "gypse"
+    ]
+   },
+   "modifier": "gypseux"
+  },
+  {
+   "id": "II.3.1.4",
+   "code": "II.3.1.4",
+   "level": "sous_groupe",
+   "name": "Salé",
+   "description": "Contient des sels solubles en quantité notable (conductivité élevée) dans une partie du profil.",
+   "parent": "II.3.1",
+   "criteria": {
+    "drainage": [
+     "nappe_salee"
+    ]
+   },
+   "modifier": "sale"
+  },
+  {
+   "id": "II.3.1.5",
+   "code": "II.3.1.5",
+   "level": "sous_groupe",
+   "name": "À alcali (sodique)",
+   "description": "Le sodium échangeable est élevé dans une partie du profil.",
+   "parent": "II.3.1",
+   "criteria": {
+    "complexe": [
+     "sodique"
+    ]
+   },
+   "modifier": "alcali"
+  },
+  {
+   "id": "II.4",
+   "code": "II.4",
+   "level": "sous_classe",
+   "name": "Sols peu évolués non climatiques",
+   "description": "Le jeune âge du sol est dû à un facteur local : érosion permanente ou apport régulier de matériaux.",
+   "parent": "II",
+   "criteria": {
+    "climat": [
+     "azonal"
+    ]
+   },
+   "explanation": "C'est la sous-classe la plus répandue des sols jeunes, notamment dans les vallées et sur les dunes du Sahel."
+  },
+  {
+   "id": "II.4.1",
+   "code": "II.4.1",
+   "level": "groupe",
+   "name": "Sols peu évolués d'érosion",
+   "description": "Le sol est rajeuni en permanence par l'érosion sur les pentes.",
+   "parent": "II.4",
+   "criteria": {
+    "topographie": [
+     "pente"
+    ],
+    "aptitude": [
+     "conservation",
+     "foret"
+    ]
+   }
+  },
+  {
+   "id": "II.4.1.1",
+   "code": "II.4.1.1",
+   "level": "sous_groupe",
+   "name": "Lithique (lithosol)",
+   "description": "La roche dure apparaît à faible profondeur (moins de 10 à 20 cm) : profil réduit à un horizon sur la roche.",
+   "parent": "II.4.1",
+   "criteria": {
+    "materiau": [
+     "roche_dure"
+    ],
+    "topographie": [
+     "pente"
+    ]
+   },
+   "modifier": "lithique"
+  },
+  {
+   "id": "II.4.1.2",
+   "code": "II.4.1.2",
+   "level": "sous_groupe",
+   "name": "Régosolique (régosol)",
+   "description": "Formé sur un matériau tendre ou meuble (marne, sable, argile), rajeuni sans cesse par l'érosion.",
+   "parent": "II.4.1",
+   "criteria": {
+    "topographie": [
+     "pente"
+    ]
+   },
+   "modifier": "regosolique"
+  },
+  {
+   "id": "II.4.2",
+   "code": "II.4.2",
+   "level": "groupe",
+   "name": "Sols peu évolués d'apport",
+   "description": "Le sol se forme sur des dépôts régulièrement renouvelés (alluvions, colluvions, sables éoliens, cendres).",
+   "parent": "II.4",
+   "criteria": {
+    "topographie": [
+     "plaine_alluviale",
+     "bas_pente"
+    ],
+    "aptitude": [
+     "cultures",
+     "irrigation"
+    ]
+   },
+   "examples": "Alluvions du fleuve Niger, sols dunaires (« dior ») cultivés en mil."
+  },
+  {
+   "id": "II.4.2.1",
+   "code": "II.4.2.1",
+   "level": "sous_groupe",
+   "name": "d'apport alluvial",
+   "description": "Formé sur des alluvions récentes déposées par les crues.",
+   "parent": "II.4.2",
+   "criteria": {
+    "materiau": [
+     "alluvions"
+    ],
+    "topographie": [
+     "plaine_alluviale"
+    ]
+   },
+   "modifier": "alluvial"
+  },
+  {
+   "id": "II.4.2.2",
+   "code": "II.4.2.2",
+   "level": "sous_groupe",
+   "name": "d'apport colluvial",
+   "description": "Formé sur des matériaux descendus des pentes par le ruissellement et la gravité.",
+   "parent": "II.4.2",
+   "criteria": {
+    "materiau": [
+     "alluvions"
+    ],
+    "topographie": [
+     "bas_pente"
+    ]
+   },
+   "modifier": "colluvial"
+  },
+  {
+   "id": "II.4.2.3",
+   "code": "II.4.2.3",
+   "level": "sous_groupe",
+   "name": "d'apport éolien",
+   "description": "Formé sur des sables ou limons déposés par le vent (dunes, voiles sableux, loess).",
+   "parent": "II.4.2",
+   "criteria": {
+    "materiau": [
+     "eolien"
+    ]
+   },
+   "modifier": "eolien"
+  },
+  {
+   "id": "II.4.2.4",
+   "code": "II.4.2.4",
+   "level": "sous_groupe",
+   "name": "d'apport volcanique friable",
+   "description": "Formé sur des cendres, lapillis ou ponces récentes.",
+   "parent": "II.4.2",
+   "criteria": {
+    "materiau": [
+     "volcanique"
+    ]
+   },
+   "modifier": "volcanique"
+  },
+  {
+   "id": "II.4.2.5",
+   "code": "II.4.2.5",
+   "level": "sous_groupe",
+   "name": "Hydromorphe",
+   "description": "Présente des signes d'engorgement (taches d'oxydo-réduction, gley ou pseudogley) en profondeur.",
+   "parent": "II.4.2",
+   "criteria": {
+    "drainage": [
+     "temporaire"
+    ]
+   },
+   "modifier": "hydromorphe"
+  },
+  {
+   "id": "II.4.2.6",
+   "code": "II.4.2.6",
+   "level": "sous_groupe",
+   "name": "Vertique",
+   "description": "Présente des caractères de vertisol (fentes de retrait, faces de glissement) sans en avoir tous les critères.",
+   "parent": "II.4.2",
+   "criteria": {
+    "materiau": [
+     "argile_gonflante"
+    ]
+   },
+   "modifier": "vertique"
+  },
+  {
+   "id": "II.4.2.7",
+   "code": "II.4.2.7",
+   "level": "sous_groupe",
+   "name": "Salé",
+   "description": "Contient des sels solubles en quantité notable (conductivité élevée) dans une partie du profil.",
+   "parent": "II.4.2",
+   "criteria": {
+    "drainage": [
+     "nappe_salee"
+    ]
+   },
+   "modifier": "sale"
+  },
+  {
+   "id": "II.4.3",
+   "code": "II.4.3",
+   "level": "groupe",
+   "name": "Sols peu évolués anthropiques",
+   "description": "Sols jeunes issus de matériaux rapportés ou fortement remaniés par l'homme (terrasses, remblais).",
+   "parent": "II.4",
+   "criteria": {
+    "topographie": [
+     "toutes"
+    ],
+    "aptitude": [
+     "cultures"
+    ]
+   }
+  },
+  {
+   "id": "II.4.3.1",
+   "code": "II.4.3.1",
+   "level": "sous_groupe",
+   "name": "Modal",
+   "description": "Le sous-groupe « modal » représente le cas typique du groupe, sans caractère secondaire marqué.",
+   "parent": "II.4.3",
+   "criteria": {},
+   "modifier": "modal"
+  },
+  {
+   "id": "III",
+   "code": "III",
+   "level": "classe",
+   "name": "Vertisols",
+   "description": "Sols argileux riches en argiles gonflantes (smectites) : larges fentes de retrait en saison sèche, faces de glissement luisantes, autobrassage (profil A(B)C homogène et sombre).",
+   "parent": null,
+   "criteria": {
+    "processus": [
+     "vertisolisation"
+    ],
+    "materiau": [
+     "argile_gonflante",
+     "roche_basique"
+    ],
+    "complexe": [
+     "sature"
+    ],
+    "climat": [
+     "tropical_sec",
+     "sahelien",
+     "mediterraneen",
+     "steppique"
+    ],
+    "vegetation": [
+     "savane",
+     "prairie"
+    ],
+    "aptitude": [
+     "irrigation",
+     "cultures"
+    ],
+    "drainage": [
+     "temporaire"
+    ]
+   },
+   "explanation": "Quand ils sèchent, les vertisols se fendent profondément ; quand ils se mouillent, ils gonflent et deviennent collants. Ce mouvement mélange le sol sur lui-même. Ils sont fertiles mais difficiles à travailler.",
+   "profile": "A (B) C"
+  },
+  {
+   "id": "III.1",
+   "code": "III.1",
+   "level": "sous_classe",
+   "name": "Vertisols topomorphes (drainage externe nul ou réduit)",
+   "description": "En position basse (bas-fonds, plaines) : l'eau s'accumule, la topographie crée la vertisolisation.",
+   "parent": "III",
+   "criteria": {
+    "topographie": [
+     "depression",
+     "plaine_alluviale"
+    ]
+   }
+  },
+  {
+   "id": "III.1.1",
+   "code": "III.1.1",
+   "level": "groupe",
+   "name": "Vertisols topomorphes à structure arrondie en surface",
+   "description": "Surface grumeleuse à structure fine (« self-mulching ») sur au moins 15 cm.",
+   "parent": "III.1",
+   "criteria": {}
+  },
+  {
+   "id": "III.1.1.1",
+   "code": "III.1.1.1",
+   "level": "sous_groupe",
+   "name": "Modal",
+   "description": "Le sous-groupe « modal » représente le cas typique du groupe, sans caractère secondaire marqué.",
+   "parent": "III.1.1",
+   "criteria": {},
+   "modifier": "modal"
+  },
+  {
+   "id": "III.1.1.2",
+   "code": "III.1.1.2",
+   "level": "sous_groupe",
+   "name": "Hydromorphe",
+   "description": "Présente des signes d'engorgement (taches d'oxydo-réduction, gley ou pseudogley) en profondeur.",
+   "parent": "III.1.1",
+   "criteria": {
+    "drainage": [
+     "temporaire"
+    ]
+   },
+   "modifier": "hydromorphe"
+  },
+  {
+   "id": "III.1.1.3",
+   "code": "III.1.1.3",
+   "level": "sous_groupe",
+   "name": "Salé",
+   "description": "Contient des sels solubles en quantité notable (conductivité élevée) dans une partie du profil.",
+   "parent": "III.1.1",
+   "criteria": {
+    "drainage": [
+     "nappe_salee"
+    ]
+   },
+   "modifier": "sale"
+  },
+  {
+   "id": "III.1.1.4",
+   "code": "III.1.1.4",
+   "level": "sous_groupe",
+   "name": "À alcali (sodique)",
+   "description": "Le sodium échangeable est élevé dans une partie du profil.",
+   "parent": "III.1.1",
+   "criteria": {
+    "complexe": [
+     "sodique"
+    ]
+   },
+   "modifier": "alcali"
+  },
+  {
+   "id": "III.1.1.5",
+   "code": "III.1.1.5",
+   "level": "sous_groupe",
+   "name": "Calcaire / à nodules calcaires",
+   "description": "Contient du calcaire libre (effervescence à l'acide) ou des nodules calcaires.",
+   "parent": "III.1.1",
+   "criteria": {
+    "complexe": [
+     "sature"
+    ]
+   },
+   "modifier": "calcaire"
+  },
+  {
+   "id": "III.1.2",
+   "code": "III.1.2",
+   "level": "groupe",
+   "name": "Vertisols topomorphes à structure anguleuse dès la surface",
+   "description": "Structure prismatique ou en blocs dès la surface.",
+   "parent": "III.1",
+   "criteria": {}
+  },
+  {
+   "id": "III.1.2.1",
+   "code": "III.1.2.1",
+   "level": "sous_groupe",
+   "name": "Modal",
+   "description": "Le sous-groupe « modal » représente le cas typique du groupe, sans caractère secondaire marqué.",
+   "parent": "III.1.2",
+   "criteria": {},
+   "modifier": "modal"
+  },
+  {
+   "id": "III.1.2.2",
+   "code": "III.1.2.2",
+   "level": "sous_groupe",
+   "name": "Hydromorphe",
+   "description": "Présente des signes d'engorgement (taches d'oxydo-réduction, gley ou pseudogley) en profondeur.",
+   "parent": "III.1.2",
+   "criteria": {
+    "drainage": [
+     "temporaire"
+    ]
+   },
+   "modifier": "hydromorphe"
+  },
+  {
+   "id": "III.1.2.3",
+   "code": "III.1.2.3",
+   "level": "sous_groupe",
+   "name": "Salé",
+   "description": "Contient des sels solubles en quantité notable (conductivité élevée) dans une partie du profil.",
+   "parent": "III.1.2",
+   "criteria": {
+    "drainage": [
+     "nappe_salee"
+    ]
+   },
+   "modifier": "sale"
+  },
+  {
+   "id": "III.1.2.4",
+   "code": "III.1.2.4",
+   "level": "sous_groupe",
+   "name": "À alcali (sodique)",
+   "description": "Le sodium échangeable est élevé dans une partie du profil.",
+   "parent": "III.1.2",
+   "criteria": {
+    "complexe": [
+     "sodique"
+    ]
+   },
+   "modifier": "alcali"
+  },
+  {
+   "id": "III.1.2.5",
+   "code": "III.1.2.5",
+   "level": "sous_groupe",
+   "name": "Gypseux / à encroûtement gypseux",
+   "description": "Accumulation de gypse (cristaux, amas ou croûte).",
+   "parent": "III.1.2",
+   "criteria": {
+    "materiau": [
+     "gypse"
+    ]
+   },
+   "modifier": "gypseux"
+  },
+  {
+   "id": "III.2",
+   "code": "III.2",
+   "level": "sous_classe",
+   "name": "Vertisols lithomorphes (drainage externe possible)",
+   "description": "Sur pentes faibles : c'est la roche-mère (basalte, marne) qui fournit les argiles gonflantes.",
+   "parent": "III",
+   "criteria": {
+    "topographie": [
+     "bas_pente",
+     "pente"
+    ],
+    "materiau": [
+     "roche_basique",
+     "argile_gonflante",
+     "calcaire"
+    ],
+    "drainage": [
+     "bon"
+    ]
+   }
+  },
+  {
+   "id": "III.2.1",
+   "code": "III.2.1",
+   "level": "groupe",
+   "name": "Vertisols lithomorphes à structure arrondie en surface",
+   "description": "Surface grumeleuse sur au moins 15 cm.",
+   "parent": "III.2",
+   "criteria": {}
+  },
+  {
+   "id": "III.2.1.1",
+   "code": "III.2.1.1",
+   "level": "sous_groupe",
+   "name": "Modal",
+   "description": "Le sous-groupe « modal » représente le cas typique du groupe, sans caractère secondaire marqué.",
+   "parent": "III.2.1",
+   "criteria": {},
+   "modifier": "modal"
+  },
+  {
+   "id": "III.2.1.2",
+   "code": "III.2.1.2",
+   "level": "sous_groupe",
+   "name": "Calcaire / à nodules calcaires",
+   "description": "Contient du calcaire libre (effervescence à l'acide) ou des nodules calcaires.",
+   "parent": "III.2.1",
+   "criteria": {
+    "complexe": [
+     "sature"
+    ]
+   },
+   "modifier": "calcaire"
+  },
+  {
+   "id": "III.2.1.3",
+   "code": "III.2.1.3",
+   "level": "sous_groupe",
+   "name": "À encroûtement calcaire",
+   "description": "Le calcaire s'est accumulé en amas, nodules ou croûte durcie en profondeur.",
+   "parent": "III.2.1",
+   "criteria": {
+    "climat": [
+     "aride",
+     "sahelien",
+     "mediterraneen",
+     "steppique"
+    ]
+   },
+   "modifier": "encroutement_calcaire"
+  },
+  {
+   "id": "III.2.2",
+   "code": "III.2.2",
+   "level": "groupe",
+   "name": "Vertisols lithomorphes à structure anguleuse dès la surface",
+   "description": "Structure anguleuse dès la surface.",
+   "parent": "III.2",
+   "criteria": {}
+  },
+  {
+   "id": "III.2.2.1",
+   "code": "III.2.2.1",
+   "level": "sous_groupe",
+   "name": "Modal",
+   "description": "Le sous-groupe « modal » représente le cas typique du groupe, sans caractère secondaire marqué.",
+   "parent": "III.2.2",
+   "criteria": {},
+   "modifier": "modal"
+  },
+  {
+   "id": "III.2.2.2",
+   "code": "III.2.2.2",
+   "level": "sous_groupe",
+   "name": "Calcaire / à nodules calcaires",
+   "description": "Contient du calcaire libre (effervescence à l'acide) ou des nodules calcaires.",
+   "parent": "III.2.2",
+   "criteria": {
+    "complexe": [
+     "sature"
+    ]
+   },
+   "modifier": "calcaire"
+  },
+  {
+   "id": "III.2.2.3",
+   "code": "III.2.2.3",
+   "level": "sous_groupe",
+   "name": "Gypseux / à encroûtement gypseux",
+   "description": "Accumulation de gypse (cristaux, amas ou croûte).",
+   "parent": "III.2.2",
+   "criteria": {
+    "materiau": [
+     "gypse"
+    ]
+   },
+   "modifier": "gypseux"
+  },
+  {
+   "id": "IV",
+   "code": "IV",
+   "level": "classe",
+   "name": "Andosols",
+   "description": "Sols développés sur matériaux volcaniques : riches en allophanes et en matière organique, très légers (densité faible), forte rétention d'eau et fixation du phosphore.",
+   "parent": null,
+   "criteria": {
+    "processus": [
+     "andosolisation"
+    ],
+    "materiau": [
+     "volcanique"
+    ],
+    "topographie": [
+     "toutes"
+    ],
+    "drainage": [
+     "bon"
+    ],
+    "vegetation": [
+     "foret_feuillus",
+     "foret_dense",
+     "prairie"
+    ],
+    "aptitude": [
+     "cultures",
+     "foret",
+     "amendement"
+    ]
+   },
+   "explanation": "Les cendres volcaniques s'altèrent vite en minéraux mal cristallisés qui piègent l'humus. Le sol est noir, très poreux et onctueux au toucher.",
+   "profile": "A (B) C"
+  },
+  {
+   "id": "IV.1",
+   "code": "IV.1",
+   "level": "sous_classe",
+   "name": "Andosols des pays froids et tempérés",
+   "description": "Climats frais d'altitude ou tempérés humides.",
+   "parent": "IV",
+   "criteria": {
+    "climat": [
+     "tempere_humide",
+     "montagnard",
+     "froid"
+    ]
+   }
+  },
+  {
+   "id": "IV.1.1",
+   "code": "IV.1.1",
+   "level": "groupe",
+   "name": "Andosols humifères (désaturés)",
+   "description": "Très riches en humus, acides.",
+   "parent": "IV.1",
+   "criteria": {
+    "complexe": [
+     "desature"
+    ]
+   }
+  },
+  {
+   "id": "IV.1.1.1",
+   "code": "IV.1.1.1",
+   "level": "sous_groupe",
+   "name": "Modal",
+   "description": "Le sous-groupe « modal » représente le cas typique du groupe, sans caractère secondaire marqué.",
+   "parent": "IV.1.1",
+   "criteria": {},
+   "modifier": "modal"
+  },
+  {
+   "id": "IV.1.1.2",
+   "code": "IV.1.1.2",
+   "level": "sous_groupe",
+   "name": "Podzolique / podzolisé",
+   "description": "Montre un début de podzolisation (horizon blanchi, accumulation humo-ferrugineuse).",
+   "parent": "IV.1.1",
+   "criteria": {
+    "complexe": [
+     "desature"
+    ]
+   },
+   "modifier": "podzolique"
+  },
+  {
+   "id": "IV.1.1.3",
+   "code": "IV.1.1.3",
+   "level": "sous_groupe",
+   "name": "Hydromorphe",
+   "description": "Présente des signes d'engorgement (taches d'oxydo-réduction, gley ou pseudogley) en profondeur.",
+   "parent": "IV.1.1",
+   "criteria": {
+    "drainage": [
+     "temporaire"
+    ]
+   },
+   "modifier": "hydromorphe"
+  },
+  {
+   "id": "IV.1.2",
+   "code": "IV.1.2",
+   "level": "groupe",
+   "name": "Andosols saturés",
+   "description": "Complexe riche en bases.",
+   "parent": "IV.1",
+   "criteria": {
+    "complexe": [
+     "sature"
+    ]
+   }
+  },
+  {
+   "id": "IV.1.2.1",
+   "code": "IV.1.2.1",
+   "level": "sous_groupe",
+   "name": "Modal",
+   "description": "Le sous-groupe « modal » représente le cas typique du groupe, sans caractère secondaire marqué.",
+   "parent": "IV.1.2",
+   "criteria": {},
+   "modifier": "modal"
+  },
+  {
+   "id": "IV.1.2.2",
+   "code": "IV.1.2.2",
+   "level": "sous_groupe",
+   "name": "Brunifié",
+   "description": "Un horizon brun d'altération (B) s'est formé sous l'horizon humifère.",
+   "parent": "IV.1.2",
+   "criteria": {},
+   "modifier": "brunifie"
+  },
+  {
+   "id": "IV.1.3",
+   "code": "IV.1.3",
+   "level": "groupe",
+   "name": "Andosols vitriques",
+   "description": "Encore riches en verres volcaniques non altérés.",
+   "parent": "IV.1",
+   "criteria": {
+    "complexe": [
+     "variable"
+    ]
+   }
+  },
+  {
+   "id": "IV.1.3.1",
+   "code": "IV.1.3.1",
+   "level": "sous_groupe",
+   "name": "Modal",
+   "description": "Le sous-groupe « modal » représente le cas typique du groupe, sans caractère secondaire marqué.",
+   "parent": "IV.1.3",
+   "criteria": {},
+   "modifier": "modal"
+  },
+  {
+   "id": "IV.2",
+   "code": "IV.2",
+   "level": "sous_classe",
+   "name": "Andosols des pays tropicaux",
+   "description": "Volcans des régions tropicales humides.",
+   "parent": "IV",
+   "criteria": {
+    "climat": [
+     "tropical_humide",
+     "tropical_sec"
+    ]
+   }
+  },
+  {
+   "id": "IV.2.1",
+   "code": "IV.2.1",
+   "level": "groupe",
+   "name": "Andosols tropicaux désaturés (humifères)",
+   "description": "Humifères et acides.",
+   "parent": "IV.2",
+   "criteria": {
+    "complexe": [
+     "desature"
+    ]
+   }
+  },
+  {
+   "id": "IV.2.1.1",
+   "code": "IV.2.1.1",
+   "level": "sous_groupe",
+   "name": "Modal",
+   "description": "Le sous-groupe « modal » représente le cas typique du groupe, sans caractère secondaire marqué.",
+   "parent": "IV.2.1",
+   "criteria": {},
+   "modifier": "modal"
+  },
+  {
+   "id": "IV.2.1.2",
+   "code": "IV.2.1.2",
+   "level": "sous_groupe",
+   "name": "Hydromorphe",
+   "description": "Présente des signes d'engorgement (taches d'oxydo-réduction, gley ou pseudogley) en profondeur.",
+   "parent": "IV.2.1",
+   "criteria": {
+    "drainage": [
+     "temporaire"
+    ]
+   },
+   "modifier": "hydromorphe"
+  },
+  {
+   "id": "IV.2.1.3",
+   "code": "IV.2.1.3",
+   "level": "sous_groupe",
+   "name": "Rajeuni / pénévolué",
+   "description": "L'érosion a décapé le sol et réexposé un matériau moins altéré.",
+   "parent": "IV.2.1",
+   "criteria": {
+    "topographie": [
+     "pente"
+    ]
+   },
+   "modifier": "rajeuni"
+  },
+  {
+   "id": "IV.2.2",
+   "code": "IV.2.2",
+   "level": "groupe",
+   "name": "Andosols tropicaux saturés",
+   "description": "Riches en bases, souvent sous climat à saison sèche.",
+   "parent": "IV.2",
+   "criteria": {
+    "complexe": [
+     "sature"
+    ]
+   }
+  },
+  {
+   "id": "IV.2.2.1",
+   "code": "IV.2.2.1",
+   "level": "sous_groupe",
+   "name": "Modal",
+   "description": "Le sous-groupe « modal » représente le cas typique du groupe, sans caractère secondaire marqué.",
+   "parent": "IV.2.2",
+   "criteria": {},
+   "modifier": "modal"
+  },
+  {
+   "id": "IV.2.2.2",
+   "code": "IV.2.2.2",
+   "level": "sous_groupe",
+   "name": "Vertique",
+   "description": "Présente des caractères de vertisol (fentes de retrait, faces de glissement) sans en avoir tous les critères.",
+   "parent": "IV.2.2",
+   "criteria": {
+    "materiau": [
+     "argile_gonflante"
+    ]
+   },
+   "modifier": "vertique"
+  },
+  {
+   "id": "IV.2.3",
+   "code": "IV.2.3",
+   "level": "groupe",
+   "name": "Andosols vitriques tropicaux",
+   "description": "Cendres récentes encore vitreuses.",
+   "parent": "IV.2",
+   "criteria": {
+    "complexe": [
+     "variable"
+    ]
+   }
+  },
+  {
+   "id": "IV.2.3.1",
+   "code": "IV.2.3.1",
+   "level": "sous_groupe",
+   "name": "Modal",
+   "description": "Le sous-groupe « modal » représente le cas typique du groupe, sans caractère secondaire marqué.",
+   "parent": "IV.2.3",
+   "criteria": {},
+   "modifier": "modal"
+  },
+  {
+   "id": "V",
+   "code": "V",
+   "level": "classe",
+   "name": "Sols calcimagnésiques",
+   "description": "Sols dont l'évolution est dominée par le calcium ou le magnésium (calcaire, dolomie, gypse) : humus stable (mull calcique), structure grumeleuse, complexe saturé.",
+   "parent": null,
+   "criteria": {
+    "processus": [
+     "calcimagnesique"
+    ],
+    "materiau": [
+     "calcaire"
+    ],
+    "complexe": [
+     "sature"
+    ],
+    "drainage": [
+     "bon"
+    ],
+    "climat": [
+     "azonal"
+    ],
+    "vegetation": [
+     "prairie",
+     "foret_feuillus",
+     "steppe"
+    ],
+    "aptitude": [
+     "cultures",
+     "paturage"
+    ]
+   },
+   "explanation": "Le calcaire agit comme un « frein » : il neutralise les acides et colle l'humus aux argiles. Le sol reste peu épais et peu différencié tant que le calcaire n'est pas dissous.",
+   "profile": "A C ou A (B) C"
+  },
+  {
+   "id": "V.1",
+   "code": "V.1",
+   "level": "sous_classe",
+   "name": "Sols carbonatés",
+   "description": "Le calcaire actif est présent dans tout le profil.",
+   "parent": "V",
+   "criteria": {}
+  },
+  {
+   "id": "V.1.1",
+   "code": "V.1.1",
+   "level": "groupe",
+   "name": "Rendzines",
+   "description": "Horizon A humifère, foncé et grumeleux, directement sur la roche calcaire (profil A-C).",
+   "parent": "V.1",
+   "criteria": {
+    "topographie": [
+     "pente",
+     "sommet"
+    ]
+   },
+   "explanation": "La rendzine est le sol calcaire le plus simple : un horizon noir riche en humus posé sur des cailloux calcaires.",
+   "profile": "A C"
+  },
+  {
+   "id": "V.1.1.1",
+   "code": "V.1.1.1",
+   "level": "sous_groupe",
+   "name": "Modal",
+   "description": "Le sous-groupe « modal » représente le cas typique du groupe, sans caractère secondaire marqué.",
+   "parent": "V.1.1",
+   "criteria": {},
+   "modifier": "modal"
+  },
+  {
+   "id": "V.1.1.2",
+   "code": "V.1.1.2",
+   "level": "sous_groupe",
+   "name": "Initial",
+   "description": "Profil encore très jeune, peu épais.",
+   "parent": "V.1.1",
+   "criteria": {},
+   "modifier": "initial"
+  },
+  {
+   "id": "V.1.1.3",
+   "code": "V.1.1.3",
+   "level": "sous_groupe",
+   "name": "Dolomitique / magnésien",
+   "description": "Matériau riche en magnésium (dolomie).",
+   "parent": "V.1.1",
+   "criteria": {},
+   "modifier": "dolomitique"
+  },
+  {
+   "id": "V.1.1.4",
+   "code": "V.1.1.4",
+   "level": "sous_groupe",
+   "name": "Brunifié",
+   "description": "Un horizon brun d'altération (B) s'est formé sous l'horizon humifère.",
+   "parent": "V.1.1",
+   "criteria": {},
+   "modifier": "brunifie"
+  },
+  {
+   "id": "V.1.1.5",
+   "code": "V.1.1.5",
+   "level": "sous_groupe",
+   "name": "Humifère",
+   "description": "Horizon de surface particulièrement riche en matière organique.",
+   "parent": "V.1.1",
+   "criteria": {},
+   "modifier": "humifere"
+  },
+  {
+   "id": "V.1.2",
+   "code": "V.1.2",
+   "level": "groupe",
+   "name": "Sols bruns calcaires",
+   "description": "Un horizon (B) brun d'altération apparaît, le calcaire reste présent dans tout le profil.",
+   "parent": "V.1",
+   "criteria": {},
+   "profile": "A (B) C"
+  },
+  {
+   "id": "V.1.2.1",
+   "code": "V.1.2.1",
+   "level": "sous_groupe",
+   "name": "Modal",
+   "description": "Le sous-groupe « modal » représente le cas typique du groupe, sans caractère secondaire marqué.",
+   "parent": "V.1.2",
+   "criteria": {},
+   "modifier": "modal"
+  },
+  {
+   "id": "V.1.2.2",
+   "code": "V.1.2.2",
+   "level": "sous_groupe",
+   "name": "À encroûtement calcaire",
+   "description": "Le calcaire s'est accumulé en amas, nodules ou croûte durcie en profondeur.",
+   "parent": "V.1.2",
+   "criteria": {
+    "climat": [
+     "aride",
+     "sahelien",
+     "mediterraneen",
+     "steppique"
+    ]
+   },
+   "modifier": "encroutement_calcaire"
+  },
+  {
+   "id": "V.1.2.3",
+   "code": "V.1.2.3",
+   "level": "sous_groupe",
+   "name": "Hydromorphe",
+   "description": "Présente des signes d'engorgement (taches d'oxydo-réduction, gley ou pseudogley) en profondeur.",
+   "parent": "V.1.2",
+   "criteria": {
+    "drainage": [
+     "temporaire"
+    ]
+   },
+   "modifier": "hydromorphe"
+  },
+  {
+   "id": "V.1.2.4",
+   "code": "V.1.2.4",
+   "level": "sous_groupe",
+   "name": "Vertique",
+   "description": "Présente des caractères de vertisol (fentes de retrait, faces de glissement) sans en avoir tous les critères.",
+   "parent": "V.1.2",
+   "criteria": {
+    "materiau": [
+     "argile_gonflante"
+    ]
+   },
+   "modifier": "vertique"
+  },
+  {
+   "id": "V.1.3",
+   "code": "V.1.3",
+   "level": "groupe",
+   "name": "Sols humo-calcaires",
+   "description": "Très humifères, sur roches calcaires en climat frais.",
+   "parent": "V.1",
+   "criteria": {
+    "climat": [
+     "montagnard",
+     "tempere_humide"
+    ]
+   }
+  },
+  {
+   "id": "V.1.3.1",
+   "code": "V.1.3.1",
+   "level": "sous_groupe",
+   "name": "Modal",
+   "description": "Le sous-groupe « modal » représente le cas typique du groupe, sans caractère secondaire marqué.",
+   "parent": "V.1.3",
+   "criteria": {},
+   "modifier": "modal"
+  },
+  {
+   "id": "V.1.3.2",
+   "code": "V.1.3.2",
+   "level": "sous_groupe",
+   "name": "Hydromorphe",
+   "description": "Présente des signes d'engorgement (taches d'oxydo-réduction, gley ou pseudogley) en profondeur.",
+   "parent": "V.1.3",
+   "criteria": {
+    "drainage": [
+     "temporaire"
+    ]
+   },
+   "modifier": "hydromorphe"
+  },
+  {
+   "id": "V.2",
+   "code": "V.2",
+   "level": "sous_classe",
+   "name": "Sols saturés (décarbonatés)",
+   "description": "Le calcaire a été dissous en surface, mais le complexe reste saturé en calcium.",
+   "parent": "V",
+   "criteria": {}
+  },
+  {
+   "id": "V.2.1",
+   "code": "V.2.1",
+   "level": "groupe",
+   "name": "Sols bruns calciques",
+   "description": "Profil A(B)C décarbonaté, saturé en calcium.",
+   "parent": "V.2",
+   "criteria": {},
+   "profile": "A (B) C"
+  },
+  {
+   "id": "V.2.1.1",
+   "code": "V.2.1.1",
+   "level": "sous_groupe",
+   "name": "Modal",
+   "description": "Le sous-groupe « modal » représente le cas typique du groupe, sans caractère secondaire marqué.",
+   "parent": "V.2.1",
+   "criteria": {},
+   "modifier": "modal"
+  },
+  {
+   "id": "V.2.1.2",
+   "code": "V.2.1.2",
+   "level": "sous_groupe",
+   "name": "Lessivé",
+   "description": "Montre une migration d'argile vers la profondeur (horizon Bt) sans changer de classe.",
+   "parent": "V.2.1",
+   "criteria": {},
+   "modifier": "lessive"
+  },
+  {
+   "id": "V.2.1.3",
+   "code": "V.2.1.3",
+   "level": "sous_groupe",
+   "name": "Hydromorphe",
+   "description": "Présente des signes d'engorgement (taches d'oxydo-réduction, gley ou pseudogley) en profondeur.",
+   "parent": "V.2.1",
+   "criteria": {
+    "drainage": [
+     "temporaire"
+    ]
+   },
+   "modifier": "hydromorphe"
+  },
+  {
+   "id": "V.2.1.4",
+   "code": "V.2.1.4",
+   "level": "sous_groupe",
+   "name": "Vertique",
+   "description": "Présente des caractères de vertisol (fentes de retrait, faces de glissement) sans en avoir tous les critères.",
+   "parent": "V.2.1",
+   "criteria": {
+    "materiau": [
+     "argile_gonflante"
+    ]
+   },
+   "modifier": "vertique"
+  },
+  {
+   "id": "V.2.2",
+   "code": "V.2.2",
+   "level": "groupe",
+   "name": "Sols humo-calciques",
+   "description": "Très humifères, décarbonatés mais saturés.",
+   "parent": "V.2",
+   "criteria": {}
+  },
+  {
+   "id": "V.2.2.1",
+   "code": "V.2.2.1",
+   "level": "sous_groupe",
+   "name": "Modal",
+   "description": "Le sous-groupe « modal » représente le cas typique du groupe, sans caractère secondaire marqué.",
+   "parent": "V.2.2",
+   "criteria": {},
+   "modifier": "modal"
+  },
+  {
+   "id": "V.2.2.2",
+   "code": "V.2.2.2",
+   "level": "sous_groupe",
+   "name": "Hydromorphe",
+   "description": "Présente des signes d'engorgement (taches d'oxydo-réduction, gley ou pseudogley) en profondeur.",
+   "parent": "V.2.2",
+   "criteria": {
+    "drainage": [
+     "temporaire"
+    ]
+   },
+   "modifier": "hydromorphe"
+  },
+  {
+   "id": "V.3",
+   "code": "V.3",
+   "level": "sous_classe",
+   "name": "Sols gypseux",
+   "description": "Le gypse (sulfate de calcium) remplace le calcaire, surtout en climat aride.",
+   "parent": "V",
+   "criteria": {
+    "materiau": [
+     "gypse"
+    ],
+    "climat": [
+     "aride",
+     "sahelien",
+     "mediterraneen"
+    ],
+    "vegetation": [
+     "steppe"
+    ],
+    "aptitude": [
+     "paturage",
+     "amendement"
+    ]
+   }
+  },
+  {
+   "id": "V.3.1",
+   "code": "V.3.1",
+   "level": "groupe",
+   "name": "Rendzines gypseuses",
+   "description": "Horizon humifère sur gypse.",
+   "parent": "V.3",
+   "criteria": {},
+   "profile": "A C"
+  },
+  {
+   "id": "V.3.1.1",
+   "code": "V.3.1.1",
+   "level": "sous_groupe",
+   "name": "Modal",
+   "description": "Le sous-groupe « modal » représente le cas typique du groupe, sans caractère secondaire marqué.",
+   "parent": "V.3.1",
+   "criteria": {},
+   "modifier": "modal"
+  },
+  {
+   "id": "V.3.2",
+   "code": "V.3.2",
+   "level": "groupe",
+   "name": "Sols bruns gypseux",
+   "description": "Horizon (B) sur matériau gypseux.",
+   "parent": "V.3",
+   "criteria": {},
+   "profile": "A (B) C"
+  },
+  {
+   "id": "V.3.2.1",
+   "code": "V.3.2.1",
+   "level": "sous_groupe",
+   "name": "Modal",
+   "description": "Le sous-groupe « modal » représente le cas typique du groupe, sans caractère secondaire marqué.",
+   "parent": "V.3.2",
+   "criteria": {},
+   "modifier": "modal"
+  },
+  {
+   "id": "V.3.2.2",
+   "code": "V.3.2.2",
+   "level": "sous_groupe",
+   "name": "À encroûtement calcaire",
+   "description": "Le calcaire s'est accumulé en amas, nodules ou croûte durcie en profondeur.",
+   "parent": "V.3.2",
+   "criteria": {
+    "climat": [
+     "aride",
+     "sahelien",
+     "mediterraneen",
+     "steppique"
+    ]
+   },
+   "modifier": "encroutement_calcaire"
+  },
+  {
+   "id": "V.3.2.3",
+   "code": "V.3.2.3",
+   "level": "sous_groupe",
+   "name": "Salé",
+   "description": "Contient des sels solubles en quantité notable (conductivité élevée) dans une partie du profil.",
+   "parent": "V.3.2",
+   "criteria": {
+    "drainage": [
+     "nappe_salee"
+    ]
+   },
+   "modifier": "sale"
+  },
+  {
+   "id": "VI",
+   "code": "VI",
+   "level": "classe",
+   "name": "Sols isohumiques",
+   "description": "Sols à humus très évolué, incorporé profondément et progressivement (la teneur décroît régulièrement avec la profondeur), sous végétation herbacée de climat à saison sèche.",
+   "parent": null,
+   "criteria": {
+    "processus": [
+     "isohumique"
+    ],
+    "complexe": [
+     "sature"
+    ],
+    "drainage": [
+     "bon"
+    ],
+    "topographie": [
+     "sommet",
+     "bas_pente"
+    ],
+    "vegetation": [
+     "prairie",
+     "steppe"
+    ],
+    "materiau": [
+     "eolien",
+     "divers"
+    ],
+    "aptitude": [
+     "cultures",
+     "paturage"
+    ]
+   },
+   "explanation": "Sous les prairies et les steppes, les racines des graminées meurent chaque année en profondeur : la matière organique s'installe dans tout le profil, ce qui donne des sols sombres, épais et fertiles.",
+   "profile": "A (B) C"
+  },
+  {
+   "id": "VI.1",
+   "code": "VI.1",
+   "level": "sous_classe",
+   "name": "Sols isohumiques à pédoclimat très humide en saison froide",
+   "description": "Climat tempéré continental humide.",
+   "parent": "VI",
+   "criteria": {
+    "climat": [
+     "tempere_continental"
+    ],
+    "vegetation": [
+     "prairie"
+    ]
+   }
+  },
+  {
+   "id": "VI.1.1",
+   "code": "VI.1.1",
+   "level": "groupe",
+   "name": "Brunizems",
+   "description": "Sols de prairie humide : épais, foncés, légèrement désaturés.",
+   "parent": "VI.1",
+   "criteria": {
+    "complexe": [
+     "peu_desature"
+    ]
+   }
+  },
+  {
+   "id": "VI.1.1.1",
+   "code": "VI.1.1.1",
+   "level": "sous_groupe",
+   "name": "Modal",
+   "description": "Le sous-groupe « modal » représente le cas typique du groupe, sans caractère secondaire marqué.",
+   "parent": "VI.1.1",
+   "criteria": {},
+   "modifier": "modal"
+  },
+  {
+   "id": "VI.1.1.2",
+   "code": "VI.1.1.2",
+   "level": "sous_groupe",
+   "name": "Lessivé",
+   "description": "Montre une migration d'argile vers la profondeur (horizon Bt) sans changer de classe.",
+   "parent": "VI.1.1",
+   "criteria": {},
+   "modifier": "lessive"
+  },
+  {
+   "id": "VI.1.1.3",
+   "code": "VI.1.1.3",
+   "level": "sous_groupe",
+   "name": "Hydromorphe",
+   "description": "Présente des signes d'engorgement (taches d'oxydo-réduction, gley ou pseudogley) en profondeur.",
+   "parent": "VI.1.1",
+   "criteria": {
+    "drainage": [
+     "temporaire"
+    ]
+   },
+   "modifier": "hydromorphe"
+  },
+  {
+   "id": "VI.1.1.4",
+   "code": "VI.1.1.4",
+   "level": "sous_groupe",
+   "name": "Vertique",
+   "description": "Présente des caractères de vertisol (fentes de retrait, faces de glissement) sans en avoir tous les critères.",
+   "parent": "VI.1.1",
+   "criteria": {
+    "materiau": [
+     "argile_gonflante"
+    ]
+   },
+   "modifier": "vertique"
+  },
+  {
+   "id": "VI.2",
+   "code": "VI.2",
+   "level": "sous_classe",
+   "name": "Sols isohumiques à pédoclimat frais en saison pluvieuse",
+   "description": "Steppes des climats continentaux (pluies au printemps-été, hiver froid).",
+   "parent": "VI",
+   "criteria": {
+    "climat": [
+     "steppique",
+     "tempere_continental"
+    ]
+   }
+  },
+  {
+   "id": "VI.2.1",
+   "code": "VI.2.1",
+   "level": "groupe",
+   "name": "Chernozems",
+   "description": "Terres noires des steppes, très riches en humus, calcaire en profondeur.",
+   "parent": "VI.2",
+   "criteria": {
+    "materiau": [
+     "eolien"
+    ]
+   },
+   "explanation": "Les chernozems (« terre noire » en russe) sont parmi les sols les plus fertiles du monde : greniers à blé d'Ukraine et de Russie."
+  },
+  {
+   "id": "VI.2.1.1",
+   "code": "VI.2.1.1",
+   "level": "sous_groupe",
+   "name": "Modal",
+   "description": "Le sous-groupe « modal » représente le cas typique du groupe, sans caractère secondaire marqué.",
+   "parent": "VI.2.1",
+   "criteria": {},
+   "modifier": "modal"
+  },
+  {
+   "id": "VI.2.1.2",
+   "code": "VI.2.1.2",
+   "level": "sous_groupe",
+   "name": "Lessivé",
+   "description": "Montre une migration d'argile vers la profondeur (horizon Bt) sans changer de classe.",
+   "parent": "VI.2.1",
+   "criteria": {},
+   "modifier": "lessive"
+  },
+  {
+   "id": "VI.2.1.3",
+   "code": "VI.2.1.3",
+   "level": "sous_groupe",
+   "name": "À encroûtement calcaire",
+   "description": "Le calcaire s'est accumulé en amas, nodules ou croûte durcie en profondeur.",
+   "parent": "VI.2.1",
+   "criteria": {
+    "climat": [
+     "aride",
+     "sahelien",
+     "mediterraneen",
+     "steppique"
+    ]
+   },
+   "modifier": "encroutement_calcaire"
+  },
+  {
+   "id": "VI.2.1.4",
+   "code": "VI.2.1.4",
+   "level": "sous_groupe",
+   "name": "À alcali (sodique)",
+   "description": "Le sodium échangeable est élevé dans une partie du profil.",
+   "parent": "VI.2.1",
+   "criteria": {
+    "complexe": [
+     "sodique"
+    ]
+   },
+   "modifier": "alcali"
+  },
+  {
+   "id": "VI.2.2",
+   "code": "VI.2.2",
+   "level": "groupe",
+   "name": "Sols châtains",
+   "description": "Couleur brun-châtain, moins d'humus que les chernozems, climat plus sec.",
+   "parent": "VI.2",
+   "criteria": {}
+  },
+  {
+   "id": "VI.2.2.1",
+   "code": "VI.2.2.1",
+   "level": "sous_groupe",
+   "name": "Modal",
+   "description": "Le sous-groupe « modal » représente le cas typique du groupe, sans caractère secondaire marqué.",
+   "parent": "VI.2.2",
+   "criteria": {},
+   "modifier": "modal"
+  },
+  {
+   "id": "VI.2.2.2",
+   "code": "VI.2.2.2",
+   "level": "sous_groupe",
+   "name": "À encroûtement calcaire",
+   "description": "Le calcaire s'est accumulé en amas, nodules ou croûte durcie en profondeur.",
+   "parent": "VI.2.2",
+   "criteria": {
+    "climat": [
+     "aride",
+     "sahelien",
+     "mediterraneen",
+     "steppique"
+    ]
+   },
+   "modifier": "encroutement_calcaire"
+  },
+  {
+   "id": "VI.2.2.3",
+   "code": "VI.2.2.3",
+   "level": "sous_groupe",
+   "name": "À alcali (sodique)",
+   "description": "Le sodium échangeable est élevé dans une partie du profil.",
+   "parent": "VI.2.2",
+   "criteria": {
+    "complexe": [
+     "sodique"
+    ]
+   },
+   "modifier": "alcali"
+  },
+  {
+   "id": "VI.2.2.4",
+   "code": "VI.2.2.4",
+   "level": "sous_groupe",
+   "name": "Salé",
+   "description": "Contient des sels solubles en quantité notable (conductivité élevée) dans une partie du profil.",
+   "parent": "VI.2.2",
+   "criteria": {
+    "drainage": [
+     "nappe_salee"
+    ]
+   },
+   "modifier": "sale"
+  },
+  {
+   "id": "VI.2.3",
+   "code": "VI.2.3",
+   "level": "groupe",
+   "name": "Sols bruns steppiques",
+   "description": "Encore plus pauvres en humus, transition vers les sierozems.",
+   "parent": "VI.2",
+   "criteria": {}
+  },
+  {
+   "id": "VI.2.3.1",
+   "code": "VI.2.3.1",
+   "level": "sous_groupe",
+   "name": "Modal",
+   "description": "Le sous-groupe « modal » représente le cas typique du groupe, sans caractère secondaire marqué.",
+   "parent": "VI.2.3",
+   "criteria": {},
+   "modifier": "modal"
+  },
+  {
+   "id": "VI.2.3.2",
+   "code": "VI.2.3.2",
+   "level": "sous_groupe",
+   "name": "À encroûtement calcaire",
+   "description": "Le calcaire s'est accumulé en amas, nodules ou croûte durcie en profondeur.",
+   "parent": "VI.2.3",
+   "criteria": {
+    "climat": [
+     "aride",
+     "sahelien",
+     "mediterraneen",
+     "steppique"
+    ]
+   },
+   "modifier": "encroutement_calcaire"
+  },
+  {
+   "id": "VI.2.3.3",
+   "code": "VI.2.3.3",
+   "level": "sous_groupe",
+   "name": "Gypseux / à encroûtement gypseux",
+   "description": "Accumulation de gypse (cristaux, amas ou croûte).",
+   "parent": "VI.2.3",
+   "criteria": {
+    "materiau": [
+     "gypse"
+    ]
+   },
+   "modifier": "gypseux"
+  },
+  {
+   "id": "VI.2.4",
+   "code": "VI.2.4",
+   "level": "groupe",
+   "name": "Sierozems",
+   "description": "Sols gris des steppes désertiques, très faiblement humifères.",
+   "parent": "VI.2",
+   "criteria": {
+    "climat": [
+     "aride",
+     "steppique"
+    ],
+    "vegetation": [
+     "steppe"
+    ]
+   }
+  },
+  {
+   "id": "VI.2.4.1",
+   "code": "VI.2.4.1",
+   "level": "sous_groupe",
+   "name": "Modal",
+   "description": "Le sous-groupe « modal » représente le cas typique du groupe, sans caractère secondaire marqué.",
+   "parent": "VI.2.4",
+   "criteria": {},
+   "modifier": "modal"
+  },
+  {
+   "id": "VI.2.4.2",
+   "code": "VI.2.4.2",
+   "level": "sous_groupe",
+   "name": "À encroûtement calcaire",
+   "description": "Le calcaire s'est accumulé en amas, nodules ou croûte durcie en profondeur.",
+   "parent": "VI.2.4",
+   "criteria": {
+    "climat": [
+     "aride",
+     "sahelien",
+     "mediterraneen",
+     "steppique"
+    ]
+   },
+   "modifier": "encroutement_calcaire"
+  },
+  {
+   "id": "VI.2.4.3",
+   "code": "VI.2.4.3",
+   "level": "sous_groupe",
+   "name": "Gypseux / à encroûtement gypseux",
+   "description": "Accumulation de gypse (cristaux, amas ou croûte).",
+   "parent": "VI.2.4",
+   "criteria": {
+    "materiau": [
+     "gypse"
+    ]
+   },
+   "modifier": "gypseux"
+  },
+  {
+   "id": "VI.2.4.4",
+   "code": "VI.2.4.4",
+   "level": "sous_groupe",
+   "name": "Salé",
+   "description": "Contient des sels solubles en quantité notable (conductivité élevée) dans une partie du profil.",
+   "parent": "VI.2.4",
+   "criteria": {
+    "drainage": [
+     "nappe_salee"
+    ]
+   },
+   "modifier": "sale"
+  },
+  {
+   "id": "VI.3",
+   "code": "VI.3",
+   "level": "sous_classe",
+   "name": "Sols isohumiques à pédoclimat chaud en saison pluvieuse",
+   "description": "Régions subtropicales et tropicales sèches (pluies en saison chaude).",
+   "parent": "VI",
+   "criteria": {
+    "climat": [
+     "sahelien",
+     "mediterraneen",
+     "aride"
+    ],
+    "vegetation": [
+     "steppe",
+     "savane"
+    ]
+   }
+  },
+  {
+   "id": "VI.3.1",
+   "code": "VI.3.1",
+   "level": "groupe",
+   "name": "Sols bruns subarides",
+   "description": "Sols bruns faiblement humifères des steppes à saison des pluies chaude.",
+   "parent": "VI.3",
+   "criteria": {},
+   "explanation": "Très présents au Sahel (zones 300-500 mm) ; sols sableux à sablo-argileux, à protéger contre l'érosion éolienne.",
+   "examples": "Zones pastorales et agropastorales du Sahel nigérien."
+  },
+  {
+   "id": "VI.3.1.1",
+   "code": "VI.3.1.1",
+   "level": "sous_groupe",
+   "name": "Modal",
+   "description": "Le sous-groupe « modal » représente le cas typique du groupe, sans caractère secondaire marqué.",
+   "parent": "VI.3.1",
+   "criteria": {},
+   "modifier": "modal"
+  },
+  {
+   "id": "VI.3.1.2",
+   "code": "VI.3.1.2",
+   "level": "sous_groupe",
+   "name": "À encroûtement calcaire",
+   "description": "Le calcaire s'est accumulé en amas, nodules ou croûte durcie en profondeur.",
+   "parent": "VI.3.1",
+   "criteria": {
+    "climat": [
+     "aride",
+     "sahelien",
+     "mediterraneen",
+     "steppique"
+    ]
+   },
+   "modifier": "encroutement_calcaire"
+  },
+  {
+   "id": "VI.3.1.3",
+   "code": "VI.3.1.3",
+   "level": "sous_groupe",
+   "name": "Vertique",
+   "description": "Présente des caractères de vertisol (fentes de retrait, faces de glissement) sans en avoir tous les critères.",
+   "parent": "VI.3.1",
+   "criteria": {
+    "materiau": [
+     "argile_gonflante"
+    ]
+   },
+   "modifier": "vertique"
+  },
+  {
+   "id": "VI.3.1.4",
+   "code": "VI.3.1.4",
+   "level": "sous_groupe",
+   "name": "Hydromorphe",
+   "description": "Présente des signes d'engorgement (taches d'oxydo-réduction, gley ou pseudogley) en profondeur.",
+   "parent": "VI.3.1",
+   "criteria": {
+    "drainage": [
+     "temporaire"
+    ]
+   },
+   "modifier": "hydromorphe"
+  },
+  {
+   "id": "VI.3.1.5",
+   "code": "VI.3.1.5",
+   "level": "sous_groupe",
+   "name": "Salé",
+   "description": "Contient des sels solubles en quantité notable (conductivité élevée) dans une partie du profil.",
+   "parent": "VI.3.1",
+   "criteria": {
+    "drainage": [
+     "nappe_salee"
+    ]
+   },
+   "modifier": "sale"
+  },
+  {
+   "id": "VI.3.1.6",
+   "code": "VI.3.1.6",
+   "level": "sous_groupe",
+   "name": "À alcali (sodique)",
+   "description": "Le sodium échangeable est élevé dans une partie du profil.",
+   "parent": "VI.3.1",
+   "criteria": {
+    "complexe": [
+     "sodique"
+    ]
+   },
+   "modifier": "alcali"
+  },
+  {
+   "id": "VI.3.2",
+   "code": "VI.3.2",
+   "level": "groupe",
+   "name": "Sols châtains subtropicaux",
+   "description": "Équivalents chauds des sols châtains.",
+   "parent": "VI.3",
+   "criteria": {}
+  },
+  {
+   "id": "VI.3.2.1",
+   "code": "VI.3.2.1",
+   "level": "sous_groupe",
+   "name": "Modal",
+   "description": "Le sous-groupe « modal » représente le cas typique du groupe, sans caractère secondaire marqué.",
+   "parent": "VI.3.2",
+   "criteria": {},
+   "modifier": "modal"
+  },
+  {
+   "id": "VI.3.2.2",
+   "code": "VI.3.2.2",
+   "level": "sous_groupe",
+   "name": "À encroûtement calcaire",
+   "description": "Le calcaire s'est accumulé en amas, nodules ou croûte durcie en profondeur.",
+   "parent": "VI.3.2",
+   "criteria": {
+    "climat": [
+     "aride",
+     "sahelien",
+     "mediterraneen",
+     "steppique"
+    ]
+   },
+   "modifier": "encroutement_calcaire"
+  },
+  {
+   "id": "VI.3.3",
+   "code": "VI.3.3",
+   "level": "groupe",
+   "name": "Sols marron",
+   "description": "Sols bruns-rougeâtres sous végétation méditerranéenne sèche.",
+   "parent": "VI.3",
+   "criteria": {
+    "climat": [
+     "mediterraneen"
+    ]
+   }
+  },
+  {
+   "id": "VI.3.3.1",
+   "code": "VI.3.3.1",
+   "level": "sous_groupe",
+   "name": "Modal",
+   "description": "Le sous-groupe « modal » représente le cas typique du groupe, sans caractère secondaire marqué.",
+   "parent": "VI.3.3",
+   "criteria": {},
+   "modifier": "modal"
+  },
+  {
+   "id": "VI.3.3.2",
+   "code": "VI.3.3.2",
+   "level": "sous_groupe",
+   "name": "À encroûtement calcaire",
+   "description": "Le calcaire s'est accumulé en amas, nodules ou croûte durcie en profondeur.",
+   "parent": "VI.3.3",
+   "criteria": {
+    "climat": [
+     "aride",
+     "sahelien",
+     "mediterraneen",
+     "steppique"
+    ]
+   },
+   "modifier": "encroutement_calcaire"
+  },
+  {
+   "id": "VI.3.3.3",
+   "code": "VI.3.3.3",
+   "level": "sous_groupe",
+   "name": "Vertique",
+   "description": "Présente des caractères de vertisol (fentes de retrait, faces de glissement) sans en avoir tous les critères.",
+   "parent": "VI.3.3",
+   "criteria": {
+    "materiau": [
+     "argile_gonflante"
+    ]
+   },
+   "modifier": "vertique"
+  },
+  {
+   "id": "VI.3.4",
+   "code": "VI.3.4",
+   "level": "groupe",
+   "name": "Sols bruns-rouges subarides",
+   "description": "Teinte rouge plus marquée, climat plus chaud.",
+   "parent": "VI.3",
+   "criteria": {}
+  },
+  {
+   "id": "VI.3.4.1",
+   "code": "VI.3.4.1",
+   "level": "sous_groupe",
+   "name": "Modal",
+   "description": "Le sous-groupe « modal » représente le cas typique du groupe, sans caractère secondaire marqué.",
+   "parent": "VI.3.4",
+   "criteria": {},
+   "modifier": "modal"
+  },
+  {
+   "id": "VI.3.4.2",
+   "code": "VI.3.4.2",
+   "level": "sous_groupe",
+   "name": "À encroûtement calcaire",
+   "description": "Le calcaire s'est accumulé en amas, nodules ou croûte durcie en profondeur.",
+   "parent": "VI.3.4",
+   "criteria": {
+    "climat": [
+     "aride",
+     "sahelien",
+     "mediterraneen",
+     "steppique"
+    ]
+   },
+   "modifier": "encroutement_calcaire"
+  },
+  {
+   "id": "VI.3.4.3",
+   "code": "VI.3.4.3",
+   "level": "sous_groupe",
+   "name": "Salé",
+   "description": "Contient des sels solubles en quantité notable (conductivité élevée) dans une partie du profil.",
+   "parent": "VI.3.4",
+   "criteria": {
+    "drainage": [
+     "nappe_salee"
+    ]
+   },
+   "modifier": "sale"
+  },
+  {
+   "id": "VI.3.5",
+   "code": "VI.3.5",
+   "level": "groupe",
+   "name": "Sierozems subtropicaux",
+   "description": "Sols gris très pauvres en humus des marges désertiques chaudes.",
+   "parent": "VI.3",
+   "criteria": {
+    "climat": [
+     "aride"
+    ]
+   }
+  },
+  {
+   "id": "VI.3.5.1",
+   "code": "VI.3.5.1",
+   "level": "sous_groupe",
+   "name": "Modal",
+   "description": "Le sous-groupe « modal » représente le cas typique du groupe, sans caractère secondaire marqué.",
+   "parent": "VI.3.5",
+   "criteria": {},
+   "modifier": "modal"
+  },
+  {
+   "id": "VI.3.5.2",
+   "code": "VI.3.5.2",
+   "level": "sous_groupe",
+   "name": "Gypseux / à encroûtement gypseux",
+   "description": "Accumulation de gypse (cristaux, amas ou croûte).",
+   "parent": "VI.3.5",
+   "criteria": {
+    "materiau": [
+     "gypse"
+    ]
+   },
+   "modifier": "gypseux"
+  },
+  {
+   "id": "VI.3.5.3",
+   "code": "VI.3.5.3",
+   "level": "sous_groupe",
+   "name": "Salé",
+   "description": "Contient des sels solubles en quantité notable (conductivité élevée) dans une partie du profil.",
+   "parent": "VI.3.5",
+   "criteria": {
+    "drainage": [
+     "nappe_salee"
+    ]
+   },
+   "modifier": "sale"
+  },
+  {
+   "id": "VII",
+   "code": "VII",
+   "level": "classe",
+   "name": "Sols brunifiés",
+   "description": "Sols à humus doux (mull) bien lié aux argiles et au fer : couleur brune, bonne structure, horizon (B) d'altération ou Bt d'accumulation d'argile.",
+   "parent": null,
+   "criteria": {
+    "processus": [
+     "brunification"
+    ],
+    "vegetation": [
+     "foret_feuillus"
+    ],
+    "drainage": [
+     "bon"
+    ],
+    "topographie": [
+     "toutes"
+    ],
+    "materiau": [
+     "divers"
+    ],
+    "aptitude": [
+     "cultures",
+     "foret"
+    ]
+   },
+   "explanation": "C'est le sol typique des forêts de feuillus et des campagnes tempérées. Le fer libéré par l'altération colore le sol en brun et stabilise la structure.",
+   "profile": "A (B) C ou A E Bt C"
+  },
+  {
+   "id": "VII.1",
+   "code": "VII.1",
+   "level": "sous_classe",
+   "name": "Sols brunifiés des pays tempérés humides",
+   "description": "Climat atlantique, pluies réparties sur l'année.",
+   "parent": "VII",
+   "criteria": {
+    "climat": [
+     "tempere_humide"
+    ]
+   }
+  },
+  {
+   "id": "VII.1.1",
+   "code": "VII.1.1",
+   "level": "groupe",
+   "name": "Sols bruns",
+   "description": "Profil A(B)C, horizon (B) brun d'altération sans accumulation d'argile.",
+   "parent": "VII.1",
+   "criteria": {},
+   "profile": "A (B) C"
+  },
+  {
+   "id": "VII.1.1.1",
+   "code": "VII.1.1.1",
+   "level": "sous_groupe",
+   "name": "Modal",
+   "description": "Le sous-groupe « modal » représente le cas typique du groupe, sans caractère secondaire marqué.",
+   "parent": "VII.1.1",
+   "criteria": {},
+   "modifier": "modal"
+  },
+  {
+   "id": "VII.1.1.2",
+   "code": "VII.1.1.2",
+   "level": "sous_groupe",
+   "name": "Eutrophe",
+   "description": "Riche en bases échangeables (saturation élevée), donc fertile chimiquement.",
+   "parent": "VII.1.1",
+   "criteria": {
+    "complexe": [
+     "sature"
+    ]
+   },
+   "modifier": "eutrophe"
+  },
+  {
+   "id": "VII.1.1.3",
+   "code": "VII.1.1.3",
+   "level": "sous_groupe",
+   "name": "Acide",
+   "description": "Complexe désaturé, pH inférieur à 5,5 environ.",
+   "parent": "VII.1.1",
+   "criteria": {
+    "complexe": [
+     "desature"
+    ]
+   },
+   "modifier": "acide"
+  },
+  {
+   "id": "VII.1.1.4",
+   "code": "VII.1.1.4",
+   "level": "sous_groupe",
+   "name": "Ocreux",
+   "description": "Horizon B coloré en ocre par des oxydes de fer liés à l'humus, en milieu acide.",
+   "parent": "VII.1.1",
+   "criteria": {
+    "complexe": [
+     "desature"
+    ]
+   },
+   "modifier": "ocreux"
+  },
+  {
+   "id": "VII.1.1.5",
+   "code": "VII.1.1.5",
+   "level": "sous_groupe",
+   "name": "Lessivé",
+   "description": "Montre une migration d'argile vers la profondeur (horizon Bt) sans changer de classe.",
+   "parent": "VII.1.1",
+   "criteria": {},
+   "modifier": "lessive"
+  },
+  {
+   "id": "VII.1.1.6",
+   "code": "VII.1.1.6",
+   "level": "sous_groupe",
+   "name": "Hydromorphe",
+   "description": "Présente des signes d'engorgement (taches d'oxydo-réduction, gley ou pseudogley) en profondeur.",
+   "parent": "VII.1.1",
+   "criteria": {
+    "drainage": [
+     "temporaire"
+    ]
+   },
+   "modifier": "hydromorphe"
+  },
+  {
+   "id": "VII.1.1.7",
+   "code": "VII.1.1.7",
+   "level": "sous_groupe",
+   "name": "Humifère",
+   "description": "Horizon de surface particulièrement riche en matière organique.",
+   "parent": "VII.1.1",
+   "criteria": {},
+   "modifier": "humifere"
+  },
+  {
+   "id": "VII.1.2",
+   "code": "VII.1.2",
+   "level": "groupe",
+   "name": "Sols lessivés",
+   "description": "L'argile migre de la surface (horizon E appauvri) vers la profondeur (horizon Bt).",
+   "parent": "VII.1",
+   "criteria": {
+    "processus": [
+     "brunification",
+     "lessivage"
+    ]
+   },
+   "explanation": "Le lessivage est un transport mécanique de l'argile par l'eau qui s'infiltre : la surface devient limoneuse et battante, la profondeur plus argileuse.",
+   "profile": "A E Bt C"
+  },
+  {
+   "id": "VII.1.2.1",
+   "code": "VII.1.2.1",
+   "level": "sous_groupe",
+   "name": "Modal",
+   "description": "Le sous-groupe « modal » représente le cas typique du groupe, sans caractère secondaire marqué.",
+   "parent": "VII.1.2",
+   "criteria": {},
+   "modifier": "modal"
+  },
+  {
+   "id": "VII.1.2.2",
+   "code": "VII.1.2.2",
+   "level": "sous_groupe",
+   "name": "Glossique",
+   "description": "Langues d'horizon blanchi (E) pénétrant dans l'horizon Bt.",
+   "parent": "VII.1.2",
+   "criteria": {},
+   "modifier": "glossique"
+  },
+  {
+   "id": "VII.1.2.3",
+   "code": "VII.1.2.3",
+   "level": "sous_groupe",
+   "name": "À pseudogley",
+   "description": "Nappe perchée temporaire : horizon bariolé gris et rouille.",
+   "parent": "VII.1.2",
+   "criteria": {
+    "drainage": [
+     "temporaire"
+    ]
+   },
+   "modifier": "pseudogley"
+  },
+  {
+   "id": "VII.1.2.4",
+   "code": "VII.1.2.4",
+   "level": "sous_groupe",
+   "name": "Dégradé",
+   "description": "Les horizons supérieurs sont en voie de destruction (glosses, acidification).",
+   "parent": "VII.1.2",
+   "criteria": {},
+   "modifier": "degrade"
+  },
+  {
+   "id": "VII.1.2.5",
+   "code": "VII.1.2.5",
+   "level": "sous_groupe",
+   "name": "Podzolique / podzolisé",
+   "description": "Montre un début de podzolisation (horizon blanchi, accumulation humo-ferrugineuse).",
+   "parent": "VII.1.2",
+   "criteria": {
+    "complexe": [
+     "desature"
+    ]
+   },
+   "modifier": "podzolique"
+  },
+  {
+   "id": "VII.1.2.6",
+   "code": "VII.1.2.6",
+   "level": "sous_groupe",
+   "name": "Acide",
+   "description": "Complexe désaturé, pH inférieur à 5,5 environ.",
+   "parent": "VII.1.2",
+   "criteria": {
+    "complexe": [
+     "desature"
+    ]
+   },
+   "modifier": "acide"
+  },
+  {
+   "id": "VII.2",
+   "code": "VII.2",
+   "level": "sous_classe",
+   "name": "Sols brunifiés des pays tempérés continentaux",
+   "description": "Hivers froids, végétation de forêt-steppe.",
+   "parent": "VII",
+   "criteria": {
+    "climat": [
+     "tempere_continental"
+    ]
+   }
+  },
+  {
+   "id": "VII.2.1",
+   "code": "VII.2.1",
+   "level": "groupe",
+   "name": "Sols gris forestiers",
+   "description": "Transition entre chernozems et sols lessivés.",
+   "parent": "VII.2",
+   "criteria": {
+    "processus": [
+     "brunification",
+     "lessivage"
+    ]
+   }
+  },
+  {
+   "id": "VII.2.1.1",
+   "code": "VII.2.1.1",
+   "level": "sous_groupe",
+   "name": "Modal",
+   "description": "Le sous-groupe « modal » représente le cas typique du groupe, sans caractère secondaire marqué.",
+   "parent": "VII.2.1",
+   "criteria": {},
+   "modifier": "modal"
+  },
+  {
+   "id": "VII.2.1.2",
+   "code": "VII.2.1.2",
+   "level": "sous_groupe",
+   "name": "Lessivé",
+   "description": "Montre une migration d'argile vers la profondeur (horizon Bt) sans changer de classe.",
+   "parent": "VII.2.1",
+   "criteria": {},
+   "modifier": "lessive"
+  },
+  {
+   "id": "VII.2.1.3",
+   "code": "VII.2.1.3",
+   "level": "sous_groupe",
+   "name": "Hydromorphe",
+   "description": "Présente des signes d'engorgement (taches d'oxydo-réduction, gley ou pseudogley) en profondeur.",
+   "parent": "VII.2.1",
+   "criteria": {
+    "drainage": [
+     "temporaire"
+    ]
+   },
+   "modifier": "hydromorphe"
+  },
+  {
+   "id": "VII.2.2",
+   "code": "VII.2.2",
+   "level": "groupe",
+   "name": "Sols bruns continentaux",
+   "description": "Sols bruns sous forêts de climat continental.",
+   "parent": "VII.2",
+   "criteria": {}
+  },
+  {
+   "id": "VII.2.2.1",
+   "code": "VII.2.2.1",
+   "level": "sous_groupe",
+   "name": "Modal",
+   "description": "Le sous-groupe « modal » représente le cas typique du groupe, sans caractère secondaire marqué.",
+   "parent": "VII.2.2",
+   "criteria": {},
+   "modifier": "modal"
+  },
+  {
+   "id": "VII.2.2.2",
+   "code": "VII.2.2.2",
+   "level": "sous_groupe",
+   "name": "Lessivé",
+   "description": "Montre une migration d'argile vers la profondeur (horizon Bt) sans changer de classe.",
+   "parent": "VII.2.2",
+   "criteria": {},
+   "modifier": "lessive"
+  },
+  {
+   "id": "VII.3",
+   "code": "VII.3",
+   "level": "sous_classe",
+   "name": "Sols brunifiés des pays tropicaux",
+   "description": "Climat tropical, sur roches riches en bases.",
+   "parent": "VII",
+   "criteria": {
+    "climat": [
+     "tropical_sec",
+     "tropical_humide"
+    ],
+    "materiau": [
+     "roche_basique"
+    ],
+    "complexe": [
+     "sature"
+    ]
+   }
+  },
+  {
+   "id": "VII.3.1",
+   "code": "VII.3.1",
+   "level": "groupe",
+   "name": "Sols bruns eutrophes tropicaux",
+   "description": "Sols bruns riches en bases sur roches basiques, très fertiles.",
+   "parent": "VII.3",
+   "criteria": {
+    "vegetation": [
+     "savane",
+     "foret_feuillus"
+    ]
+   }
+  },
+  {
+   "id": "VII.3.1.1",
+   "code": "VII.3.1.1",
+   "level": "sous_groupe",
+   "name": "Modal",
+   "description": "Le sous-groupe « modal » représente le cas typique du groupe, sans caractère secondaire marqué.",
+   "parent": "VII.3.1",
+   "criteria": {},
+   "modifier": "modal"
+  },
+  {
+   "id": "VII.3.1.2",
+   "code": "VII.3.1.2",
+   "level": "sous_groupe",
+   "name": "Vertique",
+   "description": "Présente des caractères de vertisol (fentes de retrait, faces de glissement) sans en avoir tous les critères.",
+   "parent": "VII.3.1",
+   "criteria": {
+    "materiau": [
+     "argile_gonflante"
+    ]
+   },
+   "modifier": "vertique"
+  },
+  {
+   "id": "VII.3.1.3",
+   "code": "VII.3.1.3",
+   "level": "sous_groupe",
+   "name": "Hydromorphe",
+   "description": "Présente des signes d'engorgement (taches d'oxydo-réduction, gley ou pseudogley) en profondeur.",
+   "parent": "VII.3.1",
+   "criteria": {
+    "drainage": [
+     "temporaire"
+    ]
+   },
+   "modifier": "hydromorphe"
+  },
+  {
+   "id": "VII.3.1.4",
+   "code": "VII.3.1.4",
+   "level": "sous_groupe",
+   "name": "Ferrugineux",
+   "description": "Accumulation surtout ferrugineuse (Bs).",
+   "parent": "VII.3.1",
+   "criteria": {},
+   "modifier": "ferrugineux"
+  },
+  {
+   "id": "VIII",
+   "code": "VIII",
+   "level": "classe",
+   "name": "Sols podzolisés",
+   "description": "Sols acides où des complexes organiques entraînent le fer et l'aluminium vers la profondeur : horizon blanchi cendreux (E) au-dessus d'horizons d'accumulation sombres et rouille (Bh, Bs).",
+   "parent": null,
+   "criteria": {
+    "processus": [
+     "podzolisation"
+    ],
+    "materiau": [
+     "roche_acide",
+     "eolien"
+    ],
+    "complexe": [
+     "desature"
+    ],
+    "vegetation": [
+     "foret_resineux"
+    ],
+    "drainage": [
+     "bon"
+    ],
+    "topographie": [
+     "toutes"
+    ],
+    "aptitude": [
+     "foret",
+     "amendement"
+    ]
+   },
+   "explanation": "Sous les landes et les forêts de résineux, la litière acide libère des acides qui « dissolvent » le fer et l'aluminium. Ceux-ci descendent et se déposent plus bas, laissant une couche blanche comme de la cendre.",
+   "profile": "O A E Bh Bs C"
+  },
+  {
+   "id": "VIII.1",
+   "code": "VIII.1",
+   "level": "sous_classe",
+   "name": "Sols podzolisés des climats tempérés",
+   "description": "Climats tempérés humides et frais.",
+   "parent": "VIII",
+   "criteria": {
+    "climat": [
+     "tempere_humide",
+     "montagnard"
+    ]
+   }
+  },
+  {
+   "id": "VIII.1.1",
+   "code": "VIII.1.1",
+   "level": "groupe",
+   "name": "Podzols",
+   "description": "Podzolisation complète : horizon E très net, B spodique épais.",
+   "parent": "VIII.1",
+   "criteria": {},
+   "profile": "O A E Bh Bs C"
+  },
+  {
+   "id": "VIII.1.1.1",
+   "code": "VIII.1.1.1",
+   "level": "sous_groupe",
+   "name": "Humo-ferrugineux",
+   "description": "L'horizon d'accumulation contient à la fois de l'humus (Bh) et du fer (Bs).",
+   "parent": "VIII.1.1",
+   "criteria": {},
+   "modifier": "humo_ferrugineux"
+  },
+  {
+   "id": "VIII.1.1.2",
+   "code": "VIII.1.1.2",
+   "level": "sous_groupe",
+   "name": "Humique",
+   "description": "Accumulation surtout humique (Bh) en profondeur.",
+   "parent": "VIII.1.1",
+   "criteria": {},
+   "modifier": "humique"
+  },
+  {
+   "id": "VIII.1.1.3",
+   "code": "VIII.1.1.3",
+   "level": "sous_groupe",
+   "name": "Ferrugineux",
+   "description": "Accumulation surtout ferrugineuse (Bs).",
+   "parent": "VIII.1.1",
+   "criteria": {},
+   "modifier": "ferrugineux"
+  },
+  {
+   "id": "VIII.1.1.4",
+   "code": "VIII.1.1.4",
+   "level": "sous_groupe",
+   "name": "Induré",
+   "description": "Un horizon est durci (cuirasse, carapace, croûte) et forme un obstacle aux racines.",
+   "parent": "VIII.1.1",
+   "criteria": {},
+   "modifier": "induré"
+  },
+  {
+   "id": "VIII.1.2",
+   "code": "VIII.1.2",
+   "level": "groupe",
+   "name": "Sols podzoliques",
+   "description": "Podzolisation moins marquée, horizon E discontinu.",
+   "parent": "VIII.1",
+   "criteria": {}
+  },
+  {
+   "id": "VIII.1.2.1",
+   "code": "VIII.1.2.1",
+   "level": "sous_groupe",
+   "name": "Modal",
+   "description": "Le sous-groupe « modal » représente le cas typique du groupe, sans caractère secondaire marqué.",
+   "parent": "VIII.1.2",
+   "criteria": {},
+   "modifier": "modal"
+  },
+  {
+   "id": "VIII.1.2.2",
+   "code": "VIII.1.2.2",
+   "level": "sous_groupe",
+   "name": "Lessivé",
+   "description": "Montre une migration d'argile vers la profondeur (horizon Bt) sans changer de classe.",
+   "parent": "VIII.1.2",
+   "criteria": {},
+   "modifier": "lessive"
+  },
+  {
+   "id": "VIII.1.2.3",
+   "code": "VIII.1.2.3",
+   "level": "sous_groupe",
+   "name": "À pseudogley",
+   "description": "Nappe perchée temporaire : horizon bariolé gris et rouille.",
+   "parent": "VIII.1.2",
+   "criteria": {
+    "drainage": [
+     "temporaire"
+    ]
+   },
+   "modifier": "pseudogley"
+  },
+  {
+   "id": "VIII.1.3",
+   "code": "VIII.1.3",
+   "level": "groupe",
+   "name": "Sols ocre podzoliques",
+   "description": "Horizon B ocre riche en complexes alumino-humiques, sans E net (montagne).",
+   "parent": "VIII.1",
+   "criteria": {}
+  },
+  {
+   "id": "VIII.1.3.1",
+   "code": "VIII.1.3.1",
+   "level": "sous_groupe",
+   "name": "Modal",
+   "description": "Le sous-groupe « modal » représente le cas typique du groupe, sans caractère secondaire marqué.",
+   "parent": "VIII.1.3",
+   "criteria": {},
+   "modifier": "modal"
+  },
+  {
+   "id": "VIII.1.3.2",
+   "code": "VIII.1.3.2",
+   "level": "sous_groupe",
+   "name": "Humifère",
+   "description": "Horizon de surface particulièrement riche en matière organique.",
+   "parent": "VIII.1.3",
+   "criteria": {},
+   "modifier": "humifere"
+  },
+  {
+   "id": "VIII.1.4",
+   "code": "VIII.1.4",
+   "level": "groupe",
+   "name": "Sols cryptopodzoliques humifères",
+   "description": "Podzolisation peu visible, très humifères (haute montagne).",
+   "parent": "VIII.1",
+   "criteria": {
+    "climat": [
+     "montagnard"
+    ]
+   }
+  },
+  {
+   "id": "VIII.1.4.1",
+   "code": "VIII.1.4.1",
+   "level": "sous_groupe",
+   "name": "Cryptopodzolique",
+   "description": "Podzolisation peu visible à l'œil mais décelable par l'analyse.",
+   "parent": "VIII.1.4",
+   "criteria": {},
+   "modifier": "cryptopodzolique"
+  },
+  {
+   "id": "VIII.2",
+   "code": "VIII.2",
+   "level": "sous_classe",
+   "name": "Sols podzolisés des climats froids (boréaux)",
+   "description": "Taïga boréale.",
+   "parent": "VIII",
+   "criteria": {
+    "climat": [
+     "froid"
+    ]
+   }
+  },
+  {
+   "id": "VIII.2.1",
+   "code": "VIII.2.1",
+   "level": "groupe",
+   "name": "Podzols boréaux",
+   "description": "Podzols sous taïga, souvent à permagel profond.",
+   "parent": "VIII.2",
+   "criteria": {}
+  },
+  {
+   "id": "VIII.2.1.1",
+   "code": "VIII.2.1.1",
+   "level": "sous_groupe",
+   "name": "Modal",
+   "description": "Le sous-groupe « modal » représente le cas typique du groupe, sans caractère secondaire marqué.",
+   "parent": "VIII.2.1",
+   "criteria": {},
+   "modifier": "modal"
+  },
+  {
+   "id": "VIII.2.1.2",
+   "code": "VIII.2.1.2",
+   "level": "sous_groupe",
+   "name": "Humo-ferrugineux",
+   "description": "L'horizon d'accumulation contient à la fois de l'humus (Bh) et du fer (Bs).",
+   "parent": "VIII.2.1",
+   "criteria": {},
+   "modifier": "humo_ferrugineux"
+  },
+  {
+   "id": "VIII.3",
+   "code": "VIII.3",
+   "level": "sous_classe",
+   "name": "Sols podzolisés hydromorphes",
+   "description": "La podzolisation s'accompagne d'un engorgement par une nappe.",
+   "parent": "VIII",
+   "criteria": {
+    "drainage": [
+     "temporaire",
+     "permanent"
+    ],
+    "topographie": [
+     "depression",
+     "plaine_alluviale"
+    ]
+   }
+  },
+  {
+   "id": "VIII.3.1",
+   "code": "VIII.3.1",
+   "level": "groupe",
+   "name": "Podzols à gley",
+   "description": "Podzol avec nappe permanente en profondeur.",
+   "parent": "VIII.3",
+   "criteria": {}
+  },
+  {
+   "id": "VIII.3.1.1",
+   "code": "VIII.3.1.1",
+   "level": "sous_groupe",
+   "name": "À gley",
+   "description": "Nappe permanente en profondeur : horizon gris-bleu verdâtre réduit.",
+   "parent": "VIII.3.1",
+   "criteria": {
+    "drainage": [
+     "permanent"
+    ]
+   },
+   "modifier": "gley"
+  },
+  {
+   "id": "VIII.3.1.2",
+   "code": "VIII.3.1.2",
+   "level": "sous_groupe",
+   "name": "Humique",
+   "description": "Accumulation surtout humique (Bh) en profondeur.",
+   "parent": "VIII.3.1",
+   "criteria": {},
+   "modifier": "humique"
+  },
+  {
+   "id": "VIII.3.2",
+   "code": "VIII.3.2",
+   "level": "groupe",
+   "name": "Sols podzoliques à pseudogley",
+   "description": "Nappe perchée temporaire.",
+   "parent": "VIII.3",
+   "criteria": {}
+  },
+  {
+   "id": "VIII.3.2.1",
+   "code": "VIII.3.2.1",
+   "level": "sous_groupe",
+   "name": "À pseudogley",
+   "description": "Nappe perchée temporaire : horizon bariolé gris et rouille.",
+   "parent": "VIII.3.2",
+   "criteria": {
+    "drainage": [
+     "temporaire"
+    ]
+   },
+   "modifier": "pseudogley"
+  },
+  {
+   "id": "VIII.3.3",
+   "code": "VIII.3.3",
+   "level": "groupe",
+   "name": "Podzols de nappe tropicaux",
+   "description": "Sables blancs des régions tropicales humides à nappe fluctuante.",
+   "parent": "VIII.3",
+   "criteria": {
+    "climat": [
+     "tropical_humide"
+    ],
+    "vegetation": [
+     "foret_dense"
+    ]
+   }
+  },
+  {
+   "id": "VIII.3.3.1",
+   "code": "VIII.3.3.1",
+   "level": "sous_groupe",
+   "name": "Humique",
+   "description": "Accumulation surtout humique (Bh) en profondeur.",
+   "parent": "VIII.3.3",
+   "criteria": {},
+   "modifier": "humique"
+  },
+  {
+   "id": "VIII.3.3.2",
+   "code": "VIII.3.3.2",
+   "level": "sous_groupe",
+   "name": "Modal",
+   "description": "Le sous-groupe « modal » représente le cas typique du groupe, sans caractère secondaire marqué.",
+   "parent": "VIII.3.3",
+   "criteria": {},
+   "modifier": "modal"
+  },
+  {
+   "id": "IX",
+   "code": "IX",
+   "level": "classe",
+   "name": "Sols à sesquioxydes de fer",
+   "description": "Sols où les oxydes et hydroxydes de fer (sesquioxydes) s'individualisent et colorent le profil en rouge ou ocre ; argiles 2/1 (fersiallitiques) ou surtout kaolinite (ferrugineux).",
+   "parent": null,
+   "criteria": {
+    "drainage": [
+     "bon"
+    ],
+    "topographie": [
+     "sommet",
+     "bas_pente",
+     "pente"
+    ],
+    "materiau": [
+     "divers"
+    ],
+    "vegetation": [
+     "savane"
+    ],
+    "aptitude": [
+     "cultures"
+    ]
+   },
+   "explanation": "Sous climat chaud à saison sèche, le fer libéré par l'altération se concentre : couleurs rouges, taches, concrétions, voire cuirasses. Ce sont les sols les plus courants d'Afrique de l'Ouest soudano-sahélienne.",
+   "profile": "A (B) C ou A E Bt C"
+  },
+  {
+   "id": "IX.1",
+   "code": "IX.1",
+   "level": "sous_classe",
+   "name": "Sols fersiallitiques",
+   "description": "Climats méditerranéen et subtropical : fer cristallisé (hématite), argiles 2/1 conservées, complexe saturé ou peu désaturé (« sols rouges méditerranéens »).",
+   "parent": "IX",
+   "criteria": {
+    "processus": [
+     "fersiallitisation"
+    ],
+    "climat": [
+     "mediterraneen"
+    ],
+    "vegetation": [
+     "foret_feuillus",
+     "steppe"
+    ]
+   }
+  },
+  {
+   "id": "IX.1.1",
+   "code": "IX.1.1",
+   "level": "groupe",
+   "name": "Sols fersiallitiques à réserve calcique",
+   "description": "Calcaire ou complexe saturé en profondeur (terra rossa).",
+   "parent": "IX.1",
+   "criteria": {
+    "complexe": [
+     "sature"
+    ],
+    "materiau": [
+     "calcaire"
+    ]
+   }
+  },
+  {
+   "id": "IX.1.1.1",
+   "code": "IX.1.1.1",
+   "level": "sous_groupe",
+   "name": "Modal",
+   "description": "Le sous-groupe « modal » représente le cas typique du groupe, sans caractère secondaire marqué.",
+   "parent": "IX.1.1",
+   "criteria": {},
+   "modifier": "modal"
+  },
+  {
+   "id": "IX.1.1.2",
+   "code": "IX.1.1.2",
+   "level": "sous_groupe",
+   "name": "À encroûtement calcaire",
+   "description": "Le calcaire s'est accumulé en amas, nodules ou croûte durcie en profondeur.",
+   "parent": "IX.1.1",
+   "criteria": {
+    "climat": [
+     "aride",
+     "sahelien",
+     "mediterraneen",
+     "steppique"
+    ]
+   },
+   "modifier": "encroutement_calcaire"
+  },
+  {
+   "id": "IX.1.1.3",
+   "code": "IX.1.1.3",
+   "level": "sous_groupe",
+   "name": "Vertique",
+   "description": "Présente des caractères de vertisol (fentes de retrait, faces de glissement) sans en avoir tous les critères.",
+   "parent": "IX.1.1",
+   "criteria": {
+    "materiau": [
+     "argile_gonflante"
+    ]
+   },
+   "modifier": "vertique"
+  },
+  {
+   "id": "IX.1.1.4",
+   "code": "IX.1.1.4",
+   "level": "sous_groupe",
+   "name": "Lessivé",
+   "description": "Montre une migration d'argile vers la profondeur (horizon Bt) sans changer de classe.",
+   "parent": "IX.1.1",
+   "criteria": {},
+   "modifier": "lessive"
+  },
+  {
+   "id": "IX.1.2",
+   "code": "IX.1.2",
+   "level": "groupe",
+   "name": "Sols fersiallitiques sans réserve calcique",
+   "description": "Complexe peu désaturé, souvent lessivés.",
+   "parent": "IX.1",
+   "criteria": {
+    "complexe": [
+     "peu_desature"
+    ]
+   }
+  },
+  {
+   "id": "IX.1.2.1",
+   "code": "IX.1.2.1",
+   "level": "sous_groupe",
+   "name": "Modal",
+   "description": "Le sous-groupe « modal » représente le cas typique du groupe, sans caractère secondaire marqué.",
+   "parent": "IX.1.2",
+   "criteria": {},
+   "modifier": "modal"
+  },
+  {
+   "id": "IX.1.2.2",
+   "code": "IX.1.2.2",
+   "level": "sous_groupe",
+   "name": "Lessivé",
+   "description": "Montre une migration d'argile vers la profondeur (horizon Bt) sans changer de classe.",
+   "parent": "IX.1.2",
+   "criteria": {},
+   "modifier": "lessive"
+  },
+  {
+   "id": "IX.1.2.3",
+   "code": "IX.1.2.3",
+   "level": "sous_groupe",
+   "name": "Hydromorphe",
+   "description": "Présente des signes d'engorgement (taches d'oxydo-réduction, gley ou pseudogley) en profondeur.",
+   "parent": "IX.1.2",
+   "criteria": {
+    "drainage": [
+     "temporaire"
+    ]
+   },
+   "modifier": "hydromorphe"
+  },
+  {
+   "id": "IX.1.2.4",
+   "code": "IX.1.2.4",
+   "level": "sous_groupe",
+   "name": "Rouge",
+   "description": "Couleur rouge due à l'hématite, signe de bon drainage et d'oxydation.",
+   "parent": "IX.1.2",
+   "criteria": {},
+   "modifier": "rouge"
+  },
+  {
+   "id": "IX.1.3",
+   "code": "IX.1.3",
+   "level": "groupe",
+   "name": "Sols fersiallitiques acides",
+   "description": "Complexe désaturé, transition vers les sols ferrallitiques.",
+   "parent": "IX.1",
+   "criteria": {
+    "complexe": [
+     "desature"
+    ]
+   }
+  },
+  {
+   "id": "IX.1.3.1",
+   "code": "IX.1.3.1",
+   "level": "sous_groupe",
+   "name": "Modal",
+   "description": "Le sous-groupe « modal » représente le cas typique du groupe, sans caractère secondaire marqué.",
+   "parent": "IX.1.3",
+   "criteria": {},
+   "modifier": "modal"
+  },
+  {
+   "id": "IX.1.3.2",
+   "code": "IX.1.3.2",
+   "level": "sous_groupe",
+   "name": "Lessivé",
+   "description": "Montre une migration d'argile vers la profondeur (horizon Bt) sans changer de classe.",
+   "parent": "IX.1.3",
+   "criteria": {},
+   "modifier": "lessive"
+  },
+  {
+   "id": "IX.2",
+   "code": "IX.2",
+   "level": "sous_classe",
+   "name": "Sols ferrugineux tropicaux",
+   "description": "Climat tropical à saison sèche marquée : kaolinite dominante, fer individualisé en taches et concrétions, complexe peu désaturé.",
+   "parent": "IX",
+   "criteria": {
+    "processus": [
+     "ferruginisation"
+    ],
+    "climat": [
+     "tropical_sec",
+     "sahelien"
+    ],
+    "complexe": [
+     "peu_desature"
+    ],
+    "aptitude": [
+     "cultures",
+     "conservation",
+     "foret"
+    ]
+   },
+   "explanation": "Sols de base de l'agriculture pluviale soudano-sahélienne (mil, sorgho, arachide, coton). Ils sont fragiles : battance, érosion, cuirassement si on les dénude."
+  },
+  {
+   "id": "IX.2.1",
+   "code": "IX.2.1",
+   "level": "groupe",
+   "name": "Sols ferrugineux tropicaux peu lessivés",
+   "description": "Pas ou peu de migration d'argile ; souvent sableux (zone sahélienne).",
+   "parent": "IX.2",
+   "criteria": {
+    "materiau": [
+     "eolien",
+     "roche_acide"
+    ]
+   },
+   "examples": "Sols « dior » et sols dunaires fixés du Sahel."
+  },
+  {
+   "id": "IX.2.1.1",
+   "code": "IX.2.1.1",
+   "level": "sous_groupe",
+   "name": "Modal",
+   "description": "Le sous-groupe « modal » représente le cas typique du groupe, sans caractère secondaire marqué.",
+   "parent": "IX.2.1",
+   "criteria": {},
+   "modifier": "modal"
+  },
+  {
+   "id": "IX.2.1.2",
+   "code": "IX.2.1.2",
+   "level": "sous_groupe",
+   "name": "À taches et concrétions",
+   "description": "Taches rouille et concrétions dues à des alternances d'humidité et de dessèchement.",
+   "parent": "IX.2.1",
+   "criteria": {
+    "drainage": [
+     "temporaire"
+    ]
+   },
+   "modifier": "tache"
+  },
+  {
+   "id": "IX.2.1.3",
+   "code": "IX.2.1.3",
+   "level": "sous_groupe",
+   "name": "À concrétions",
+   "description": "Présence de concrétions ferrugineuses ou ferro-manganiques (petites billes dures).",
+   "parent": "IX.2.1",
+   "criteria": {},
+   "modifier": "concretions"
+  },
+  {
+   "id": "IX.2.1.4",
+   "code": "IX.2.1.4",
+   "level": "sous_groupe",
+   "name": "Hydromorphe",
+   "description": "Présente des signes d'engorgement (taches d'oxydo-réduction, gley ou pseudogley) en profondeur.",
+   "parent": "IX.2.1",
+   "criteria": {
+    "drainage": [
+     "temporaire"
+    ]
+   },
+   "modifier": "hydromorphe"
+  },
+  {
+   "id": "IX.2.2",
+   "code": "IX.2.2",
+   "level": "groupe",
+   "name": "Sols ferrugineux tropicaux lessivés",
+   "description": "Horizon E appauvri et Bt d'accumulation d'argile ; fréquents en zone soudanienne.",
+   "parent": "IX.2",
+   "criteria": {
+    "processus": [
+     "ferruginisation",
+     "lessivage"
+    ]
+   },
+   "profile": "A E Bt C",
+   "examples": "Plateaux cuirassés et glacis du Burkina Faso et du sud-ouest du Niger."
+  },
+  {
+   "id": "IX.2.2.1",
+   "code": "IX.2.2.1",
+   "level": "sous_groupe",
+   "name": "Modal",
+   "description": "Le sous-groupe « modal » représente le cas typique du groupe, sans caractère secondaire marqué.",
+   "parent": "IX.2.2",
+   "criteria": {},
+   "modifier": "modal"
+  },
+  {
+   "id": "IX.2.2.2",
+   "code": "IX.2.2.2",
+   "level": "sous_groupe",
+   "name": "À taches et concrétions",
+   "description": "Taches rouille et concrétions dues à des alternances d'humidité et de dessèchement.",
+   "parent": "IX.2.2",
+   "criteria": {
+    "drainage": [
+     "temporaire"
+    ]
+   },
+   "modifier": "tache"
+  },
+  {
+   "id": "IX.2.2.3",
+   "code": "IX.2.2.3",
+   "level": "sous_groupe",
+   "name": "À concrétions",
+   "description": "Présence de concrétions ferrugineuses ou ferro-manganiques (petites billes dures).",
+   "parent": "IX.2.2",
+   "criteria": {},
+   "modifier": "concretions"
+  },
+  {
+   "id": "IX.2.2.4",
+   "code": "IX.2.2.4",
+   "level": "sous_groupe",
+   "name": "Induré",
+   "description": "Un horizon est durci (cuirasse, carapace, croûte) et forme un obstacle aux racines.",
+   "parent": "IX.2.2",
+   "criteria": {},
+   "modifier": "induré"
+  },
+  {
+   "id": "IX.2.2.5",
+   "code": "IX.2.2.5",
+   "level": "sous_groupe",
+   "name": "À cuirasse / carapace",
+   "description": "Un horizon induré par le fer (cuirasse latéritique) ou une carapace limite la profondeur utile.",
+   "parent": "IX.2.2",
+   "criteria": {
+    "aptitude": [
+     "conservation",
+     "foret"
+    ]
+   },
+   "modifier": "cuirasse"
+  },
+  {
+   "id": "IX.2.2.6",
+   "code": "IX.2.2.6",
+   "level": "sous_groupe",
+   "name": "Hydromorphe",
+   "description": "Présente des signes d'engorgement (taches d'oxydo-réduction, gley ou pseudogley) en profondeur.",
+   "parent": "IX.2.2",
+   "criteria": {
+    "drainage": [
+     "temporaire"
+    ]
+   },
+   "modifier": "hydromorphe"
+  },
+  {
+   "id": "IX.2.3",
+   "code": "IX.2.3",
+   "level": "groupe",
+   "name": "Sols ferrugineux tropicaux appauvris",
+   "description": "Départ latéral d'argile en surface, sans Bt marqué.",
+   "parent": "IX.2",
+   "criteria": {}
+  },
+  {
+   "id": "IX.2.3.1",
+   "code": "IX.2.3.1",
+   "level": "sous_groupe",
+   "name": "Modal",
+   "description": "Le sous-groupe « modal » représente le cas typique du groupe, sans caractère secondaire marqué.",
+   "parent": "IX.2.3",
+   "criteria": {},
+   "modifier": "modal"
+  },
+  {
+   "id": "IX.2.3.2",
+   "code": "IX.2.3.2",
+   "level": "sous_groupe",
+   "name": "À taches et concrétions",
+   "description": "Taches rouille et concrétions dues à des alternances d'humidité et de dessèchement.",
+   "parent": "IX.2.3",
+   "criteria": {
+    "drainage": [
+     "temporaire"
+    ]
+   },
+   "modifier": "tache"
+  },
+  {
+   "id": "IX.2.3.3",
+   "code": "IX.2.3.3",
+   "level": "sous_groupe",
+   "name": "Hydromorphe",
+   "description": "Présente des signes d'engorgement (taches d'oxydo-réduction, gley ou pseudogley) en profondeur.",
+   "parent": "IX.2.3",
+   "criteria": {
+    "drainage": [
+     "temporaire"
+    ]
+   },
+   "modifier": "hydromorphe"
+  },
+  {
+   "id": "X",
+   "code": "X",
+   "level": "classe",
+   "name": "Sols ferrallitiques",
+   "description": "Altération totale des minéraux primaires : perte de la silice et des bases, accumulation de kaolinite, d'hydroxydes de fer (goethite, hématite) et d'aluminium (gibbsite). Profils très épais, couleurs rouges ou jaunes.",
+   "parent": null,
+   "criteria": {
+    "processus": [
+     "ferrallitisation"
+    ],
+    "climat": [
+     "tropical_humide"
+    ],
+    "vegetation": [
+     "foret_dense",
+     "savane"
+    ],
+    "drainage": [
+     "bon"
+    ],
+    "topographie": [
+     "sommet",
+     "pente"
+    ],
+    "materiau": [
+     "divers"
+    ],
+    "aptitude": [
+     "foret",
+     "cultures",
+     "amendement"
+    ]
+   },
+   "explanation": "Sous climat chaud et humide, des siècles de pluie « lavent » la roche jusqu'à ne laisser que les éléments les plus insolubles : fer et aluminium. Le sol est profond mais chimiquement pauvre.",
+   "profile": "A B C (très épais)"
+  },
+  {
+   "id": "X.1",
+   "code": "X.1",
+   "level": "sous_classe",
+   "name": "Sols ferrallitiques faiblement désaturés",
+   "description": "Saison sèche marquée, complexe encore assez riche en bases.",
+   "parent": "X",
+   "criteria": {
+    "complexe": [
+     "peu_desature"
+    ],
+    "climat": [
+     "tropical_humide",
+     "tropical_sec"
+    ]
+   }
+  },
+  {
+   "id": "X.1.1",
+   "code": "X.1.1",
+   "level": "groupe",
+   "name": "Sols ferrallitiques faiblement désaturés typiques",
+   "description": "Profil complet, sans caractère secondaire.",
+   "parent": "X.1",
+   "criteria": {}
+  },
+  {
+   "id": "X.1.1.1",
+   "code": "X.1.1.1",
+   "level": "sous_groupe",
+   "name": "Rouge",
+   "description": "Couleur rouge due à l'hématite, signe de bon drainage et d'oxydation.",
+   "parent": "X.1.1",
+   "criteria": {},
+   "modifier": "rouge"
+  },
+  {
+   "id": "X.1.1.2",
+   "code": "X.1.1.2",
+   "level": "sous_groupe",
+   "name": "Jaune",
+   "description": "Couleur jaune due à la goethite, milieu plus humide.",
+   "parent": "X.1.1",
+   "criteria": {},
+   "modifier": "jaune"
+  },
+  {
+   "id": "X.1.1.3",
+   "code": "X.1.1.3",
+   "level": "sous_groupe",
+   "name": "Modal",
+   "description": "Le sous-groupe « modal » représente le cas typique du groupe, sans caractère secondaire marqué.",
+   "parent": "X.1.1",
+   "criteria": {},
+   "modifier": "modal"
+  },
+  {
+   "id": "X.1.2",
+   "code": "X.1.2",
+   "level": "groupe",
+   "name": "Sols ferrallitiques faiblement désaturés appauvris",
+   "description": "Surface appauvrie en argile.",
+   "parent": "X.1",
+   "criteria": {}
+  },
+  {
+   "id": "X.1.2.1",
+   "code": "X.1.2.1",
+   "level": "sous_groupe",
+   "name": "Modal",
+   "description": "Le sous-groupe « modal » représente le cas typique du groupe, sans caractère secondaire marqué.",
+   "parent": "X.1.2",
+   "criteria": {},
+   "modifier": "modal"
+  },
+  {
+   "id": "X.1.2.2",
+   "code": "X.1.2.2",
+   "level": "sous_groupe",
+   "name": "À concrétions",
+   "description": "Présence de concrétions ferrugineuses ou ferro-manganiques (petites billes dures).",
+   "parent": "X.1.2",
+   "criteria": {},
+   "modifier": "concretions"
+  },
+  {
+   "id": "X.1.2.3",
+   "code": "X.1.2.3",
+   "level": "sous_groupe",
+   "name": "Induré",
+   "description": "Un horizon est durci (cuirasse, carapace, croûte) et forme un obstacle aux racines.",
+   "parent": "X.1.2",
+   "criteria": {},
+   "modifier": "induré"
+  },
+  {
+   "id": "X.1.3",
+   "code": "X.1.3",
+   "level": "groupe",
+   "name": "Sols ferrallitiques faiblement désaturés remaniés",
+   "description": "Horizons supérieurs remaniés, ligne de cailloux.",
+   "parent": "X.1",
+   "criteria": {}
+  },
+  {
+   "id": "X.1.3.1",
+   "code": "X.1.3.1",
+   "level": "sous_groupe",
+   "name": "Remanié",
+   "description": "Les horizons supérieurs ont été déplacés et mélangés (érosion, colluvionnement) ; présence fréquente d'une ligne de cailloux (stone-line).",
+   "parent": "X.1.3",
+   "criteria": {},
+   "modifier": "remanie"
+  },
+  {
+   "id": "X.1.3.2",
+   "code": "X.1.3.2",
+   "level": "sous_groupe",
+   "name": "Modal",
+   "description": "Le sous-groupe « modal » représente le cas typique du groupe, sans caractère secondaire marqué.",
+   "parent": "X.1.3",
+   "criteria": {},
+   "modifier": "modal"
+  },
+  {
+   "id": "X.1.4",
+   "code": "X.1.4",
+   "level": "groupe",
+   "name": "Sols ferrallitiques faiblement désaturés rajeunis",
+   "description": "Érosion ayant réexposé un matériau moins altéré.",
+   "parent": "X.1",
+   "criteria": {}
+  },
+  {
+   "id": "X.1.4.1",
+   "code": "X.1.4.1",
+   "level": "sous_groupe",
+   "name": "Rajeuni / pénévolué",
+   "description": "L'érosion a décapé le sol et réexposé un matériau moins altéré.",
+   "parent": "X.1.4",
+   "criteria": {
+    "topographie": [
+     "pente"
+    ]
+   },
+   "modifier": "rajeuni"
+  },
+  {
+   "id": "X.1.5",
+   "code": "X.1.5",
+   "level": "groupe",
+   "name": "Sols ferrallitiques faiblement désaturés lessivés",
+   "description": "Migration verticale d'argile.",
+   "parent": "X.1",
+   "criteria": {
+    "processus": [
+     "ferrallitisation",
+     "lessivage"
+    ]
+   }
+  },
+  {
+   "id": "X.1.5.1",
+   "code": "X.1.5.1",
+   "level": "sous_groupe",
+   "name": "Modal",
+   "description": "Le sous-groupe « modal » représente le cas typique du groupe, sans caractère secondaire marqué.",
+   "parent": "X.1.5",
+   "criteria": {},
+   "modifier": "modal"
+  },
+  {
+   "id": "X.1.5.2",
+   "code": "X.1.5.2",
+   "level": "sous_groupe",
+   "name": "Hydromorphe",
+   "description": "Présente des signes d'engorgement (taches d'oxydo-réduction, gley ou pseudogley) en profondeur.",
+   "parent": "X.1.5",
+   "criteria": {
+    "drainage": [
+     "temporaire"
+    ]
+   },
+   "modifier": "hydromorphe"
+  },
+  {
+   "id": "X.2",
+   "code": "X.2",
+   "level": "sous_classe",
+   "name": "Sols ferrallitiques moyennement désaturés",
+   "description": "Climat humide à courte saison sèche.",
+   "parent": "X",
+   "criteria": {
+    "complexe": [
+     "peu_desature"
+    ]
+   }
+  },
+  {
+   "id": "X.2.1",
+   "code": "X.2.1",
+   "level": "groupe",
+   "name": "Sols ferrallitiques moyennement désaturés typiques",
+   "description": "Profil complet.",
+   "parent": "X.2",
+   "criteria": {}
+  },
+  {
+   "id": "X.2.1.1",
+   "code": "X.2.1.1",
+   "level": "sous_groupe",
+   "name": "Rouge",
+   "description": "Couleur rouge due à l'hématite, signe de bon drainage et d'oxydation.",
+   "parent": "X.2.1",
+   "criteria": {},
+   "modifier": "rouge"
+  },
+  {
+   "id": "X.2.1.2",
+   "code": "X.2.1.2",
+   "level": "sous_groupe",
+   "name": "Jaune",
+   "description": "Couleur jaune due à la goethite, milieu plus humide.",
+   "parent": "X.2.1",
+   "criteria": {},
+   "modifier": "jaune"
+  },
+  {
+   "id": "X.2.1.3",
+   "code": "X.2.1.3",
+   "level": "sous_groupe",
+   "name": "Modal",
+   "description": "Le sous-groupe « modal » représente le cas typique du groupe, sans caractère secondaire marqué.",
+   "parent": "X.2.1",
+   "criteria": {},
+   "modifier": "modal"
+  },
+  {
+   "id": "X.2.2",
+   "code": "X.2.2",
+   "level": "groupe",
+   "name": "Sols ferrallitiques moyennement désaturés humifères",
+   "description": "Horizon humifère épais (altitude).",
+   "parent": "X.2",
+   "criteria": {
+    "climat": [
+     "tropical_humide",
+     "montagnard"
+    ]
+   }
+  },
+  {
+   "id": "X.2.2.1",
+   "code": "X.2.2.1",
+   "level": "sous_groupe",
+   "name": "Humifère",
+   "description": "Horizon de surface particulièrement riche en matière organique.",
+   "parent": "X.2.2",
+   "criteria": {},
+   "modifier": "humifere"
+  },
+  {
+   "id": "X.2.3",
+   "code": "X.2.3",
+   "level": "groupe",
+   "name": "Sols ferrallitiques moyennement désaturés appauvris",
+   "description": "Surface appauvrie.",
+   "parent": "X.2",
+   "criteria": {}
+  },
+  {
+   "id": "X.2.3.1",
+   "code": "X.2.3.1",
+   "level": "sous_groupe",
+   "name": "Modal",
+   "description": "Le sous-groupe « modal » représente le cas typique du groupe, sans caractère secondaire marqué.",
+   "parent": "X.2.3",
+   "criteria": {},
+   "modifier": "modal"
+  },
+  {
+   "id": "X.2.3.2",
+   "code": "X.2.3.2",
+   "level": "sous_groupe",
+   "name": "À concrétions",
+   "description": "Présence de concrétions ferrugineuses ou ferro-manganiques (petites billes dures).",
+   "parent": "X.2.3",
+   "criteria": {},
+   "modifier": "concretions"
+  },
+  {
+   "id": "X.2.4",
+   "code": "X.2.4",
+   "level": "groupe",
+   "name": "Sols ferrallitiques moyennement désaturés remaniés",
+   "description": "Profil remanié.",
+   "parent": "X.2",
+   "criteria": {}
+  },
+  {
+   "id": "X.2.4.1",
+   "code": "X.2.4.1",
+   "level": "sous_groupe",
+   "name": "Remanié",
+   "description": "Les horizons supérieurs ont été déplacés et mélangés (érosion, colluvionnement) ; présence fréquente d'une ligne de cailloux (stone-line).",
+   "parent": "X.2.4",
+   "criteria": {},
+   "modifier": "remanie"
+  },
+  {
+   "id": "X.2.4.2",
+   "code": "X.2.4.2",
+   "level": "sous_groupe",
+   "name": "Induré",
+   "description": "Un horizon est durci (cuirasse, carapace, croûte) et forme un obstacle aux racines.",
+   "parent": "X.2.4",
+   "criteria": {},
+   "modifier": "induré"
+  },
+  {
+   "id": "X.2.5",
+   "code": "X.2.5",
+   "level": "groupe",
+   "name": "Sols ferrallitiques moyennement désaturés rajeunis",
+   "description": "Rajeunis par l'érosion.",
+   "parent": "X.2",
+   "criteria": {}
+  },
+  {
+   "id": "X.2.5.1",
+   "code": "X.2.5.1",
+   "level": "sous_groupe",
+   "name": "Rajeuni / pénévolué",
+   "description": "L'érosion a décapé le sol et réexposé un matériau moins altéré.",
+   "parent": "X.2.5",
+   "criteria": {
+    "topographie": [
+     "pente"
+    ]
+   },
+   "modifier": "rajeuni"
+  },
+  {
+   "id": "X.3",
+   "code": "X.3",
+   "level": "sous_classe",
+   "name": "Sols ferrallitiques fortement désaturés",
+   "description": "Climat équatorial très humide : complexe très pauvre, aluminium échangeable.",
+   "parent": "X",
+   "criteria": {
+    "complexe": [
+     "desature"
+    ]
+   }
+  },
+  {
+   "id": "X.3.1",
+   "code": "X.3.1",
+   "level": "groupe",
+   "name": "Sols ferrallitiques fortement désaturés typiques",
+   "description": "Profil complet.",
+   "parent": "X.3",
+   "criteria": {}
+  },
+  {
+   "id": "X.3.1.1",
+   "code": "X.3.1.1",
+   "level": "sous_groupe",
+   "name": "Rouge",
+   "description": "Couleur rouge due à l'hématite, signe de bon drainage et d'oxydation.",
+   "parent": "X.3.1",
+   "criteria": {},
+   "modifier": "rouge"
+  },
+  {
+   "id": "X.3.1.2",
+   "code": "X.3.1.2",
+   "level": "sous_groupe",
+   "name": "Jaune",
+   "description": "Couleur jaune due à la goethite, milieu plus humide.",
+   "parent": "X.3.1",
+   "criteria": {},
+   "modifier": "jaune"
+  },
+  {
+   "id": "X.3.1.3",
+   "code": "X.3.1.3",
+   "level": "sous_groupe",
+   "name": "Modal",
+   "description": "Le sous-groupe « modal » représente le cas typique du groupe, sans caractère secondaire marqué.",
+   "parent": "X.3.1",
+   "criteria": {},
+   "modifier": "modal"
+  },
+  {
+   "id": "X.3.2",
+   "code": "X.3.2",
+   "level": "groupe",
+   "name": "Sols ferrallitiques fortement désaturés humifères",
+   "description": "Très humifères (altitude).",
+   "parent": "X.3",
+   "criteria": {
+    "climat": [
+     "tropical_humide",
+     "montagnard"
+    ]
+   }
+  },
+  {
+   "id": "X.3.2.1",
+   "code": "X.3.2.1",
+   "level": "sous_groupe",
+   "name": "Humifère",
+   "description": "Horizon de surface particulièrement riche en matière organique.",
+   "parent": "X.3.2",
+   "criteria": {},
+   "modifier": "humifere"
+  },
+  {
+   "id": "X.3.3",
+   "code": "X.3.3",
+   "level": "groupe",
+   "name": "Sols ferrallitiques fortement désaturés appauvris",
+   "description": "Surface appauvrie.",
+   "parent": "X.3",
+   "criteria": {}
+  },
+  {
+   "id": "X.3.3.1",
+   "code": "X.3.3.1",
+   "level": "sous_groupe",
+   "name": "Modal",
+   "description": "Le sous-groupe « modal » représente le cas typique du groupe, sans caractère secondaire marqué.",
+   "parent": "X.3.3",
+   "criteria": {},
+   "modifier": "modal"
+  },
+  {
+   "id": "X.3.3.2",
+   "code": "X.3.3.2",
+   "level": "sous_groupe",
+   "name": "Hydromorphe",
+   "description": "Présente des signes d'engorgement (taches d'oxydo-réduction, gley ou pseudogley) en profondeur.",
+   "parent": "X.3.3",
+   "criteria": {
+    "drainage": [
+     "temporaire"
+    ]
+   },
+   "modifier": "hydromorphe"
+  },
+  {
+   "id": "X.3.4",
+   "code": "X.3.4",
+   "level": "groupe",
+   "name": "Sols ferrallitiques fortement désaturés remaniés",
+   "description": "Profil remanié.",
+   "parent": "X.3",
+   "criteria": {}
+  },
+  {
+   "id": "X.3.4.1",
+   "code": "X.3.4.1",
+   "level": "sous_groupe",
+   "name": "Remanié",
+   "description": "Les horizons supérieurs ont été déplacés et mélangés (érosion, colluvionnement) ; présence fréquente d'une ligne de cailloux (stone-line).",
+   "parent": "X.3.4",
+   "criteria": {},
+   "modifier": "remanie"
+  },
+  {
+   "id": "X.3.4.2",
+   "code": "X.3.4.2",
+   "level": "sous_groupe",
+   "name": "Induré",
+   "description": "Un horizon est durci (cuirasse, carapace, croûte) et forme un obstacle aux racines.",
+   "parent": "X.3.4",
+   "criteria": {},
+   "modifier": "induré"
+  },
+  {
+   "id": "X.3.5",
+   "code": "X.3.5",
+   "level": "groupe",
+   "name": "Sols ferrallitiques fortement désaturés rajeunis",
+   "description": "Rajeunis par l'érosion.",
+   "parent": "X.3",
+   "criteria": {}
+  },
+  {
+   "id": "X.3.5.1",
+   "code": "X.3.5.1",
+   "level": "sous_groupe",
+   "name": "Rajeuni / pénévolué",
+   "description": "L'érosion a décapé le sol et réexposé un matériau moins altéré.",
+   "parent": "X.3.5",
+   "criteria": {
+    "topographie": [
+     "pente"
+    ]
+   },
+   "modifier": "rajeuni"
+  },
+  {
+   "id": "X.3.6",
+   "code": "X.3.6",
+   "level": "groupe",
+   "name": "Sols ferrallitiques fortement désaturés podzoliques",
+   "description": "Début de podzolisation sur matériaux sableux.",
+   "parent": "X.3",
+   "criteria": {
+    "processus": [
+     "ferrallitisation",
+     "podzolisation"
+    ]
+   }
+  },
+  {
+   "id": "X.3.6.1",
+   "code": "X.3.6.1",
+   "level": "sous_groupe",
+   "name": "Podzolique / podzolisé",
+   "description": "Montre un début de podzolisation (horizon blanchi, accumulation humo-ferrugineuse).",
+   "parent": "X.3.6",
+   "criteria": {
+    "complexe": [
+     "desature"
+    ]
+   },
+   "modifier": "podzolique"
+  },
+  {
+   "id": "XI",
+   "code": "XI",
+   "level": "classe",
+   "name": "Sols hydromorphes",
+   "description": "Sols marqués par un excès d'eau prolongé : réduction du fer (gley gris-bleu), alternance oxydation/réduction (pseudogley à taches rouille), ou accumulation de matière organique (tourbe, anmoor).",
+   "parent": null,
+   "criteria": {
+    "processus": [
+     "hydromorphie"
+    ],
+    "climat": [
+     "azonal"
+    ],
+    "topographie": [
+     "depression",
+     "plaine_alluviale",
+     "littoral"
+    ],
+    "drainage": [
+     "permanent",
+     "temporaire"
+    ],
+    "vegetation": [
+     "hygrophile"
+    ],
+    "materiau": [
+     "alluvions",
+     "divers"
+    ],
+    "complexe": [
+     "variable"
+    ],
+    "aptitude": [
+     "irrigation"
+    ]
+   },
+   "explanation": "Quand l'eau chasse l'air du sol, les micro-organismes utilisent le fer à la place de l'oxygène : il devient soluble et gris. Là où l'air revient, il rouille en taches orangées.",
+   "profile": "A G ou A g"
+  },
+  {
+   "id": "XI.1",
+   "code": "XI.1",
+   "level": "sous_classe",
+   "name": "Sols hydromorphes organiques",
+   "description": "Plus de 30 % de matière organique sur au moins 40 cm : tourbes.",
+   "parent": "XI",
+   "criteria": {
+    "materiau": [
+     "organique"
+    ],
+    "drainage": [
+     "permanent"
+    ],
+    "aptitude": [
+     "faible",
+     "conservation"
+    ]
+   },
+   "explanation": "La tourbe se forme quand les débris végétaux s'accumulent dans l'eau plus vite qu'ils ne se décomposent.",
+   "profile": "H (horizons tourbeux)"
+  },
+  {
+   "id": "XI.1.1",
+   "code": "XI.1.1",
+   "level": "groupe",
+   "name": "Sols tourbeux fibreux",
+   "description": "Tourbe peu décomposée.",
+   "parent": "XI.1",
+   "criteria": {}
+  },
+  {
+   "id": "XI.1.1.1",
+   "code": "XI.1.1.1",
+   "level": "sous_groupe",
+   "name": "Oligotrophe / acide",
+   "description": "Pauvre en bases échangeables, acide.",
+   "parent": "XI.1.1",
+   "criteria": {
+    "complexe": [
+     "desature"
+    ]
+   },
+   "modifier": "oligotrophe"
+  },
+  {
+   "id": "XI.1.1.2",
+   "code": "XI.1.1.2",
+   "level": "sous_groupe",
+   "name": "Mésotrophe",
+   "description": "Richesse en bases intermédiaire.",
+   "parent": "XI.1.1",
+   "criteria": {
+    "complexe": [
+     "peu_desature"
+    ]
+   },
+   "modifier": "mesotrophe"
+  },
+  {
+   "id": "XI.1.1.3",
+   "code": "XI.1.1.3",
+   "level": "sous_groupe",
+   "name": "Eutrophe",
+   "description": "Riche en bases échangeables (saturation élevée), donc fertile chimiquement.",
+   "parent": "XI.1.1",
+   "criteria": {
+    "complexe": [
+     "sature"
+    ]
+   },
+   "modifier": "eutrophe"
+  },
+  {
+   "id": "XI.1.2",
+   "code": "XI.1.2",
+   "level": "groupe",
+   "name": "Sols tourbeux semi-fibreux",
+   "description": "Tourbe moyennement décomposée.",
+   "parent": "XI.1",
+   "criteria": {}
+  },
+  {
+   "id": "XI.1.2.1",
+   "code": "XI.1.2.1",
+   "level": "sous_groupe",
+   "name": "Oligotrophe / acide",
+   "description": "Pauvre en bases échangeables, acide.",
+   "parent": "XI.1.2",
+   "criteria": {
+    "complexe": [
+     "desature"
+    ]
+   },
+   "modifier": "oligotrophe"
+  },
+  {
+   "id": "XI.1.2.2",
+   "code": "XI.1.2.2",
+   "level": "sous_groupe",
+   "name": "Mésotrophe",
+   "description": "Richesse en bases intermédiaire.",
+   "parent": "XI.1.2",
+   "criteria": {
+    "complexe": [
+     "peu_desature"
+    ]
+   },
+   "modifier": "mesotrophe"
+  },
+  {
+   "id": "XI.1.2.3",
+   "code": "XI.1.2.3",
+   "level": "sous_groupe",
+   "name": "Eutrophe",
+   "description": "Riche en bases échangeables (saturation élevée), donc fertile chimiquement.",
+   "parent": "XI.1.2",
+   "criteria": {
+    "complexe": [
+     "sature"
+    ]
+   },
+   "modifier": "eutrophe"
+  },
+  {
+   "id": "XI.1.3",
+   "code": "XI.1.3",
+   "level": "groupe",
+   "name": "Sols tourbeux altérés",
+   "description": "Tourbe très décomposée (saprique).",
+   "parent": "XI.1",
+   "criteria": {}
+  },
+  {
+   "id": "XI.1.3.1",
+   "code": "XI.1.3.1",
+   "level": "sous_groupe",
+   "name": "Oligotrophe / acide",
+   "description": "Pauvre en bases échangeables, acide.",
+   "parent": "XI.1.3",
+   "criteria": {
+    "complexe": [
+     "desature"
+    ]
+   },
+   "modifier": "oligotrophe"
+  },
+  {
+   "id": "XI.1.3.2",
+   "code": "XI.1.3.2",
+   "level": "sous_groupe",
+   "name": "Mésotrophe",
+   "description": "Richesse en bases intermédiaire.",
+   "parent": "XI.1.3",
+   "criteria": {
+    "complexe": [
+     "peu_desature"
+    ]
+   },
+   "modifier": "mesotrophe"
+  },
+  {
+   "id": "XI.1.3.3",
+   "code": "XI.1.3.3",
+   "level": "sous_groupe",
+   "name": "Eutrophe",
+   "description": "Riche en bases échangeables (saturation élevée), donc fertile chimiquement.",
+   "parent": "XI.1.3",
+   "criteria": {
+    "complexe": [
+     "sature"
+    ]
+   },
+   "modifier": "eutrophe"
+  },
+  {
+   "id": "XI.2",
+   "code": "XI.2",
+   "level": "sous_classe",
+   "name": "Sols hydromorphes moyennement organiques",
+   "description": "Horizon humifère épais (8 à 30 % de matière organique) sur horizon minéral engorgé.",
+   "parent": "XI",
+   "criteria": {
+    "drainage": [
+     "permanent"
+    ]
+   }
+  },
+  {
+   "id": "XI.2.1",
+   "code": "XI.2.1",
+   "level": "groupe",
+   "name": "Sols humiques à gley",
+   "description": "Horizon humifère sur gley.",
+   "parent": "XI.2",
+   "criteria": {}
+  },
+  {
+   "id": "XI.2.1.1",
+   "code": "XI.2.1.1",
+   "level": "sous_groupe",
+   "name": "Modal",
+   "description": "Le sous-groupe « modal » représente le cas typique du groupe, sans caractère secondaire marqué.",
+   "parent": "XI.2.1",
+   "criteria": {},
+   "modifier": "modal"
+  },
+  {
+   "id": "XI.2.1.2",
+   "code": "XI.2.1.2",
+   "level": "sous_groupe",
+   "name": "Calcaire / à nodules calcaires",
+   "description": "Contient du calcaire libre (effervescence à l'acide) ou des nodules calcaires.",
+   "parent": "XI.2.1",
+   "criteria": {
+    "complexe": [
+     "sature"
+    ]
+   },
+   "modifier": "calcaire"
+  },
+  {
+   "id": "XI.2.1.3",
+   "code": "XI.2.1.3",
+   "level": "sous_groupe",
+   "name": "Acide",
+   "description": "Complexe désaturé, pH inférieur à 5,5 environ.",
+   "parent": "XI.2.1",
+   "criteria": {
+    "complexe": [
+     "desature"
+    ]
+   },
+   "modifier": "acide"
+  },
+  {
+   "id": "XI.2.1.4",
+   "code": "XI.2.1.4",
+   "level": "sous_groupe",
+   "name": "Salé",
+   "description": "Contient des sels solubles en quantité notable (conductivité élevée) dans une partie du profil.",
+   "parent": "XI.2.1",
+   "criteria": {
+    "drainage": [
+     "nappe_salee"
+    ]
+   },
+   "modifier": "sale"
+  },
+  {
+   "id": "XI.2.2",
+   "code": "XI.2.2",
+   "level": "groupe",
+   "name": "Sols à anmoor",
+   "description": "Humus noir, pâteux, mêlé à la matière minérale.",
+   "parent": "XI.2",
+   "criteria": {}
+  },
+  {
+   "id": "XI.2.2.1",
+   "code": "XI.2.2.1",
+   "level": "sous_groupe",
+   "name": "Modal",
+   "description": "Le sous-groupe « modal » représente le cas typique du groupe, sans caractère secondaire marqué.",
+   "parent": "XI.2.2",
+   "criteria": {},
+   "modifier": "modal"
+  },
+  {
+   "id": "XI.2.2.2",
+   "code": "XI.2.2.2",
+   "level": "sous_groupe",
+   "name": "Calcaire / à nodules calcaires",
+   "description": "Contient du calcaire libre (effervescence à l'acide) ou des nodules calcaires.",
+   "parent": "XI.2.2",
+   "criteria": {
+    "complexe": [
+     "sature"
+    ]
+   },
+   "modifier": "calcaire"
+  },
+  {
+   "id": "XI.2.2.3",
+   "code": "XI.2.2.3",
+   "level": "sous_groupe",
+   "name": "Acide",
+   "description": "Complexe désaturé, pH inférieur à 5,5 environ.",
+   "parent": "XI.2.2",
+   "criteria": {
+    "complexe": [
+     "desature"
+    ]
+   },
+   "modifier": "acide"
+  },
+  {
+   "id": "XI.2.3",
+   "code": "XI.2.3",
+   "level": "groupe",
+   "name": "Sols tourbeux à gley",
+   "description": "Mince horizon tourbeux sur gley.",
+   "parent": "XI.2",
+   "criteria": {}
+  },
+  {
+   "id": "XI.2.3.1",
+   "code": "XI.2.3.1",
+   "level": "sous_groupe",
+   "name": "Modal",
+   "description": "Le sous-groupe « modal » représente le cas typique du groupe, sans caractère secondaire marqué.",
+   "parent": "XI.2.3",
+   "criteria": {},
+   "modifier": "modal"
+  },
+  {
+   "id": "XI.3",
+   "code": "XI.3",
+   "level": "sous_classe",
+   "name": "Sols hydromorphes minéraux ou peu humifères",
+   "description": "Moins de 8 % de matière organique : l'hydromorphie se lit surtout dans les couleurs.",
+   "parent": "XI",
+   "criteria": {}
+  },
+  {
+   "id": "XI.3.1",
+   "code": "XI.3.1",
+   "level": "groupe",
+   "name": "Sols hydromorphes à gley",
+   "description": "Nappe permanente : horizon gris-bleu réduit.",
+   "parent": "XI.3",
+   "criteria": {
+    "drainage": [
+     "permanent"
+    ]
+   },
+   "profile": "A Go Gr",
+   "examples": "Bas-fonds rizicoles et vallées des « dallols » au Niger."
+  },
+  {
+   "id": "XI.3.1.1",
+   "code": "XI.3.1.1",
+   "level": "sous_groupe",
+   "name": "Modal",
+   "description": "Le sous-groupe « modal » représente le cas typique du groupe, sans caractère secondaire marqué.",
+   "parent": "XI.3.1",
+   "criteria": {},
+   "modifier": "modal"
+  },
+  {
+   "id": "XI.3.1.2",
+   "code": "XI.3.1.2",
+   "level": "sous_groupe",
+   "name": "Lessivé",
+   "description": "Montre une migration d'argile vers la profondeur (horizon Bt) sans changer de classe.",
+   "parent": "XI.3.1",
+   "criteria": {},
+   "modifier": "lessive"
+  },
+  {
+   "id": "XI.3.1.3",
+   "code": "XI.3.1.3",
+   "level": "sous_groupe",
+   "name": "Salé",
+   "description": "Contient des sels solubles en quantité notable (conductivité élevée) dans une partie du profil.",
+   "parent": "XI.3.1",
+   "criteria": {
+    "drainage": [
+     "nappe_salee"
+    ]
+   },
+   "modifier": "sale"
+  },
+  {
+   "id": "XI.3.1.4",
+   "code": "XI.3.1.4",
+   "level": "sous_groupe",
+   "name": "Vertique",
+   "description": "Présente des caractères de vertisol (fentes de retrait, faces de glissement) sans en avoir tous les critères.",
+   "parent": "XI.3.1",
+   "criteria": {
+    "materiau": [
+     "argile_gonflante"
+    ]
+   },
+   "modifier": "vertique"
+  },
+  {
+   "id": "XI.3.1.5",
+   "code": "XI.3.1.5",
+   "level": "sous_groupe",
+   "name": "Calcaire / à nodules calcaires",
+   "description": "Contient du calcaire libre (effervescence à l'acide) ou des nodules calcaires.",
+   "parent": "XI.3.1",
+   "criteria": {
+    "complexe": [
+     "sature"
+    ]
+   },
+   "modifier": "calcaire"
+  },
+  {
+   "id": "XI.3.2",
+   "code": "XI.3.2",
+   "level": "groupe",
+   "name": "Sols hydromorphes à pseudogley",
+   "description": "Nappe perchée temporaire : horizon bariolé (gris et rouille).",
+   "parent": "XI.3",
+   "criteria": {
+    "drainage": [
+     "temporaire"
+    ]
+   },
+   "profile": "A g"
+  },
+  {
+   "id": "XI.3.2.1",
+   "code": "XI.3.2.1",
+   "level": "sous_groupe",
+   "name": "Modal",
+   "description": "Le sous-groupe « modal » représente le cas typique du groupe, sans caractère secondaire marqué.",
+   "parent": "XI.3.2",
+   "criteria": {},
+   "modifier": "modal"
+  },
+  {
+   "id": "XI.3.2.2",
+   "code": "XI.3.2.2",
+   "level": "sous_groupe",
+   "name": "À taches et concrétions",
+   "description": "Taches rouille et concrétions dues à des alternances d'humidité et de dessèchement.",
+   "parent": "XI.3.2",
+   "criteria": {
+    "drainage": [
+     "temporaire"
+    ]
+   },
+   "modifier": "tache"
+  },
+  {
+   "id": "XI.3.2.3",
+   "code": "XI.3.2.3",
+   "level": "sous_groupe",
+   "name": "À concrétions",
+   "description": "Présence de concrétions ferrugineuses ou ferro-manganiques (petites billes dures).",
+   "parent": "XI.3.2",
+   "criteria": {},
+   "modifier": "concretions"
+  },
+  {
+   "id": "XI.3.2.4",
+   "code": "XI.3.2.4",
+   "level": "sous_groupe",
+   "name": "Lessivé",
+   "description": "Montre une migration d'argile vers la profondeur (horizon Bt) sans changer de classe.",
+   "parent": "XI.3.2",
+   "criteria": {},
+   "modifier": "lessive"
+  },
+  {
+   "id": "XI.3.2.5",
+   "code": "XI.3.2.5",
+   "level": "sous_groupe",
+   "name": "Induré",
+   "description": "Un horizon est durci (cuirasse, carapace, croûte) et forme un obstacle aux racines.",
+   "parent": "XI.3.2",
+   "criteria": {},
+   "modifier": "induré"
+  },
+  {
+   "id": "XI.3.3",
+   "code": "XI.3.3",
+   "level": "groupe",
+   "name": "Sols hydromorphes à redistribution du calcaire ou du gypse",
+   "description": "La nappe redistribue le calcaire ou le gypse (amas, encroûtements).",
+   "parent": "XI.3",
+   "criteria": {
+    "materiau": [
+     "calcaire",
+     "gypse"
+    ],
+    "complexe": [
+     "sature"
+    ]
+   }
+  },
+  {
+   "id": "XI.3.3.1",
+   "code": "XI.3.3.1",
+   "level": "sous_groupe",
+   "name": "À encroûtement calcaire",
+   "description": "Le calcaire s'est accumulé en amas, nodules ou croûte durcie en profondeur.",
+   "parent": "XI.3.3",
+   "criteria": {
+    "climat": [
+     "aride",
+     "sahelien",
+     "mediterraneen",
+     "steppique"
+    ]
+   },
+   "modifier": "encroutement_calcaire"
+  },
+  {
+   "id": "XI.3.3.2",
+   "code": "XI.3.3.2",
+   "level": "sous_groupe",
+   "name": "Gypseux / à encroûtement gypseux",
+   "description": "Accumulation de gypse (cristaux, amas ou croûte).",
+   "parent": "XI.3.3",
+   "criteria": {
+    "materiau": [
+     "gypse"
+    ]
+   },
+   "modifier": "gypseux"
+  },
+  {
+   "id": "XI.3.3.3",
+   "code": "XI.3.3.3",
+   "level": "sous_groupe",
+   "name": "Salé",
+   "description": "Contient des sels solubles en quantité notable (conductivité élevée) dans une partie du profil.",
+   "parent": "XI.3.3",
+   "criteria": {
+    "drainage": [
+     "nappe_salee"
+    ]
+   },
+   "modifier": "sale"
+  },
+  {
+   "id": "XI.3.4",
+   "code": "XI.3.4",
+   "level": "groupe",
+   "name": "Sols hydromorphes à amphigley",
+   "description": "Engorgement à la fois par une nappe profonde et une nappe perchée.",
+   "parent": "XI.3",
+   "criteria": {
+    "drainage": [
+     "permanent",
+     "temporaire"
+    ]
+   }
+  },
+  {
+   "id": "XI.3.4.1",
+   "code": "XI.3.4.1",
+   "level": "sous_groupe",
+   "name": "Modal",
+   "description": "Le sous-groupe « modal » représente le cas typique du groupe, sans caractère secondaire marqué.",
+   "parent": "XI.3.4",
+   "criteria": {},
+   "modifier": "modal"
+  },
+  {
+   "id": "XII",
+   "code": "XII",
+   "level": "classe",
+   "name": "Sols sodiques (salsodiques)",
+   "description": "Sols dominés par les sels solubles ou par le sodium échangeable : salure (conductivité élevée) et/ou alcalisation (pH > 8,5, argiles dispersées, structure dégradée).",
+   "parent": null,
+   "criteria": {
+    "processus": [
+     "salinisation",
+     "sodisation"
+    ],
+    "materiau": [
+     "sale",
+     "alluvions"
+    ],
+    "climat": [
+     "aride",
+     "sahelien",
+     "azonal"
+    ],
+    "topographie": [
+     "depression",
+     "littoral",
+     "plaine_alluviale"
+    ],
+    "drainage": [
+     "nappe_salee",
+     "temporaire"
+    ],
+    "complexe": [
+     "sodique"
+    ],
+    "vegetation": [
+     "hygrophile",
+     "steppe"
+    ],
+    "aptitude": [
+     "amendement",
+     "paturage",
+     "faible"
+    ]
+   },
+   "explanation": "L'eau qui s'évapore laisse ses sels : en excès, ils assoiffent les plantes. Si le sodium prend la place du calcium sur les argiles, le sol devient compact, imperméable et très alcalin.",
+   "profile": "A C ou A Btna C"
+  },
+  {
+   "id": "XII.1",
+   "code": "XII.1",
+   "level": "sous_classe",
+   "name": "Sols sodiques à structure non dégradée",
+   "description": "Les sels solubles dominent : la structure reste floconneuse (salins).",
+   "parent": "XII",
+   "criteria": {
+    "processus": [
+     "salinisation"
+    ]
+   }
+  },
+  {
+   "id": "XII.1.1",
+   "code": "XII.1.1",
+   "level": "groupe",
+   "name": "Sols salins (solontchaks)",
+   "description": "Fortes teneurs en sels solubles, efflorescences blanches en surface, pH < 8,5.",
+   "parent": "XII.1",
+   "criteria": {},
+   "explanation": "Reconnaissables à leur croûte blanche en saison sèche ; on les récupère par lessivage à l'eau douce et drainage."
+  },
+  {
+   "id": "XII.1.1.1",
+   "code": "XII.1.1.1",
+   "level": "sous_groupe",
+   "name": "Modal",
+   "description": "Le sous-groupe « modal » représente le cas typique du groupe, sans caractère secondaire marqué.",
+   "parent": "XII.1.1",
+   "criteria": {},
+   "modifier": "modal"
+  },
+  {
+   "id": "XII.1.1.2",
+   "code": "XII.1.1.2",
+   "level": "sous_groupe",
+   "name": "À croûte saline / efflorescences",
+   "description": "Les sels cristallisent en surface en saison sèche.",
+   "parent": "XII.1.1",
+   "criteria": {
+    "drainage": [
+     "nappe_salee"
+    ]
+   },
+   "modifier": "croute_saline"
+  },
+  {
+   "id": "XII.1.1.3",
+   "code": "XII.1.1.3",
+   "level": "sous_groupe",
+   "name": "Chloruré / sulfaté",
+   "description": "Nature dominante des sels (chlorures ou sulfates).",
+   "parent": "XII.1.1",
+   "criteria": {},
+   "modifier": "chlorure"
+  },
+  {
+   "id": "XII.1.1.4",
+   "code": "XII.1.1.4",
+   "level": "sous_groupe",
+   "name": "Hydromorphe",
+   "description": "Présente des signes d'engorgement (taches d'oxydo-réduction, gley ou pseudogley) en profondeur.",
+   "parent": "XII.1.1",
+   "criteria": {
+    "drainage": [
+     "temporaire"
+    ]
+   },
+   "modifier": "hydromorphe"
+  },
+  {
+   "id": "XII.1.1.5",
+   "code": "XII.1.1.5",
+   "level": "sous_groupe",
+   "name": "Gypseux / à encroûtement gypseux",
+   "description": "Accumulation de gypse (cristaux, amas ou croûte).",
+   "parent": "XII.1.1",
+   "criteria": {
+    "materiau": [
+     "gypse"
+    ]
+   },
+   "modifier": "gypseux"
+  },
+  {
+   "id": "XII.1.2",
+   "code": "XII.1.2",
+   "level": "groupe",
+   "name": "Sols salins à alcali",
+   "description": "Salés et à sodium échangeable élevé, structure encore stable grâce aux sels.",
+   "parent": "XII.1",
+   "criteria": {
+    "complexe": [
+     "sodique"
+    ]
+   }
+  },
+  {
+   "id": "XII.1.2.1",
+   "code": "XII.1.2.1",
+   "level": "sous_groupe",
+   "name": "Modal",
+   "description": "Le sous-groupe « modal » représente le cas typique du groupe, sans caractère secondaire marqué.",
+   "parent": "XII.1.2",
+   "criteria": {},
+   "modifier": "modal"
+  },
+  {
+   "id": "XII.1.2.2",
+   "code": "XII.1.2.2",
+   "level": "sous_groupe",
+   "name": "Hydromorphe",
+   "description": "Présente des signes d'engorgement (taches d'oxydo-réduction, gley ou pseudogley) en profondeur.",
+   "parent": "XII.1.2",
+   "criteria": {
+    "drainage": [
+     "temporaire"
+    ]
+   },
+   "modifier": "hydromorphe"
+  },
+  {
+   "id": "XII.2",
+   "code": "XII.2",
+   "level": "sous_classe",
+   "name": "Sols sodiques à structure dégradée",
+   "description": "Le sodium a dispersé les argiles : structure massive ou en colonnettes, pH élevé.",
+   "parent": "XII",
+   "criteria": {
+    "processus": [
+     "sodisation"
+    ]
+   }
+  },
+  {
+   "id": "XII.2.1",
+   "code": "XII.2.1",
+   "level": "groupe",
+   "name": "Sols à alcali non lessivés",
+   "description": "Sodium dans tout le profil, structure massive, pH > 8,5.",
+   "parent": "XII.2",
+   "criteria": {}
+  },
+  {
+   "id": "XII.2.1.1",
+   "code": "XII.2.1.1",
+   "level": "sous_groupe",
+   "name": "Modal",
+   "description": "Le sous-groupe « modal » représente le cas typique du groupe, sans caractère secondaire marqué.",
+   "parent": "XII.2.1",
+   "criteria": {},
+   "modifier": "modal"
+  },
+  {
+   "id": "XII.2.1.2",
+   "code": "XII.2.1.2",
+   "level": "sous_groupe",
+   "name": "Hydromorphe",
+   "description": "Présente des signes d'engorgement (taches d'oxydo-réduction, gley ou pseudogley) en profondeur.",
+   "parent": "XII.2.1",
+   "criteria": {
+    "drainage": [
+     "temporaire"
+    ]
+   },
+   "modifier": "hydromorphe"
+  },
+  {
+   "id": "XII.2.1.3",
+   "code": "XII.2.1.3",
+   "level": "sous_groupe",
+   "name": "Vertique",
+   "description": "Présente des caractères de vertisol (fentes de retrait, faces de glissement) sans en avoir tous les critères.",
+   "parent": "XII.2.1",
+   "criteria": {
+    "materiau": [
+     "argile_gonflante"
+    ]
+   },
+   "modifier": "vertique"
+  },
+  {
+   "id": "XII.2.2",
+   "code": "XII.2.2",
+   "level": "groupe",
+   "name": "Sols à alcali lessivés (solonetz)",
+   "description": "Horizon Bt à structure en colonnettes riche en sodium.",
+   "parent": "XII.2",
+   "criteria": {},
+   "explanation": "Le gypse est le remède classique : son calcium remplace le sodium, puis l'eau entraîne le sodium.",
+   "profile": "A E Btna C"
+  },
+  {
+   "id": "XII.2.2.1",
+   "code": "XII.2.2.1",
+   "level": "sous_groupe",
+   "name": "Modal",
+   "description": "Le sous-groupe « modal » représente le cas typique du groupe, sans caractère secondaire marqué.",
+   "parent": "XII.2.2",
+   "criteria": {},
+   "modifier": "modal"
+  },
+  {
+   "id": "XII.2.2.2",
+   "code": "XII.2.2.2",
+   "level": "sous_groupe",
+   "name": "Solodisé",
+   "description": "Le sommet du profil est acidifié et blanchi par lessivage du sodium (évolution vers les solods).",
+   "parent": "XII.2.2",
+   "criteria": {},
+   "modifier": "solodise"
+  },
+  {
+   "id": "XII.2.2.3",
+   "code": "XII.2.2.3",
+   "level": "sous_groupe",
+   "name": "Hydromorphe",
+   "description": "Présente des signes d'engorgement (taches d'oxydo-réduction, gley ou pseudogley) en profondeur.",
+   "parent": "XII.2.2",
+   "criteria": {
+    "drainage": [
+     "temporaire"
+    ]
+   },
+   "modifier": "hydromorphe"
+  },
+  {
+   "id": "XII.2.3",
+   "code": "XII.2.3",
+   "level": "groupe",
+   "name": "Solods",
+   "description": "Stade final : sodium lessivé, horizon supérieur acide et blanchi.",
+   "parent": "XII.2",
+   "criteria": {
+    "complexe": [
+     "desature"
+    ]
+   }
+  },
+  {
+   "id": "XII.2.3.1",
+   "code": "XII.2.3.1",
+   "level": "sous_groupe",
+   "name": "Modal",
+   "description": "Le sous-groupe « modal » représente le cas typique du groupe, sans caractère secondaire marqué.",
+   "parent": "XII.2.3",
+   "criteria": {},
+   "modifier": "modal"
+  },
+  {
+   "id": "XII.2.3.2",
+   "code": "XII.2.3.2",
+   "level": "sous_groupe",
+   "name": "Hydromorphe",
+   "description": "Présente des signes d'engorgement (taches d'oxydo-réduction, gley ou pseudogley) en profondeur.",
+   "parent": "XII.2.3",
+   "criteria": {
+    "drainage": [
+     "temporaire"
+    ]
+   },
+   "modifier": "hydromorphe"
+  }
+ ],
+ "key": [
+  {
+   "id": "q1",
+   "question": "Le sol présente-t-il un excès d'eau prolongé (horizon gris-bleu, taches rouille dès la surface, tourbe) ?",
+   "help": "Regarde la couleur : gris-bleu ou verdâtre = gley ; bariolé gris et rouille = pseudogley ; noir fibreux = tourbe.",
+   "options": [
+    {
+     "label": "Oui, l'hydromorphie domine tout le profil",
+     "target": "q1b"
+    },
+    {
+     "label": "Non, ou seulement en profondeur",
+     "target": "q2"
+    }
+   ]
+  },
+  {
+   "id": "q1b",
+   "question": "Le sol est-il en même temps salé (croûte blanche) ou très compact et alcalin (pH > 8,5) ?",
+   "help": "Le sel se voit en saison sèche (efflorescences) ; le sodium rend le sol dur, imperméable, en colonnettes.",
+   "options": [
+    {
+     "label": "Oui",
+     "target": "r:XII"
+    },
+    {
+     "label": "Non",
+     "target": "r:XI"
+    }
+   ]
+  },
+  {
+   "id": "q2",
+   "question": "Le sol contient-il des sels solubles abondants ou un horizon sodique à structure dégradée ?",
+   "help": "Conductivité électrique élevée, goût salé, efflorescences, ou horizon en colonnettes.",
+   "options": [
+    {
+     "label": "Oui",
+     "target": "r:XII"
+    },
+    {
+     "label": "Non",
+     "target": "q3"
+    }
+   ]
+  },
+  {
+   "id": "q3",
+   "question": "Y a-t-il des horizons distincts (au moins un horizon humifère A bien formé) ?",
+   "help": "Un horizon A est une couche de surface plus sombre que le matériau en dessous.",
+   "options": [
+    {
+     "label": "Non : roche ou matériau quasi intact",
+     "target": "r:I"
+    },
+    {
+     "label": "Oui, mais seulement A directement sur le matériau (profil AC)",
+     "target": "q3b"
+    },
+    {
+     "label": "Oui, profil plus développé",
+     "target": "q4"
+    }
+   ]
+  },
+  {
+   "id": "q3b",
+   "question": "Le matériau sous l'horizon A est-il calcaire (effervescence à l'acide) ?",
+   "help": "Une goutte d'acide chlorhydrique dilué fait mousser le calcaire.",
+   "options": [
+    {
+     "label": "Oui, calcaire ou gypse",
+     "target": "r:V"
+    },
+    {
+     "label": "Non",
+     "target": "r:II"
+    }
+   ]
+  },
+  {
+   "id": "q4",
+   "question": "Le sol est-il très argileux, avec de larges fentes en saison sèche et des faces luisantes (slickensides) ?",
+   "help": "Les fentes peuvent dépasser 1 cm de large et 50 cm de profondeur.",
+   "options": [
+    {
+     "label": "Oui",
+     "target": "r:III"
+    },
+    {
+     "label": "Non",
+     "target": "q5"
+    }
+   ]
+  },
+  {
+   "id": "q5",
+   "question": "Le sol s'est-il formé sur cendres volcaniques (très léger, noir, onctueux) ?",
+   "help": "Densité apparente très faible (< 0,9), forte rétention d'eau, test au fluorure de sodium positif.",
+   "options": [
+    {
+     "label": "Oui",
+     "target": "r:IV"
+    },
+    {
+     "label": "Non",
+     "target": "q6"
+    }
+   ]
+  },
+  {
+   "id": "q6",
+   "question": "Le profil contient-il du calcaire ou du gypse jusqu'en surface, ou un complexe saturé en calcium sur roche calcaire ?",
+   "help": "Effervescence à l'acide dans l'horizon de surface ou juste en dessous.",
+   "options": [
+    {
+     "label": "Oui",
+     "target": "r:V"
+    },
+    {
+     "label": "Non",
+     "target": "q7"
+    }
+   ]
+  },
+  {
+   "id": "q7",
+   "question": "Observe-t-on un horizon blanchi cendreux (E) sur un horizon sombre/rouille d'accumulation de fer et d'humus ?",
+   "help": "Typique des landes et forêts de résineux sur sables acides.",
+   "options": [
+    {
+     "label": "Oui",
+     "target": "r:VIII"
+    },
+    {
+     "label": "Non",
+     "target": "q8"
+    }
+   ]
+  },
+  {
+   "id": "q8",
+   "question": "Quelle est la couleur et la profondeur d'altération dominante ?",
+   "help": "La couleur rouge/ocre vient des oxydes de fer ; la profondeur reflète l'intensité de l'altération.",
+   "options": [
+    {
+     "label": "Rouge à jaune, très épais (plusieurs mètres), sous climat tropical humide",
+     "target": "r:X"
+    },
+    {
+     "label": "Rouge, ocre ou à taches/concrétions de fer, climat à saison sèche marquée",
+     "target": "r:IX"
+    },
+    {
+     "label": "Brun, sous forêt de feuillus en climat tempéré",
+     "target": "r:VII"
+    },
+    {
+     "label": "Sombre et humifère sur grande épaisseur, sous prairie ou steppe",
+     "target": "r:VI"
+    }
+   ]
+  }
+ ],
+ "glossary": [
+  {
+   "term": "Horizon",
+   "definition": "Couche du sol à peu près parallèle à la surface, qui se distingue des autres par sa couleur, sa texture ou sa structure."
+  },
+  {
+   "term": "Profil",
+   "definition": "Coupe verticale du sol montrant la succession des horizons, de la surface jusqu'à la roche-mère."
+  },
+  {
+   "term": "Horizon A",
+   "definition": "Horizon de surface enrichi en matière organique, généralement plus sombre."
+  },
+  {
+   "term": "Horizon E",
+   "definition": "Horizon éluvial, appauvri (en argile, fer ou humus) par le lessivage ou la podzolisation ; souvent plus clair."
+  },
+  {
+   "term": "Horizon B / (B)",
+   "definition": "Horizon d'altération (B) ou d'accumulation (Bt pour l'argile, Bh pour l'humus, Bs pour le fer et l'aluminium)."
+  },
+  {
+   "term": "Horizon C",
+   "definition": "Matériau originel peu ou pas transformé, sous les horizons pédologiques."
+  },
+  {
+   "term": "Roche-mère (R)",
+   "definition": "Roche ou dépôt à partir duquel le sol s'est formé."
+  },
+  {
+   "term": "Pédogenèse",
+   "definition": "Ensemble des processus qui transforment une roche en sol au cours du temps."
+  },
+  {
+   "term": "Altération",
+   "definition": "Transformation physique et chimique des minéraux de la roche sous l'effet de l'eau, de l'air et des êtres vivants."
+  },
+  {
+   "term": "Humus",
+   "definition": "Matière organique décomposée et stabilisée, de couleur sombre ; mull (actif), moder (intermédiaire), mor (brut, acide)."
+  },
+  {
+   "term": "Complexe absorbant",
+   "definition": "Ensemble des argiles et de l'humus qui retiennent les cations échangeables (Ca, Mg, K, Na, H, Al)."
+  },
+  {
+   "term": "Taux de saturation (V)",
+   "definition": "Pourcentage de la capacité d'échange occupé par les bases (Ca, Mg, K, Na). Saturé > 80 %, désaturé < 50 % environ."
+  },
+  {
+   "term": "CEC",
+   "definition": "Capacité d'échange cationique : quantité totale de cations que le sol peut retenir, exprimée en cmol+/kg."
+  },
+  {
+   "term": "Lessivage",
+   "definition": "Entraînement mécanique de l'argile fine par l'eau vers la profondeur (argilluviation)."
+  },
+  {
+   "term": "Podzolisation",
+   "definition": "Migration du fer et de l'aluminium complexés par des acides organiques."
+  },
+  {
+   "term": "Rubéfaction",
+   "definition": "Coloration rouge du sol due à la cristallisation de l'hématite, typique des climats à saison sèche chaude."
+  },
+  {
+   "term": "Sesquioxydes",
+   "definition": "Oxydes et hydroxydes de fer et d'aluminium (Fe2O3, Al2O3)."
+  },
+  {
+   "term": "Kaolinite",
+   "definition": "Argile 1/1 peu gonflante et peu fertile, typique des sols tropicaux très altérés."
+  },
+  {
+   "term": "Smectite",
+   "definition": "Argile 2/1 gonflante, responsable du comportement des vertisols."
+  },
+  {
+   "term": "Allophanes",
+   "definition": "Minéraux mal cristallisés issus de l'altération des verres volcaniques (andosols)."
+  },
+  {
+   "term": "Gley",
+   "definition": "Horizon gris-bleu à verdâtre formé par une nappe permanente (fer réduit)."
+  },
+  {
+   "term": "Pseudogley",
+   "definition": "Horizon bariolé gris et rouille formé par une nappe temporaire."
+  },
+  {
+   "term": "Hydromorphie",
+   "definition": "Ensemble des caractères liés à un excès d'eau dans le sol."
+  },
+  {
+   "term": "Tourbe",
+   "definition": "Accumulation de débris végétaux peu décomposés en milieu saturé d'eau."
+  },
+  {
+   "term": "Anmoor",
+   "definition": "Humus noir et pâteux des sols engorgés, mélange intime de matière organique et minérale."
+  },
+  {
+   "term": "Concrétion",
+   "definition": "Petite masse dure arrondie, généralement ferrugineuse ou ferro-manganique."
+  },
+  {
+   "term": "Cuirasse",
+   "definition": "Horizon fortement induré par les oxydes de fer (latérite), souvent à l'affleurement sur les plateaux sahéliens."
+  },
+  {
+   "term": "Encroûtement calcaire",
+   "definition": "Accumulation de calcaire en amas, nodules ou croûte dure."
+  },
+  {
+   "term": "Solontchak",
+   "definition": "Sol salin à efflorescences de sels en surface."
+  },
+  {
+   "term": "Solonetz",
+   "definition": "Sol à alcali lessivé, à horizon sodique en colonnettes."
+  },
+  {
+   "term": "Toposéquence (catena)",
+   "definition": "Succession de sols liée à la position dans le paysage, du sommet au bas-fond."
+  },
+  {
+   "term": "Battance",
+   "definition": "Formation d'une croûte en surface sous l'impact des pluies, qui gêne l'infiltration et la levée des semis."
+  },
+  {
+   "term": "Réserve utile",
+   "definition": "Quantité d'eau que le sol peut stocker et céder aux plantes."
+  },
+  {
+   "term": "Classe / sous-classe / groupe / sous-groupe",
+   "definition": "Les quatre niveaux hiérarchiques de la CPCS 1967 : processus dominant → conditions de ce processus (climat, drainage) → caractères morphologiques → intergrades et caractères secondaires."
+  },
+  {
+   "term": "Zonal / azonal",
+   "definition": "Un sol zonal reflète le climat de sa région ; un sol azonal dépend surtout d'un facteur local (eau, roche, relief)."
+  },
+  {
+   "term": "RNA",
+   "definition": "Régénération naturelle assistée : protection et gestion des rejets d'arbres existants dans les champs, technique majeure de restauration des sols au Sahel."
+  },
+  {
+   "term": "Zaï / demi-lune / cordon pierreux",
+   "definition": "Techniques de conservation des eaux et des sols (CES/DRS) qui récupèrent les sols encroûtés et limitent le ruissellement."
+  }
+ ]
+}
