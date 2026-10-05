@@ -191,6 +191,13 @@ class _AboutTab extends StatelessWidget {
           const SizedBox(height: 8),
           Text(data.source),
           const SizedBox(height: 12),
+          const Card(
+            child: ListTile(
+              leading: Icon(Icons.person_outline),
+              title: Text('Auteur'),
+              subtitle: Text('SOME NIBENAON'),
+            ),
+          ),
           Card(
             child: ListTile(
               leading: const Icon(Icons.info_outline),
