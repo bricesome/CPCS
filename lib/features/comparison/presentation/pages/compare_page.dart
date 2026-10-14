@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../../../core/widgets/guide_button.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../../../core/widgets/code_badge.dart';
 import '../../../../core/widgets/info_hint.dart';
@@ -36,6 +37,7 @@ class ComparePage extends StatelessWidget {
               icon: const Icon(Icons.delete_sweep_outlined),
               onPressed: () => context.read<CompareCubit>().clear(),
             ),
+          const GuideButton('comparer'),
           const LearningModeButton(),
         ],
       ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../../../core/widgets/guide_button.dart';
 import '../../../../core/widgets/code_badge.dart';
 import '../../../../core/widgets/info_hint.dart';
 import '../../../classification/domain/entities/classification.dart';
@@ -25,6 +26,7 @@ class DeterminationPage extends StatelessWidget {
                 'suivante, jusqu\'à la classe la plus probable. Ouvrez ensuite '
                 'la fiche pour préciser sous-classe, groupe et sous-groupe.',
           ),
+          GuideButton('cle'),
           LearningModeButton(),
         ],
       ),

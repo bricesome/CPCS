@@ -1,5 +1,6 @@
 import 'package:equatable/equatable.dart';
 
+import '../../../lab/domain/entities/lab.dart';
 import 'criterion.dart';
 import 'soil_unit.dart';
 
@@ -43,6 +44,36 @@ class GlossaryEntry extends Equatable {
   List<Object?> get props => [term];
 }
 
+class Credit extends Equatable {
+  final String role;
+  final String name;
+
+  const Credit({required this.role, required this.name});
+
+  @override
+  List<Object?> get props => [role, name];
+}
+
+/// Rubrique du guide d'utilisation de l'application.
+class GuideSection extends Equatable {
+  final String id;
+  final String title;
+  final String what;
+  final List<String> steps;
+  final String example;
+
+  const GuideSection({
+    required this.id,
+    required this.title,
+    required this.what,
+    required this.steps,
+    required this.example,
+  });
+
+  @override
+  List<Object?> get props => [id];
+}
+
 /// Référentiel complet : hiérarchie, critères, clé et glossaire.
 class Classification {
   final String title;
@@ -53,6 +84,9 @@ class Classification {
   final List<SoilUnit> units;
   final List<KeyQuestion> keyQuestions;
   final List<GlossaryEntry> glossary;
+  final List<Credit> credits;
+  final LabData lab;
+  final List<GuideSection> guide;
 
   final Map<String, SoilUnit> _byId;
   final Map<String, List<SoilUnit>> _children;
@@ -66,6 +100,9 @@ class Classification {
     required this.units,
     required this.keyQuestions,
     required this.glossary,
+    this.credits = const [],
+    this.lab = const LabData(),
+    this.guide = const [],
   }) : _byId = {for (final u in units) u.id: u},
        _children = _indexChildren(units);
 
@@ -101,6 +138,13 @@ class Classification {
   Criterion? criterion(String id) {
     for (final c in criteria) {
       if (c.id == id) return c;
+    }
+    return null;
+  }
+
+  GuideSection? guideSection(String id) {
+    for (final g in guide) {
+      if (g.id == id) return g;
     }
     return null;
   }

@@ -1,10 +1,14 @@
 # CPCS — Commission de Pédologie et de Cartographie des Sols
 
-**Auteur : SOME NIBENAON**
+- Auteur : **Professeur EDMOND HIEN**
+- Contributeur : **NANAWENDIN YAMEOGO**
+- Concepteur : **NIBENAON SOME**
 
 Application Flutter multiplateforme (Android, iOS, Web, Windows, Linux, macOS) pour consulter et apprendre la **classification française des sols CPCS 1967** (Aubert et al.).
 
 ## Télécharger l'application Android
+
+Lien direct : https://github.com/bricesome/CPCS/raw/main/releases/CPCS.apk
 
 L'APK est dans [`releases/CPCS.apk`](releases/CPCS.apk) : ouvrez le fichier sur GitHub, cliquez sur **Download** (ou « View raw »), puis ouvrez-le sur le téléphone et autorisez l'installation depuis une source inconnue. Android 5 ou plus récent.
 
@@ -15,7 +19,9 @@ L'APK est dans [`releases/CPCS.apk`](releases/CPCS.apk) : ouvrez le fichier sur 
 - **Croisement** : filtres multicritères (ET entre critères, OU entre valeurs) sur 8 critères : processus, climat, matériau, topographie, drainage, complexe absorbant, végétation, aptitude. Une **matrice** croise deux critères.
 - **Comparer** : jusqu'à 3 sols côte à côte, avec les points communs mis en évidence.
 - **Clé de détermination** : questions successives pour trouver la classe d'un sol.
-- **Apprendre** : niveaux, critères expliqués, glossaire.
+- **Labo** : on saisit des observations et mesures de terrain (13 paramètres : horizons, couleur, texture, structure, effervescence, excès d'eau, pente, climat, végétation, profondeur, pH, matière organique, salinité). L'application calcule les sous-classes les plus probables, avec un pourcentage, les éléments concordants (✓), proches (≈) et contradictoires (✗). Des échantillons d'exemple sont fournis.
+- **Guide** : onglet Apprendre › Guide, et bouton « ? » en haut de chaque écran : explication simple de chaque fonction, avec un exemple.
+- **Apprendre** : guide, niveaux, critères expliqués, glossaire.
 - **Mode apprentissage** : les icônes ⓘ ouvrent une explication courte dans un volet. Le bouton chapeau les masque pour passer en mode lecture.
 
 ## Architecture
@@ -56,6 +62,26 @@ Le script vérifie que chaque valeur de critère existe et que chaque identifian
 
 > Le jeu de données a été reconstitué pour l'apprentissage. Il reste à le vérifier et à le compléter avec le document source.
 
+## Calcul du Labo
+
+Chaque sous-classe a un **profil attendu** (`tool/dataset/lab.py`) : valeurs ou plages typiques des paramètres. Le profil d'une classe est hérité par ses sous-classes, qui peuvent le préciser. Chaque paramètre a un **poids** (3 = déterminant, 1 = indice secondaire).
+
+Pour chaque sous-classe, seuls les paramètres renseignés **et** décrits par son profil comptent :
+
+- valeur dans la plage ou parmi les choix attendus : tout le poids ;
+- valeur numérique hors plage mais dans la tolérance (ex. pH ± 0,3) : la moitié du poids ;
+- sinon : 0 (contradiction).
+
+```
+concordance = points obtenus / points possibles
+couverture  = poids des paramètres décrits par ce sol / poids de tous les paramètres renseignés
+score       = concordance × (0,6 + 0,4 × couverture)
+```
+
+À score égal, passe devant le sol dont le profil est le mieux couvert par les mesures, puis l'ordre de la classification. Le calcul est vérifié par des tests (`test/features/lab_analyzer_test.dart`) : calculs à la main, bornes et tolérances, chaque échantillon d'exemple et chaque profil type reconnus à 100 %. `build.py` refait les mêmes contrôles en Python et refuse un profil incohérent.
+
+> Le Labo donne une **estimation pédagogique**, pas un diagnostic : les profils sont des simplifications. Seule une description complète du profil et des analyses de laboratoire permettent de classer un sol avec certitude.
+
 ## Modifier le contenu des informations
 
 Tout le contenu affiché (classes, groupes, explications, critères, clé, glossaire) se modifie **sans toucher au code Dart**, dans les fichiers Python de `tool/dataset/`. Le script `build.py` les assemble ensuite dans `assets/data/cpcs_1967.json`, que l'application lit.
@@ -66,7 +92,9 @@ Tout le contenu affiché (classes, groupes, explications, critères, clé, gloss
 | Qualificatifs de sous-groupes (modal, hydromorphe, induré…) et leur explication | `modifiers.py` |
 | Critères de croisement (processus, climat, matériau…) et leurs valeurs | `facets.py` |
 | Questions de la clé de détermination, glossaire | `key_gloss.py` |
-| Titre, édition, auteurs, note de source (onglet « À propos ») | `build.py` (bloc `meta`) |
+| Paramètres du Labo, profils attendus, échantillons d'exemple | `lab.py` |
+| Textes du Guide d'utilisation | `guide.py` |
+| Titre, édition, crédits, note de source (onglet « À propos ») | `build.py` (bloc `meta`) |
 
 ### 1. Modifier une unité (`tree.py`)
 
@@ -104,7 +132,14 @@ Dans le critère voulu, ajoutez `"id_valeur": ("Libellé", "Explication")`.
 - Une question : `dict(id="q9", q="Question ?", aide="Indice", opts=[("Réponse", "q10"), ("Autre réponse", "r:XI")])`. Une option pointe vers une autre question (`q10`) ou vers une classe résultat (`r:` + numéro romain de la classe, par exemple `r:XI`).
 - Un terme du glossaire : `("Terme", "Définition")`.
 
-### 5. Régénérer et vérifier
+### 5. Labo (`lab.py`) et Guide (`guide.py`)
+
+- Un paramètre : `dict(id="ph", label="pH (eau)", kind="range", weight=2, min=3.0, max=10.5, step=0.1, unit="", tol=0.3, expl="...")`, ou `kind="choice"` avec `options=[("id", "Libellé", "Explication"), ...]`.
+- Un profil (dans `PROFILES`) : `"III.1": dict(pente=["depression", "plat"], ph=(6.5, 8.5))` : liste de choix acceptés, ou plage `(min, max)`. Une sous-classe hérite du profil de sa classe.
+- Un échantillon d'exemple (dans `PRESETS`) : `("Nom", dict(ph=7.8, couleur="noir"), "III.1")` ; `build.py` vérifie qu'il donne bien la sous-classe annoncée.
+- Une rubrique du guide : `dict(id=..., title=..., what=..., steps=[...], example=...)`.
+
+### 6. Régénérer et vérifier
 
 ```bash
 python3 tool/dataset/build.py   # écrit assets/data/cpcs_1967.json et signale les erreurs
@@ -114,7 +149,7 @@ flutter run -d chrome           # pour voir le résultat
 
 Si une valeur n'existe pas ou si un identifiant est en double, `build.py` s'arrête en indiquant l'élément fautif.
 
-### 6. Regénérer l'APK
+### 7. Regénérer l'APK
 
 ```bash
 flutter build apk --release
@@ -130,6 +165,8 @@ flutter test
 flutter analyze
 ```
 
-## Auteur
+## Crédits
 
-**SOME NIBENAON**
+- Auteur : **Professeur EDMOND HIEN**
+- Contributeur : **NANAWENDIN YAMEOGO**
+- Concepteur : **NIBENAON SOME**

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../../core/widgets/guide_button.dart';
 import '../../../../core/utils/text_normalize.dart';
 import '../../../classification/domain/entities/classification.dart';
 import '../../../classification/presentation/widgets/classification_gate.dart';
@@ -10,15 +11,16 @@ class LearningPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 4,
+      length: 5,
       child: Scaffold(
         appBar: AppBar(
           title: const Text('Apprendre'),
-          actions: const [LearningModeButton()],
+          actions: const [GuideButton('apprendre'), LearningModeButton()],
           bottom: const TabBar(
             isScrollable: true,
             tabAlignment: TabAlignment.start,
             tabs: [
+              Tab(text: 'Guide'),
               Tab(text: 'Niveaux'),
               Tab(text: 'Critères'),
               Tab(text: 'Glossaire'),
@@ -30,6 +32,7 @@ class LearningPage extends StatelessWidget {
           builder:
               (context, data) => TabBarView(
                 children: [
+                  _GuideTab(data: data),
                   _LevelsTab(data: data),
                   _CriteriaTab(data: data),
                   _GlossaryTab(data: data),
@@ -37,6 +40,57 @@ class LearningPage extends StatelessWidget {
                 ],
               ),
         ),
+      ),
+    );
+  }
+}
+
+class _GuideTab extends StatelessWidget {
+  final Classification data;
+  const _GuideTab({required this.data});
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    return ContentWidth(
+      child: ListView(
+        padding: const EdgeInsets.all(16),
+        children: [
+          Text(
+            'Comment utiliser l\'application ? Touchez une rubrique. Le bouton '
+            '« ? » en haut de chaque écran ouvre aussi la rubrique concernée.',
+            style: theme.textTheme.bodyMedium,
+          ),
+          const SizedBox(height: 8),
+          for (final g in data.guide)
+            Card(
+              clipBehavior: Clip.antiAlias,
+              child: ExpansionTile(
+                title: Text(
+                  g.title,
+                  style: const TextStyle(fontWeight: FontWeight.w600),
+                ),
+                subtitle: Text(g.what),
+                expandedCrossAxisAlignment: CrossAxisAlignment.start,
+                childrenPadding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
+                children: [
+                  Text(guideSteps(g), style: const TextStyle(height: 1.4)),
+                  const SizedBox(height: 8),
+                  Container(
+                    width: double.infinity,
+                    padding: const EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      color: theme.colorScheme.secondaryContainer.withValues(
+                        alpha: 0.4,
+                      ),
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: Text('Exemple : ${g.example}'),
+                  ),
+                ],
+              ),
+            ),
+        ],
       ),
     );
   }
@@ -191,13 +245,14 @@ class _AboutTab extends StatelessWidget {
           const SizedBox(height: 8),
           Text(data.source),
           const SizedBox(height: 12),
-          const Card(
-            child: ListTile(
-              leading: Icon(Icons.person_outline),
-              title: Text('Auteur'),
-              subtitle: Text('SOME NIBENAON'),
+          for (final c in data.credits)
+            Card(
+              child: ListTile(
+                leading: const Icon(Icons.person_outline),
+                title: Text(c.name),
+                subtitle: Text(c.role),
+              ),
             ),
-          ),
           Card(
             child: ListTile(
               leading: const Icon(Icons.info_outline),

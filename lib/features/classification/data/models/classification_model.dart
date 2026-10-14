@@ -1,3 +1,4 @@
+import '../../../lab/domain/entities/lab.dart';
 import '../../domain/entities/classification.dart';
 import '../../domain/entities/criterion.dart';
 import '../../domain/entities/soil_unit.dart';
@@ -112,6 +113,29 @@ class ClassificationModel {
             )
             .toList();
 
+    final credits =
+        (meta['credits'] as List? ?? const [])
+            .cast<Map<String, dynamic>>()
+            .map(
+              (c) =>
+                  Credit(role: c['role'] as String, name: c['name'] as String),
+            )
+            .toList();
+
+    final guide =
+        (json['guide'] as List? ?? const [])
+            .cast<Map<String, dynamic>>()
+            .map(
+              (g) => GuideSection(
+                id: g['id'] as String,
+                title: g['title'] as String,
+                what: g['what'] as String,
+                steps: (g['steps'] as List).cast<String>(),
+                example: g['example'] as String,
+              ),
+            )
+            .toList();
+
     return Classification(
       title: meta['title'] as String,
       source: meta['source'] as String,
@@ -121,6 +145,91 @@ class ClassificationModel {
       units: units,
       keyQuestions: keyQuestions,
       glossary: glossary,
+      credits: credits,
+      lab: _lab(json['lab'] as Map<String, dynamic>?),
+      guide: guide,
+    );
+  }
+
+  static LabData _lab(Map<String, dynamic>? json) {
+    if (json == null) return const LabData();
+    final parameters =
+        (json['parameters'] as List).cast<Map<String, dynamic>>().map((p) {
+          final range = p['kind'] == 'range';
+          return LabParameter(
+            id: p['id'] as String,
+            label: p['label'] as String,
+            explanation: p['explanation'] as String,
+            kind: range ? LabKind.range : LabKind.choice,
+            weight: p['weight'] as int,
+            options:
+                (p['options'] as List? ?? const [])
+                    .cast<Map<String, dynamic>>()
+                    .map(
+                      (o) => LabOption(
+                        id: o['id'] as String,
+                        label: o['label'] as String,
+                        explanation: o['explanation'] as String,
+                      ),
+                    )
+                    .toList(),
+            min: (p['min'] as num? ?? 0).toDouble(),
+            max: (p['max'] as num? ?? 0).toDouble(),
+            step: (p['step'] as num? ?? 1).toDouble(),
+            tolerance: (p['tol'] as num? ?? 0).toDouble(),
+            unit: p['unit'] as String? ?? '',
+          );
+        }).toList();
+    final ranges = {
+      for (final p in parameters)
+        if (p.kind == LabKind.range) p.id,
+    };
+
+    final profiles =
+        (json['profiles'] as List)
+            .cast<Map<String, dynamic>>()
+            .map(
+              (p) => LabProfile(
+                target: p['target'] as String,
+                expect: (p['expect'] as Map<String, dynamic>).map((k, v) {
+                  final e = v as Map<String, dynamic>;
+                  return MapEntry(
+                    k,
+                    e.containsKey('values')
+                        ? LabExpectation.values(
+                          (e['values'] as List).cast<String>().toSet(),
+                        )
+                        : LabExpectation.range(
+                          (e['min'] as num).toDouble(),
+                          (e['max'] as num).toDouble(),
+                        ),
+                  );
+                }),
+              ),
+            )
+            .toList();
+
+    final presets =
+        (json['presets'] as List)
+            .cast<Map<String, dynamic>>()
+            .map(
+              (p) => LabPreset(
+                name: p['name'] as String,
+                expected: p['expected'] as String,
+                measures: (p['measures'] as Map<String, dynamic>).map(
+                  (k, v) => MapEntry(
+                    k,
+                    ranges.contains(k) ? (v as num).toDouble() : v as Object,
+                  ),
+                ),
+              ),
+            )
+            .toList();
+
+    return LabData(
+      parameters: parameters,
+      profiles: profiles,
+      presets: presets,
     );
   }
 }

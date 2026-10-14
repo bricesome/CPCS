@@ -3,7 +3,21 @@
   "title": "Classification des sols CPCS 1967",
   "source": "Commission de Pédologie et de Cartographie des Sols (CPCS), Classification des sols, édition 1967 (Aubert et al.), ENSA Grignon.",
   "note": "Données de référence reconstituées pour l'apprentissage ; à vérifier et compléter avec le document source.",
-  "version": 1
+  "version": 2,
+  "credits": [
+   {
+    "role": "Auteur",
+    "name": "Professeur EDMOND HIEN"
+   },
+   {
+    "role": "Contributeur",
+    "name": "NANAWENDIN YAMEOGO"
+   },
+   {
+    "role": "Concepteur",
+    "name": "NIBENAON SOME"
+   }
+  ]
  },
  "levels": [
   {
@@ -5992,6 +6006,2112 @@
   {
    "term": "Zaï / demi-lune / cordon pierreux",
    "definition": "Techniques de conservation des eaux et des sols (CES/DRS) qui récupèrent les sols encroûtés et limitent le ruissellement."
+  }
+ ],
+ "lab": {
+  "parameters": [
+   {
+    "id": "horizons",
+    "label": "Horizons visibles",
+    "kind": "choice",
+    "weight": 3,
+    "explanation": "Les couches que l'on voit en creusant une fosse. Leur succession est le meilleur indice du processus qui a formé le sol.",
+    "options": [
+     {
+      "id": "aucun",
+      "label": "Aucun horizon : roche ou matériau presque intact",
+      "explanation": "Pas de couche sombre en surface, le matériau est à peine transformé."
+     },
+     {
+      "id": "a_c",
+      "label": "Un horizon sombre (A) directement sur le matériau",
+      "explanation": "Une couche plus foncée en surface, puis tout de suite la roche ou le matériau d'origine."
+     },
+     {
+      "id": "a_b_c",
+      "label": "A, puis un horizon brun d'altération (B), puis le matériau",
+      "explanation": "Entre la surface et la roche, une couche brune transformée, sans accumulation nette."
+     },
+     {
+      "id": "argile",
+      "label": "Horizon clair appauvri sur un horizon enrichi en argile",
+      "explanation": "L'argile a migré : la couche du haut est plus claire et légère, celle du bas plus collante."
+     },
+     {
+      "id": "cendreux",
+      "label": "Horizon blanchi cendreux sur un horizon sombre ou rouille",
+      "explanation": "Couche gris-blanc comme de la cendre, au-dessus d'une couche noire ou couleur rouille."
+     },
+     {
+      "id": "concretions",
+      "label": "Taches, concrétions ou cuirasse de fer",
+      "explanation": "Petites billes dures rouges/noires, taches ocre, ou carapace durcie."
+     },
+     {
+      "id": "alteration",
+      "label": "Altération rouge ou ocre très épaisse (plusieurs mètres)",
+      "explanation": "La roche est pourrie sur une grande épaisseur ; tout le profil est rouge ou jaune."
+     }
+    ]
+   },
+   {
+    "id": "couleur",
+    "label": "Couleur dominante",
+    "kind": "choice",
+    "weight": 2,
+    "explanation": "La couleur révèle la matière organique (noir), le fer oxydé (rouge, ocre) ou l'excès d'eau (gris-bleu, taches rouille).",
+    "options": [
+     {
+      "id": "noir",
+      "label": "Noir",
+      "explanation": "Riche en matière organique bien décomposée."
+     },
+     {
+      "id": "brun_fonce",
+      "label": "Brun foncé",
+      "explanation": "Matière organique assez abondante liée à l'argile."
+     },
+     {
+      "id": "brun",
+      "label": "Brun",
+      "explanation": "Humus actif et fer peu cristallisé (sols brunifiés)."
+     },
+     {
+      "id": "rouge",
+      "label": "Rouge",
+      "explanation": "Fer oxydé sous forme d'hématite, sol bien aéré."
+     },
+     {
+      "id": "ocre",
+      "label": "Ocre / jaune",
+      "explanation": "Fer oxydé hydraté (goethite)."
+     },
+     {
+      "id": "beige",
+      "label": "Beige / gris clair",
+      "explanation": "Pauvre en matière organique, souvent calcaire ou en climat sec."
+     },
+     {
+      "id": "blanc",
+      "label": "Blanc / cendreux",
+      "explanation": "Matériau lavé de son fer et de son humus, ou couvert de sels."
+     },
+     {
+      "id": "gris_bleu",
+      "label": "Gris-bleu / verdâtre",
+      "explanation": "Fer réduit : eau stagnante en permanence (gley)."
+     },
+     {
+      "id": "bariole",
+      "label": "Gris taché de rouille",
+      "explanation": "Alternance d'engorgement et d'assèchement (pseudogley)."
+     }
+    ]
+   },
+   {
+    "id": "texture",
+    "label": "Texture (toucher)",
+    "kind": "choice",
+    "weight": 2,
+    "explanation": "Ce que l'on sent en frottant un peu de terre humide entre les doigts.",
+    "options": [
+     {
+      "id": "sableuse",
+      "label": "Sableuse : rugueuse, ne colle pas",
+      "explanation": "Les grains se sentent et ne tiennent pas ensemble."
+     },
+     {
+      "id": "limoneuse",
+      "label": "Limoneuse : douce, farineuse",
+      "explanation": "Toucher soyeux, comme du talc."
+     },
+     {
+      "id": "argileuse",
+      "label": "Argileuse : collante, plastique",
+      "explanation": "On peut modeler un boudin qui ne casse pas."
+     },
+     {
+      "id": "volcanique",
+      "label": "Très légère, onctueuse (cendres volcaniques)",
+      "explanation": "Terre très légère, grasse au toucher, sur cendres ou lapillis."
+     },
+     {
+      "id": "organique",
+      "label": "Fibreuse, tourbe",
+      "explanation": "Débris végétaux peu décomposés, spongieux."
+     },
+     {
+      "id": "caillouteuse",
+      "label": "Caillouteuse",
+      "explanation": "Beaucoup de cailloux ou de graviers."
+     }
+    ]
+   },
+   {
+    "id": "structure",
+    "label": "Structure",
+    "kind": "choice",
+    "weight": 2,
+    "explanation": "La façon dont la terre s'assemble en mottes.",
+    "options": [
+     {
+      "id": "grumeleuse",
+      "label": "Grumeleuse : petites mottes rondes",
+      "explanation": "Structure aérée, signe d'une bonne activité biologique."
+     },
+     {
+      "id": "particulaire",
+      "label": "Particulaire : grains libres",
+      "explanation": "Pas de mottes : le sable coule entre les doigts."
+     },
+     {
+      "id": "fentes",
+      "label": "Larges fentes et faces luisantes",
+      "explanation": "En saison sèche, fentes de plus de 1 cm ; mottes à faces lisses et brillantes."
+     },
+     {
+      "id": "colonnes",
+      "label": "Colonnes ou prismes très durs",
+      "explanation": "Gros blocs verticaux à sommet arrondi, très compacts (excès de sodium)."
+     },
+     {
+      "id": "massive",
+      "label": "Massive / compacte",
+      "explanation": "Pas d'agrégats nets, bloc compact."
+     }
+    ]
+   },
+   {
+    "id": "effervescence",
+    "label": "Effervescence à l'acide (calcaire)",
+    "kind": "choice",
+    "weight": 2,
+    "explanation": "Une goutte d'acide chlorhydrique dilué fait mousser le calcaire. Test simple pour savoir si le sol est calcaire.",
+    "options": [
+     {
+      "id": "aucune",
+      "label": "Aucune",
+      "explanation": "Pas de calcaire libre."
+     },
+     {
+      "id": "faible",
+      "label": "Faible",
+      "explanation": "Quelques bulles : un peu de calcaire."
+     },
+     {
+      "id": "forte",
+      "label": "Forte",
+      "explanation": "Forte mousse : sol riche en calcaire."
+     }
+    ]
+   },
+   {
+    "id": "eau",
+    "label": "Excès d'eau",
+    "kind": "choice",
+    "weight": 3,
+    "explanation": "Le sol reste-t-il gorgé d'eau ? L'excès d'eau prive le sol d'oxygène et change sa couleur.",
+    "options": [
+     {
+      "id": "jamais",
+      "label": "Jamais engorgé, bien drainé",
+      "explanation": "L'eau s'infiltre ou s'écoule rapidement."
+     },
+     {
+      "id": "temporaire",
+      "label": "Engorgé une partie de l'année",
+      "explanation": "Taches rouille et grises : l'eau stagne pendant la saison des pluies."
+     },
+     {
+      "id": "permanent",
+      "label": "Engorgé en permanence",
+      "explanation": "Nappe d'eau proche de la surface toute l'année."
+     }
+    ]
+   },
+   {
+    "id": "pente",
+    "label": "Position / pente",
+    "kind": "choice",
+    "weight": 1,
+    "explanation": "La position dans le paysage : l'eau et les matériaux descendent des pentes vers les bas-fonds.",
+    "options": [
+     {
+      "id": "depression",
+      "label": "Bas-fond / dépression",
+      "explanation": "Point bas où l'eau s'accumule."
+     },
+     {
+      "id": "plat",
+      "label": "Plaine ou plateau plat",
+      "explanation": "Terrain horizontal."
+     },
+     {
+      "id": "faible",
+      "label": "Pente faible (moins de 5 %)",
+      "explanation": "Légère inclinaison."
+     },
+     {
+      "id": "forte",
+      "label": "Pente forte (plus de 5 %)",
+      "explanation": "Versant marqué, érosion possible."
+     }
+    ]
+   },
+   {
+    "id": "climat",
+    "label": "Climat",
+    "kind": "choice",
+    "weight": 2,
+    "explanation": "Le climat de la région règle l'intensité de l'altération et le bilan d'eau.",
+    "options": [
+     {
+      "id": "froid",
+      "label": "Froid / boréal / polaire",
+      "explanation": "Températures basses, sol gelé une partie de l'année (permagel possible) : altération très lente."
+     },
+     {
+      "id": "montagnard",
+      "label": "Montagnard / alpin",
+      "explanation": "Climat froid et humide d'altitude, pentes fortes : sols jeunes et humifères."
+     },
+     {
+      "id": "tempere_humide",
+      "label": "Tempéré humide (atlantique)",
+      "explanation": "Pluies réparties sur l'année, hivers doux : lessivage et brunification dominants."
+     },
+     {
+      "id": "tempere_continental",
+      "label": "Tempéré continental",
+      "explanation": "Hivers froids, étés chauds, pluies moyennes : prairies et forêts mixtes."
+     },
+     {
+      "id": "mediterraneen",
+      "label": "Méditerranéen",
+      "explanation": "Été chaud et sec, hiver doux et pluvieux : rubéfaction (sols rouges)."
+     },
+     {
+      "id": "steppique",
+      "label": "Steppique / semi-aride froid",
+      "explanation": "Steppes à graminées, saison sèche estivale : forte incorporation d'humus (chernozems)."
+     },
+     {
+      "id": "aride",
+      "label": "Aride / désertique",
+      "explanation": "Pluies très faibles et irrégulières, évaporation forte : végétation rare, sels et calcaire restent dans le sol."
+     },
+     {
+      "id": "sahelien",
+      "label": "Sahélien / semi-aride tropical",
+      "explanation": "Climat tropical à longue saison sèche (300-600 mm) : sols bruns subarides, ferrugineux peu lessivés, sols sableux dunaires."
+     },
+     {
+      "id": "tropical_sec",
+      "label": "Tropical à saison sèche (soudanien)",
+      "explanation": "600-1200 mm en une saison des pluies : sols ferrugineux tropicaux, cuirasses."
+     },
+     {
+      "id": "tropical_humide",
+      "label": "Tropical humide / équatorial",
+      "explanation": "Chaud et pluvieux toute l'année ou presque : ferrallitisation intense."
+     }
+    ]
+   },
+   {
+    "id": "vegetation",
+    "label": "Végétation",
+    "kind": "choice",
+    "weight": 1,
+    "explanation": "La végétation naturelle du lieu fournit la matière organique et reflète le climat.",
+    "options": [
+     {
+      "id": "nulle",
+      "label": "Nulle à très rare",
+      "explanation": "Désert, roche nue, glacier."
+     },
+     {
+      "id": "steppe",
+      "label": "Steppe / pseudo-steppe",
+      "explanation": "Graminées et arbustes clairsemés des régions sèches."
+     },
+     {
+      "id": "prairie",
+      "label": "Prairie / pelouse",
+      "explanation": "Graminées denses (prairie, pelouse alpine)."
+     },
+     {
+      "id": "savane",
+      "label": "Savane arborée / arbustive",
+      "explanation": "Graminées avec arbres épars : paysage soudano-sahélien typique (RNA)."
+     },
+     {
+      "id": "foret_feuillus",
+      "label": "Forêt de feuillus",
+      "explanation": "Litière riche, humus actif (mull)."
+     },
+     {
+      "id": "foret_resineux",
+      "label": "Forêt de résineux / lande",
+      "explanation": "Litière acide, humus brut (mor) : favorise la podzolisation."
+     },
+     {
+      "id": "foret_dense",
+      "label": "Forêt dense humide",
+      "explanation": "Forêt tropicale sempervirente."
+     },
+     {
+      "id": "hygrophile",
+      "label": "Végétation hygrophile / halophile",
+      "explanation": "Roseaux, joncs, sphaignes, mangroves, plantes tolérant le sel."
+     }
+    ]
+   },
+   {
+    "id": "profondeur",
+    "label": "Profondeur du sol",
+    "kind": "range",
+    "weight": 1,
+    "min": 0,
+    "max": 300,
+    "step": 5,
+    "unit": "cm",
+    "tol": 15,
+    "explanation": "Épaisseur de terre au-dessus de la roche dure ou du matériau non transformé."
+   },
+   {
+    "id": "ph",
+    "label": "pH (eau)",
+    "kind": "range",
+    "weight": 2,
+    "min": 3.0,
+    "max": 10.5,
+    "step": 0.1,
+    "unit": "",
+    "tol": 0.3,
+    "explanation": "Acidité du sol : moins de 5,5 = acide, 6,5 à 7,5 = neutre, plus de 8,5 = très alcalin (sodium)."
+   },
+   {
+    "id": "mo",
+    "label": "Matière organique",
+    "kind": "range",
+    "weight": 2,
+    "min": 0,
+    "max": 80,
+    "step": 0.5,
+    "unit": "%",
+    "tol": 0.5,
+    "explanation": "Part de matière organique dans l'horizon de surface. Moins de 1 % : très pauvre ; plus de 30 % : tourbe."
+   },
+   {
+    "id": "ce",
+    "label": "Salinité (conductivité)",
+    "kind": "range",
+    "weight": 3,
+    "min": 0,
+    "max": 40,
+    "step": 0.5,
+    "unit": "dS/m",
+    "tol": 1,
+    "explanation": "Conductivité électrique de l'extrait de sol : au-delà de 4 dS/m, le sol est salé."
+   }
+  ],
+  "profiles": [
+   {
+    "target": "I.1",
+    "expect": {
+     "ce": {
+      "min": 0,
+      "max": 4
+     },
+     "horizons": {
+      "values": [
+       "aucun"
+      ]
+     },
+     "mo": {
+      "min": 0,
+      "max": 1
+     },
+     "structure": {
+      "values": [
+       "particulaire",
+       "massive"
+      ]
+     },
+     "vegetation": {
+      "values": [
+       "nulle",
+       "steppe"
+      ]
+     }
+    }
+   },
+   {
+    "target": "I.2",
+    "expect": {
+     "ce": {
+      "min": 0,
+      "max": 4
+     },
+     "horizons": {
+      "values": [
+       "aucun"
+      ]
+     },
+     "mo": {
+      "min": 0,
+      "max": 1
+     },
+     "structure": {
+      "values": [
+       "particulaire",
+       "massive"
+      ]
+     },
+     "vegetation": {
+      "values": [
+       "nulle",
+       "steppe"
+      ]
+     },
+     "climat": {
+      "values": [
+       "aride",
+       "froid",
+       "montagnard"
+      ]
+     }
+    }
+   },
+   {
+    "target": "II.1",
+    "expect": {
+     "ce": {
+      "min": 0,
+      "max": 4
+     },
+     "horizons": {
+      "values": [
+       "a_c"
+      ]
+     },
+     "mo": {
+      "min": 1,
+      "max": 5
+     },
+     "climat": {
+      "values": [
+       "froid"
+      ]
+     }
+    }
+   },
+   {
+    "target": "II.2",
+    "expect": {
+     "ce": {
+      "min": 0,
+      "max": 4
+     },
+     "horizons": {
+      "values": [
+       "a_c"
+      ]
+     },
+     "mo": {
+      "min": 5,
+      "max": 20
+     },
+     "climat": {
+      "values": [
+       "montagnard",
+       "froid"
+      ]
+     },
+     "ph": {
+      "min": 4,
+      "max": 6
+     },
+     "couleur": {
+      "values": [
+       "noir",
+       "brun_fonce"
+      ]
+     }
+    }
+   },
+   {
+    "target": "II.3",
+    "expect": {
+     "ce": {
+      "min": 0,
+      "max": 4
+     },
+     "horizons": {
+      "values": [
+       "a_c"
+      ]
+     },
+     "mo": {
+      "min": 0,
+      "max": 1.5
+     },
+     "climat": {
+      "values": [
+       "aride",
+       "sahelien"
+      ]
+     },
+     "ph": {
+      "min": 7,
+      "max": 8.5
+     },
+     "couleur": {
+      "values": [
+       "beige"
+      ]
+     },
+     "vegetation": {
+      "values": [
+       "steppe"
+      ]
+     }
+    }
+   },
+   {
+    "target": "II.4",
+    "expect": {
+     "ce": {
+      "min": 0,
+      "max": 4
+     },
+     "horizons": {
+      "values": [
+       "a_c"
+      ]
+     },
+     "mo": {
+      "min": 1,
+      "max": 5
+     }
+    }
+   },
+   {
+    "target": "III.1",
+    "expect": {
+     "ce": {
+      "min": 0,
+      "max": 4
+     },
+     "texture": {
+      "values": [
+       "argileuse"
+      ]
+     },
+     "structure": {
+      "values": [
+       "fentes"
+      ]
+     },
+     "ph": {
+      "min": 6.5,
+      "max": 8.5
+     },
+     "couleur": {
+      "values": [
+       "noir",
+       "brun_fonce"
+      ]
+     },
+     "climat": {
+      "values": [
+       "tropical_sec",
+       "sahelien",
+       "mediterraneen",
+       "steppique"
+      ]
+     },
+     "pente": {
+      "values": [
+       "depression",
+       "plat"
+      ]
+     },
+     "profondeur": {
+      "min": 50,
+      "max": 200
+     },
+     "mo": {
+      "min": 1,
+      "max": 4
+     },
+     "eau": {
+      "values": [
+       "temporaire"
+      ]
+     }
+    }
+   },
+   {
+    "target": "III.2",
+    "expect": {
+     "ce": {
+      "min": 0,
+      "max": 4
+     },
+     "texture": {
+      "values": [
+       "argileuse"
+      ]
+     },
+     "structure": {
+      "values": [
+       "fentes"
+      ]
+     },
+     "ph": {
+      "min": 6.5,
+      "max": 8.5
+     },
+     "couleur": {
+      "values": [
+       "noir",
+       "brun_fonce"
+      ]
+     },
+     "climat": {
+      "values": [
+       "tropical_sec",
+       "sahelien",
+       "mediterraneen",
+       "steppique"
+      ]
+     },
+     "pente": {
+      "values": [
+       "faible"
+      ]
+     },
+     "profondeur": {
+      "min": 50,
+      "max": 200
+     },
+     "mo": {
+      "min": 1,
+      "max": 4
+     },
+     "eau": {
+      "values": [
+       "jamais"
+      ]
+     }
+    }
+   },
+   {
+    "target": "IV.1",
+    "expect": {
+     "ce": {
+      "min": 0,
+      "max": 4
+     },
+     "texture": {
+      "values": [
+       "volcanique"
+      ]
+     },
+     "mo": {
+      "min": 5,
+      "max": 30
+     },
+     "ph": {
+      "min": 4.5,
+      "max": 6.5
+     },
+     "couleur": {
+      "values": [
+       "noir",
+       "brun_fonce"
+      ]
+     },
+     "structure": {
+      "values": [
+       "grumeleuse"
+      ]
+     },
+     "eau": {
+      "values": [
+       "jamais"
+      ]
+     },
+     "climat": {
+      "values": [
+       "tempere_humide",
+       "montagnard",
+       "froid"
+      ]
+     }
+    }
+   },
+   {
+    "target": "IV.2",
+    "expect": {
+     "ce": {
+      "min": 0,
+      "max": 4
+     },
+     "texture": {
+      "values": [
+       "volcanique"
+      ]
+     },
+     "mo": {
+      "min": 5,
+      "max": 30
+     },
+     "ph": {
+      "min": 4.5,
+      "max": 6.5
+     },
+     "couleur": {
+      "values": [
+       "noir",
+       "brun_fonce"
+      ]
+     },
+     "structure": {
+      "values": [
+       "grumeleuse"
+      ]
+     },
+     "eau": {
+      "values": [
+       "jamais"
+      ]
+     },
+     "climat": {
+      "values": [
+       "tropical_humide",
+       "tropical_sec"
+      ]
+     }
+    }
+   },
+   {
+    "target": "V.1",
+    "expect": {
+     "ce": {
+      "min": 0,
+      "max": 4
+     },
+     "eau": {
+      "values": [
+       "jamais"
+      ]
+     },
+     "structure": {
+      "values": [
+       "grumeleuse"
+      ]
+     },
+     "profondeur": {
+      "min": 10,
+      "max": 60
+     },
+     "horizons": {
+      "values": [
+       "a_c",
+       "a_b_c"
+      ]
+     },
+     "effervescence": {
+      "values": [
+       "forte"
+      ]
+     },
+     "ph": {
+      "min": 7.8,
+      "max": 8.7
+     },
+     "couleur": {
+      "values": [
+       "noir",
+       "brun_fonce",
+       "beige"
+      ]
+     }
+    }
+   },
+   {
+    "target": "V.2",
+    "expect": {
+     "ce": {
+      "min": 0,
+      "max": 4
+     },
+     "eau": {
+      "values": [
+       "jamais"
+      ]
+     },
+     "structure": {
+      "values": [
+       "grumeleuse"
+      ]
+     },
+     "profondeur": {
+      "min": 10,
+      "max": 60
+     },
+     "horizons": {
+      "values": [
+       "a_c",
+       "a_b_c"
+      ]
+     },
+     "effervescence": {
+      "values": [
+       "aucune",
+       "faible"
+      ]
+     },
+     "ph": {
+      "min": 6.5,
+      "max": 7.7
+     },
+     "couleur": {
+      "values": [
+       "brun_fonce",
+       "brun"
+      ]
+     }
+    }
+   },
+   {
+    "target": "V.3",
+    "expect": {
+     "ce": {
+      "min": 2,
+      "max": 8
+     },
+     "eau": {
+      "values": [
+       "jamais"
+      ]
+     },
+     "structure": {
+      "values": [
+       "grumeleuse"
+      ]
+     },
+     "profondeur": {
+      "min": 10,
+      "max": 60
+     },
+     "horizons": {
+      "values": [
+       "a_c",
+       "a_b_c"
+      ]
+     },
+     "effervescence": {
+      "values": [
+       "aucune",
+       "faible"
+      ]
+     },
+     "ph": {
+      "min": 7,
+      "max": 8.5
+     },
+     "couleur": {
+      "values": [
+       "beige",
+       "blanc"
+      ]
+     },
+     "climat": {
+      "values": [
+       "aride",
+       "sahelien",
+       "mediterraneen"
+      ]
+     }
+    }
+   },
+   {
+    "target": "VI.1",
+    "expect": {
+     "ce": {
+      "min": 0,
+      "max": 4
+     },
+     "mo": {
+      "min": 2,
+      "max": 8
+     },
+     "structure": {
+      "values": [
+       "grumeleuse"
+      ]
+     },
+     "eau": {
+      "values": [
+       "jamais"
+      ]
+     },
+     "profondeur": {
+      "min": 60,
+      "max": 200
+     },
+     "pente": {
+      "values": [
+       "plat",
+       "faible"
+      ]
+     },
+     "vegetation": {
+      "values": [
+       "prairie"
+      ]
+     },
+     "horizons": {
+      "values": [
+       "a_c",
+       "a_b_c"
+      ]
+     },
+     "climat": {
+      "values": [
+       "tempere_continental"
+      ]
+     },
+     "ph": {
+      "min": 5.5,
+      "max": 7
+     },
+     "couleur": {
+      "values": [
+       "brun_fonce",
+       "noir"
+      ]
+     },
+     "effervescence": {
+      "values": [
+       "aucune"
+      ]
+     }
+    }
+   },
+   {
+    "target": "VI.2",
+    "expect": {
+     "ce": {
+      "min": 0,
+      "max": 4
+     },
+     "mo": {
+      "min": 2,
+      "max": 8
+     },
+     "structure": {
+      "values": [
+       "grumeleuse"
+      ]
+     },
+     "eau": {
+      "values": [
+       "jamais"
+      ]
+     },
+     "profondeur": {
+      "min": 60,
+      "max": 200
+     },
+     "pente": {
+      "values": [
+       "plat",
+       "faible"
+      ]
+     },
+     "vegetation": {
+      "values": [
+       "prairie",
+       "steppe"
+      ]
+     },
+     "horizons": {
+      "values": [
+       "a_c",
+       "a_b_c"
+      ]
+     },
+     "climat": {
+      "values": [
+       "steppique",
+       "tempere_continental"
+      ]
+     },
+     "ph": {
+      "min": 7,
+      "max": 8.5
+     },
+     "couleur": {
+      "values": [
+       "noir",
+       "brun_fonce"
+      ]
+     },
+     "effervescence": {
+      "values": [
+       "faible",
+       "forte"
+      ]
+     }
+    }
+   },
+   {
+    "target": "VI.3",
+    "expect": {
+     "ce": {
+      "min": 0,
+      "max": 4
+     },
+     "mo": {
+      "min": 0.5,
+      "max": 3
+     },
+     "structure": {
+      "values": [
+       "grumeleuse"
+      ]
+     },
+     "eau": {
+      "values": [
+       "jamais"
+      ]
+     },
+     "profondeur": {
+      "min": 60,
+      "max": 200
+     },
+     "pente": {
+      "values": [
+       "plat",
+       "faible"
+      ]
+     },
+     "vegetation": {
+      "values": [
+       "steppe",
+       "savane"
+      ]
+     },
+     "horizons": {
+      "values": [
+       "a_c",
+       "a_b_c"
+      ]
+     },
+     "climat": {
+      "values": [
+       "sahelien",
+       "mediterraneen",
+       "aride"
+      ]
+     },
+     "ph": {
+      "min": 7,
+      "max": 8.5
+     },
+     "couleur": {
+      "values": [
+       "brun",
+       "beige"
+      ]
+     }
+    }
+   },
+   {
+    "target": "VII.1",
+    "expect": {
+     "ce": {
+      "min": 0,
+      "max": 4
+     },
+     "couleur": {
+      "values": [
+       "brun"
+      ]
+     },
+     "ph": {
+      "min": 5,
+      "max": 7
+     },
+     "mo": {
+      "min": 2,
+      "max": 8
+     },
+     "structure": {
+      "values": [
+       "grumeleuse"
+      ]
+     },
+     "horizons": {
+      "values": [
+       "a_b_c",
+       "argile"
+      ]
+     },
+     "eau": {
+      "values": [
+       "jamais"
+      ]
+     },
+     "profondeur": {
+      "min": 40,
+      "max": 150
+     },
+     "vegetation": {
+      "values": [
+       "foret_feuillus"
+      ]
+     },
+     "effervescence": {
+      "values": [
+       "aucune"
+      ]
+     },
+     "climat": {
+      "values": [
+       "tempere_humide"
+      ]
+     }
+    }
+   },
+   {
+    "target": "VII.2",
+    "expect": {
+     "ce": {
+      "min": 0,
+      "max": 4
+     },
+     "couleur": {
+      "values": [
+       "brun"
+      ]
+     },
+     "ph": {
+      "min": 5,
+      "max": 7
+     },
+     "mo": {
+      "min": 2,
+      "max": 8
+     },
+     "structure": {
+      "values": [
+       "grumeleuse"
+      ]
+     },
+     "horizons": {
+      "values": [
+       "a_b_c",
+       "argile"
+      ]
+     },
+     "eau": {
+      "values": [
+       "jamais"
+      ]
+     },
+     "profondeur": {
+      "min": 40,
+      "max": 150
+     },
+     "vegetation": {
+      "values": [
+       "foret_feuillus"
+      ]
+     },
+     "effervescence": {
+      "values": [
+       "aucune"
+      ]
+     },
+     "climat": {
+      "values": [
+       "tempere_continental"
+      ]
+     }
+    }
+   },
+   {
+    "target": "VII.3",
+    "expect": {
+     "ce": {
+      "min": 0,
+      "max": 4
+     },
+     "couleur": {
+      "values": [
+       "brun"
+      ]
+     },
+     "ph": {
+      "min": 6,
+      "max": 7.5
+     },
+     "mo": {
+      "min": 2,
+      "max": 8
+     },
+     "structure": {
+      "values": [
+       "grumeleuse"
+      ]
+     },
+     "horizons": {
+      "values": [
+       "a_b_c",
+       "argile"
+      ]
+     },
+     "eau": {
+      "values": [
+       "jamais"
+      ]
+     },
+     "profondeur": {
+      "min": 40,
+      "max": 150
+     },
+     "vegetation": {
+      "values": [
+       "foret_feuillus"
+      ]
+     },
+     "effervescence": {
+      "values": [
+       "aucune"
+      ]
+     },
+     "climat": {
+      "values": [
+       "tropical_sec",
+       "tropical_humide"
+      ]
+     }
+    }
+   },
+   {
+    "target": "VIII.1",
+    "expect": {
+     "ce": {
+      "min": 0,
+      "max": 4
+     },
+     "horizons": {
+      "values": [
+       "cendreux"
+      ]
+     },
+     "couleur": {
+      "values": [
+       "blanc"
+      ]
+     },
+     "texture": {
+      "values": [
+       "sableuse"
+      ]
+     },
+     "ph": {
+      "min": 3.5,
+      "max": 5.5
+     },
+     "vegetation": {
+      "values": [
+       "foret_resineux"
+      ]
+     },
+     "eau": {
+      "values": [
+       "jamais"
+      ]
+     },
+     "structure": {
+      "values": [
+       "particulaire"
+      ]
+     },
+     "effervescence": {
+      "values": [
+       "aucune"
+      ]
+     },
+     "climat": {
+      "values": [
+       "tempere_humide",
+       "montagnard"
+      ]
+     }
+    }
+   },
+   {
+    "target": "VIII.2",
+    "expect": {
+     "ce": {
+      "min": 0,
+      "max": 4
+     },
+     "horizons": {
+      "values": [
+       "cendreux"
+      ]
+     },
+     "couleur": {
+      "values": [
+       "blanc"
+      ]
+     },
+     "texture": {
+      "values": [
+       "sableuse"
+      ]
+     },
+     "ph": {
+      "min": 3.5,
+      "max": 5.5
+     },
+     "vegetation": {
+      "values": [
+       "foret_resineux"
+      ]
+     },
+     "eau": {
+      "values": [
+       "jamais"
+      ]
+     },
+     "structure": {
+      "values": [
+       "particulaire"
+      ]
+     },
+     "effervescence": {
+      "values": [
+       "aucune"
+      ]
+     },
+     "climat": {
+      "values": [
+       "froid"
+      ]
+     }
+    }
+   },
+   {
+    "target": "VIII.3",
+    "expect": {
+     "ce": {
+      "min": 0,
+      "max": 4
+     },
+     "horizons": {
+      "values": [
+       "cendreux"
+      ]
+     },
+     "couleur": {
+      "values": [
+       "blanc"
+      ]
+     },
+     "texture": {
+      "values": [
+       "sableuse"
+      ]
+     },
+     "ph": {
+      "min": 3.5,
+      "max": 5.5
+     },
+     "vegetation": {
+      "values": [
+       "foret_resineux"
+      ]
+     },
+     "eau": {
+      "values": [
+       "temporaire",
+       "permanent"
+      ]
+     },
+     "structure": {
+      "values": [
+       "particulaire"
+      ]
+     },
+     "effervescence": {
+      "values": [
+       "aucune"
+      ]
+     },
+     "pente": {
+      "values": [
+       "depression",
+       "plat"
+      ]
+     }
+    }
+   },
+   {
+    "target": "IX.1",
+    "expect": {
+     "ce": {
+      "min": 0,
+      "max": 4
+     },
+     "eau": {
+      "values": [
+       "jamais"
+      ]
+     },
+     "effervescence": {
+      "values": [
+       "aucune"
+      ]
+     },
+     "couleur": {
+      "values": [
+       "rouge"
+      ]
+     },
+     "climat": {
+      "values": [
+       "mediterraneen"
+      ]
+     },
+     "ph": {
+      "min": 6,
+      "max": 8
+     },
+     "horizons": {
+      "values": [
+       "a_b_c",
+       "argile"
+      ]
+     },
+     "profondeur": {
+      "min": 50,
+      "max": 200
+     },
+     "vegetation": {
+      "values": [
+       "foret_feuillus",
+       "steppe"
+      ]
+     }
+    }
+   },
+   {
+    "target": "IX.2",
+    "expect": {
+     "ce": {
+      "min": 0,
+      "max": 4
+     },
+     "eau": {
+      "values": [
+       "jamais"
+      ]
+     },
+     "effervescence": {
+      "values": [
+       "aucune"
+      ]
+     },
+     "couleur": {
+      "values": [
+       "ocre",
+       "rouge"
+      ]
+     },
+     "climat": {
+      "values": [
+       "tropical_sec",
+       "sahelien"
+      ]
+     },
+     "horizons": {
+      "values": [
+       "concretions",
+       "argile"
+      ]
+     },
+     "ph": {
+      "min": 5.5,
+      "max": 7
+     },
+     "texture": {
+      "values": [
+       "sableuse",
+       "limoneuse"
+      ]
+     },
+     "mo": {
+      "min": 0.3,
+      "max": 2
+     },
+     "vegetation": {
+      "values": [
+       "savane"
+      ]
+     }
+    }
+   },
+   {
+    "target": "X.1",
+    "expect": {
+     "ce": {
+      "min": 0,
+      "max": 4
+     },
+     "climat": {
+      "values": [
+       "tropical_humide",
+       "tropical_sec"
+      ]
+     },
+     "couleur": {
+      "values": [
+       "rouge",
+       "ocre"
+      ]
+     },
+     "horizons": {
+      "values": [
+       "alteration"
+      ]
+     },
+     "profondeur": {
+      "min": 150,
+      "max": 300
+     },
+     "texture": {
+      "values": [
+       "argileuse",
+       "limoneuse"
+      ]
+     },
+     "eau": {
+      "values": [
+       "jamais"
+      ]
+     },
+     "effervescence": {
+      "values": [
+       "aucune"
+      ]
+     },
+     "vegetation": {
+      "values": [
+       "foret_dense",
+       "savane"
+      ]
+     },
+     "ph": {
+      "min": 5.6,
+      "max": 6.5
+     }
+    }
+   },
+   {
+    "target": "X.2",
+    "expect": {
+     "ce": {
+      "min": 0,
+      "max": 4
+     },
+     "climat": {
+      "values": [
+       "tropical_humide"
+      ]
+     },
+     "couleur": {
+      "values": [
+       "rouge",
+       "ocre"
+      ]
+     },
+     "horizons": {
+      "values": [
+       "alteration"
+      ]
+     },
+     "profondeur": {
+      "min": 150,
+      "max": 300
+     },
+     "texture": {
+      "values": [
+       "argileuse",
+       "limoneuse"
+      ]
+     },
+     "eau": {
+      "values": [
+       "jamais"
+      ]
+     },
+     "effervescence": {
+      "values": [
+       "aucune"
+      ]
+     },
+     "vegetation": {
+      "values": [
+       "foret_dense",
+       "savane"
+      ]
+     },
+     "ph": {
+      "min": 5.0,
+      "max": 5.5
+     }
+    }
+   },
+   {
+    "target": "X.3",
+    "expect": {
+     "ce": {
+      "min": 0,
+      "max": 4
+     },
+     "climat": {
+      "values": [
+       "tropical_humide"
+      ]
+     },
+     "couleur": {
+      "values": [
+       "rouge",
+       "ocre"
+      ]
+     },
+     "horizons": {
+      "values": [
+       "alteration"
+      ]
+     },
+     "profondeur": {
+      "min": 150,
+      "max": 300
+     },
+     "texture": {
+      "values": [
+       "argileuse",
+       "limoneuse"
+      ]
+     },
+     "eau": {
+      "values": [
+       "jamais"
+      ]
+     },
+     "effervescence": {
+      "values": [
+       "aucune"
+      ]
+     },
+     "vegetation": {
+      "values": [
+       "foret_dense",
+       "savane"
+      ]
+     },
+     "ph": {
+      "min": 4.0,
+      "max": 4.9
+     }
+    }
+   },
+   {
+    "target": "XI.1",
+    "expect": {
+     "ce": {
+      "min": 0,
+      "max": 4
+     },
+     "eau": {
+      "values": [
+       "permanent"
+      ]
+     },
+     "couleur": {
+      "values": [
+       "noir"
+      ]
+     },
+     "pente": {
+      "values": [
+       "depression",
+       "plat"
+      ]
+     },
+     "vegetation": {
+      "values": [
+       "hygrophile"
+      ]
+     },
+     "texture": {
+      "values": [
+       "organique"
+      ]
+     },
+     "mo": {
+      "min": 30,
+      "max": 80
+     }
+    }
+   },
+   {
+    "target": "XI.2",
+    "expect": {
+     "ce": {
+      "min": 0,
+      "max": 4
+     },
+     "eau": {
+      "values": [
+       "permanent"
+      ]
+     },
+     "couleur": {
+      "values": [
+       "noir",
+       "gris_bleu"
+      ]
+     },
+     "pente": {
+      "values": [
+       "depression",
+       "plat"
+      ]
+     },
+     "vegetation": {
+      "values": [
+       "hygrophile"
+      ]
+     },
+     "mo": {
+      "min": 8,
+      "max": 29.5
+     }
+    }
+   },
+   {
+    "target": "XI.3",
+    "expect": {
+     "ce": {
+      "min": 0,
+      "max": 4
+     },
+     "eau": {
+      "values": [
+       "permanent",
+       "temporaire"
+      ]
+     },
+     "couleur": {
+      "values": [
+       "gris_bleu",
+       "bariole"
+      ]
+     },
+     "pente": {
+      "values": [
+       "depression",
+       "plat"
+      ]
+     },
+     "vegetation": {
+      "values": [
+       "hygrophile"
+      ]
+     },
+     "mo": {
+      "min": 0,
+      "max": 7.5
+     }
+    }
+   },
+   {
+    "target": "XII.1",
+    "expect": {
+     "pente": {
+      "values": [
+       "depression",
+       "plat"
+      ]
+     },
+     "climat": {
+      "values": [
+       "aride",
+       "sahelien",
+       "mediterraneen",
+       "steppique"
+      ]
+     },
+     "ph": {
+      "min": 7.5,
+      "max": 8.5
+     },
+     "ce": {
+      "min": 4,
+      "max": 40
+     },
+     "structure": {
+      "values": [
+       "grumeleuse",
+       "particulaire",
+       "massive"
+      ]
+     },
+     "couleur": {
+      "values": [
+       "beige",
+       "blanc",
+       "gris_bleu"
+      ]
+     }
+    }
+   },
+   {
+    "target": "XII.2",
+    "expect": {
+     "pente": {
+      "values": [
+       "depression",
+       "plat"
+      ]
+     },
+     "climat": {
+      "values": [
+       "aride",
+       "sahelien",
+       "mediterraneen",
+       "steppique"
+      ]
+     },
+     "ph": {
+      "min": 8.5,
+      "max": 10.5
+     },
+     "structure": {
+      "values": [
+       "colonnes",
+       "massive"
+      ]
+     }
+    }
+   }
+  ],
+  "presets": [
+   {
+    "name": "Sol rouge profond de forêt tropicale",
+    "measures": {
+     "climat": "tropical_humide",
+     "couleur": "rouge",
+     "profondeur": 250,
+     "horizons": "alteration",
+     "ph": 4.5,
+     "eau": "jamais",
+     "vegetation": "foret_dense"
+    },
+    "expected": "X.3"
+   },
+   {
+    "name": "Argile noire à fentes d'une plaine sahélienne",
+    "measures": {
+     "climat": "sahelien",
+     "texture": "argileuse",
+     "structure": "fentes",
+     "couleur": "noir",
+     "ph": 7.8,
+     "pente": "depression",
+     "eau": "temporaire"
+    },
+    "expected": "III.1"
+   },
+   {
+    "name": "Sable blanc cendreux sous les pins",
+    "measures": {
+     "climat": "tempere_humide",
+     "horizons": "cendreux",
+     "couleur": "blanc",
+     "texture": "sableuse",
+     "ph": 4.0,
+     "vegetation": "foret_resineux"
+    },
+    "expected": "VIII.1"
+   },
+   {
+    "name": "Bas-fond gris engorgé toute l'année",
+    "measures": {
+     "eau": "permanent",
+     "couleur": "gris_bleu",
+     "pente": "depression",
+     "mo": 3,
+     "vegetation": "hygrophile"
+    },
+    "expected": "XI.3"
+   },
+   {
+    "name": "Croûte blanche salée en bordure de mare",
+    "measures": {
+     "ce": 15,
+     "ph": 8.2,
+     "couleur": "blanc",
+     "pente": "depression",
+     "climat": "sahelien"
+    },
+    "expected": "XII.1"
+   },
+   {
+    "name": "Sol ocre à concrétions de savane soudanienne",
+    "measures": {
+     "climat": "tropical_sec",
+     "couleur": "ocre",
+     "horizons": "concretions",
+     "texture": "sableuse",
+     "ph": 6.2,
+     "vegetation": "savane"
+    },
+    "expected": "IX.2"
+   },
+   {
+    "name": "Sol brun forestier tempéré",
+    "measures": {
+     "climat": "tempere_humide",
+     "couleur": "brun",
+     "horizons": "a_b_c",
+     "ph": 6.0,
+     "mo": 4,
+     "vegetation": "foret_feuillus"
+    },
+    "expected": "VII.1"
+   },
+   {
+    "name": "Sol sombre et peu épais sur calcaire",
+    "measures": {
+     "effervescence": "forte",
+     "ph": 8.2,
+     "profondeur": 30,
+     "couleur": "noir",
+     "structure": "grumeleuse"
+    },
+    "expected": "V.1"
+   },
+   {
+    "name": "Sol noir léger sur cendres volcaniques",
+    "measures": {
+     "texture": "volcanique",
+     "couleur": "noir",
+     "mo": 12,
+     "ph": 5.5,
+     "climat": "tropical_humide"
+    },
+    "expected": "IV.2"
+   },
+   {
+    "name": "Roche presque nue au désert",
+    "measures": {
+     "horizons": "aucun",
+     "mo": 0.2,
+     "climat": "aride",
+     "vegetation": "nulle"
+    },
+    "expected": "I.2"
+   }
+  ]
+ },
+ "guide": [
+  {
+   "id": "classification",
+   "title": "Classification",
+   "what": "Parcourir l'arbre de la classification CPCS : 12 classes, découpées en sous-classes, groupes et sous-groupes.",
+   "steps": [
+    "Touchez une classe pour afficher ses sous-classes, puis descendez de niveau en niveau.",
+    "Tapez un mot dans la recherche (les accents sont facultatifs : « ferrallitique » ou « ferralitique »).",
+    "Ouvrez une fiche pour lire la description, le profil type, les critères et les sous-unités.",
+    "L'étoile ajoute un sol à vos favoris ; les derniers sols consultés apparaissent dans « Récents »."
+   ],
+   "example": "Cherchez « vertisol », ouvrez « Vertisols topomorphes » : la fiche indique qu'ils se trouvent dans les dépressions et plaines, sur argiles gonflantes."
+  },
+  {
+   "id": "croisement",
+   "title": "Croisement",
+   "what": "Trouver les sols qui répondent à plusieurs conditions à la fois (climat, matériau, drainage…).",
+   "steps": [
+    "Ouvrez un critère et cochez une ou plusieurs valeurs.",
+    "Entre deux critères différents, la règle est « ET » : le sol doit remplir les deux conditions.",
+    "Dans un même critère, la règle est « OU » : cocher deux climats élargit la recherche.",
+    "Choisissez éventuellement le niveau (classe, sous-classe…) et ajoutez un mot-clé.",
+    "Résultats « exacts » : ils correspondent à tous vos choix. Résultats « compatibles » : le sol n'est pas lié à un climat ou à un matériau précis (azonal, varié) et peut donc aussi se rencontrer dans votre cas.",
+    "Le mode « Matrice » croise deux critères dans un tableau : chaque case donne le nombre de sols concernés."
+   ],
+   "example": "Climat = tropical humide ET Drainage = bon → sols ferrallitiques. Ajoutez Climat = tropical sec (OU) : la liste s'élargit aux sols ferrugineux tropicaux."
+  },
+  {
+   "id": "comparer",
+   "title": "Comparer",
+   "what": "Mettre jusqu'à 3 sols côte à côte pour voir ce qui les rapproche et ce qui les distingue.",
+   "steps": [
+    "Depuis la fiche d'un sol, touchez « Comparer » pour l'ajouter (3 au maximum).",
+    "L'onglet Comparer affiche les sols en colonnes, critère par critère.",
+    "Les valeurs communes à tous les sols sont mises en évidence.",
+    "Retirez un sol avec la croix de son étiquette."
+   ],
+   "example": "Vertisols, Sols ferrallitiques et Sols hydromorphes : le drainage est bon pour les ferrallitiques, mauvais pour les hydromorphes ; les Vertisols se distinguent par leurs argiles gonflantes."
+  },
+  {
+   "id": "cle",
+   "title": "Clé de détermination",
+   "what": "Trouver la classe d'un sol en répondant à des questions simples sur ce que l'on observe.",
+   "steps": [
+    "Lisez la question et choisissez la réponse qui correspond à votre profil.",
+    "L'icône ⓘ donne un conseil d'observation.",
+    "« Question précédente » permet de corriger une réponse.",
+    "À la fin, ouvrez la fiche de la classe proposée pour préciser la sous-classe et le groupe."
+   ],
+   "example": "Pas d'excès d'eau, pas de sel, profil développé, larges fentes en saison sèche → Vertisols."
+  },
+  {
+   "id": "labo",
+   "title": "Labo",
+   "what": "Simuler une analyse : vous saisissez les paramètres observés ou mesurés, l'application calcule quels types de sols (sous-classes) correspondent le mieux et explique pourquoi.",
+   "steps": [
+    "Renseignez les paramètres que vous connaissez (horizons, couleur, pH, profondeur, pente, climat…). Ceux que vous laissez sur « Non renseigné » ne comptent pas.",
+    "Ou chargez un échantillon d'exemple pour voir comment ça marche.",
+    "Touchez « Analyser ». Chaque type de sol a un profil attendu ; chaque paramètre a un poids (3 = très important, 1 = indice secondaire).",
+    "Pour chaque sol : un paramètre dans la plage attendue vaut tout son poids, un paramètre juste à côté (dans la tolérance) la moitié, un paramètre contradictoire zéro.",
+    "Concordance = points obtenus ÷ points possibles sur les paramètres que ce sol décrit. Couverture = part de vos paramètres que ce sol décrit.",
+    "Score = concordance × (0,6 + 0,4 × couverture). Le sol au meilleur score est proposé en premier ; les éléments concordants (✓), proches (≈) et contradictoires (✗) sont listés."
+   ],
+   "example": "Climat tropical humide, couleur rouge, profondeur 250 cm, altération très épaisse, pH 4,5 → Sols ferrallitiques fortement désaturés (X.3). Avec un pH de 6,0, le résultat devient « faiblement désaturés » (X.1)."
+  },
+  {
+   "id": "apprendre",
+   "title": "Apprendre et mode apprentissage",
+   "what": "Comprendre les notions : niveaux de la classification, critères, glossaire.",
+   "steps": [
+    "L'onglet Apprendre présente les niveaux, les critères expliqués et un glossaire avec recherche.",
+    "Partout, les petites icônes ⓘ ouvrent une explication courte.",
+    "Le bouton chapeau, en haut à droite, masque les ⓘ pour une lecture plus simple.",
+    "Le bouton « ? » ouvre la rubrique du guide correspondant à l'écran."
+   ],
+   "example": "Dans le glossaire, cherchez « pseudogley » pour savoir ce que signifient les taches rouille dans un sol."
   }
  ]
 }

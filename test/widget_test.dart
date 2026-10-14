@@ -52,4 +52,45 @@ void main() {
     await tester.pumpAndSettle();
     expect(find.text('Question 2'), findsOneWidget);
   });
+
+  testWidgets('labo, guide et crédits', (tester) async {
+    tester.view.physicalSize = const Size(1280, 1000);
+    tester.view.devicePixelRatio = 1;
+    addTearDown(tester.view.reset);
+
+    await tester.pumpWidget(const CPCSApp());
+    await tester.pumpAndSettle();
+
+    await tester.tap(find.text('Labo').first);
+    await tester.pumpAndSettle();
+    expect(find.text('Analyser (0)'), findsOneWidget);
+    await tester.tap(find.text('Charger un échantillon d\'exemple'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Sol rouge profond de forêt tropicale'));
+    await tester.pumpAndSettle();
+    expect(find.byKey(const Key('lab-best')), findsOneWidget);
+    expect(
+      find.descendant(
+        of: find.byKey(const Key('lab-best')),
+        matching: find.text('100 %'),
+      ),
+      findsOneWidget,
+    );
+    expect(find.text('Analyser (7)'), findsOneWidget);
+
+    await tester.tap(find.byTooltip('Guide : Labo'));
+    await tester.pumpAndSettle();
+    expect(find.text('Guide · Labo'), findsOneWidget);
+    await tester.tapAt(const Offset(10, 10));
+    await tester.pumpAndSettle();
+
+    await tester.tap(find.text('Apprendre').first);
+    await tester.pumpAndSettle();
+    expect(find.text('Comparer'), findsWidgets);
+    await tester.tap(find.text('À propos'));
+    await tester.pumpAndSettle();
+    expect(find.text('Professeur EDMOND HIEN'), findsOneWidget);
+    expect(find.text('NANAWENDIN YAMEOGO'), findsOneWidget);
+    expect(find.text('NIBENAON SOME'), findsOneWidget);
+  });
 }

@@ -6,6 +6,7 @@ import '../../features/classification/presentation/pages/unit_detail_page.dart';
 import '../../features/comparison/presentation/pages/compare_page.dart';
 import '../../features/determination/presentation/pages/determination_page.dart';
 import '../../features/explorer/presentation/pages/explorer_page.dart';
+import '../../features/lab/presentation/pages/lab_page.dart';
 import '../../features/learning/presentation/pages/learning_page.dart';
 
 GoRouter createRouter() {
@@ -65,6 +66,14 @@ GoRouter createRouter() {
           StatefulShellBranch(
             routes: [
               GoRoute(
+                path: '/lab',
+                builder: (context, state) => const LabPage(),
+              ),
+            ],
+          ),
+          StatefulShellBranch(
+            routes: [
+              GoRoute(
                 path: '/learn',
                 builder: (context, state) => const LearningPage(),
               ),
@@ -82,10 +91,11 @@ class AppShell extends StatelessWidget {
   const AppShell({super.key, required this.shell});
 
   static const _destinations = [
-    (Icons.account_tree_outlined, Icons.account_tree, 'Classification'),
+    (Icons.account_tree_outlined, Icons.account_tree, 'Classes'),
     (Icons.hub_outlined, Icons.hub, 'Croisement'),
     (Icons.compare_arrows_outlined, Icons.compare_arrows, 'Comparer'),
     (Icons.quiz_outlined, Icons.quiz, 'Clé'),
+    (Icons.science_outlined, Icons.science, 'Labo'),
     (Icons.school_outlined, Icons.school, 'Apprendre'),
   ];
 

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../../../core/widgets/guide_button.dart';
 import '../../../../core/widgets/code_badge.dart';
 import '../../../../core/widgets/info_hint.dart';
 import '../../domain/entities/classification.dart';
@@ -33,7 +34,7 @@ class _ClassificationPageState extends State<ClassificationPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('CPCS'),
-        actions: const [LearningModeButton()],
+        actions: const [GuideButton('classification'), LearningModeButton()],
       ),
       body: ClassificationGate(
         builder:
